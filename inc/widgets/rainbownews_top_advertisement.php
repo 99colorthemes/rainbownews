@@ -15,16 +15,13 @@ add_action( 'widgets_init', 'register_rainbownews_top_advertisement' );
 function register_rainbownews_top_advertisement()
 {
     register_widget("rainbownews_top_advertisement");
-}
+} 
 
-/**
- * Project Widget section.
- */
 class rainbownews_top_advertisement extends WP_Widget {
     function __construct() {
         $widget_ops           = array(
             'classname'       => 'widget_top_advertisement',
-            'description'     => esc_html__( 'Add your 728x90 Advertisement here', 'rainbownews' )
+            'description'     => esc_html__( 'Add your 728x90 Advertisement', 'rainbownews' )
         );
         $control_ops        = array(
             'width'           => 200,
@@ -43,15 +40,15 @@ class rainbownews_top_advertisement extends WP_Widget {
         $defaults[ 'title' ]    = '';
         $instance               = wp_parse_args( (array) $instance, $defaults );
         $title                  = $instance[ 'title' ];
-        $ads_url                 = $instance[ 'ads_url' ];
+        $ads_url                 = $instance[ 'ads_url' ]; 
 
         ?>
-        <p><?php esc_html_e( 'Note: Upload your image for advertisement.', 'rainbownews' ); ?>
-        </p>
 
         <p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title:', 'rainbownews' ); ?></label>
             <input id="<?php echo $this->get_field_id( 'title' ); ?>" class="widefat" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
+
+
 
         <p>
             <label for="<?php echo $this->get_field_id( 'ads_url' ); ?>"><?php esc_html_e( 'Advertisement Image URL:', 'rainbownews' ); ?></label>
