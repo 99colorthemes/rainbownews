@@ -49,8 +49,7 @@ class rainbownews_top_advertisement extends WP_Widget {
         <p><?php esc_html_e( 'Note: Upload your image for advertisement.', 'rainbownews' ); ?>
         </p>
 
-        <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title:', 'rainbownews' ); ?></label>
+        <p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title:', 'rainbownews' ); ?></label>
             <input id="<?php echo $this->get_field_id( 'title' ); ?>" class="widefat" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
 
