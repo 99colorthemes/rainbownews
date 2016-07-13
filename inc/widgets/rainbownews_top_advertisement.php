@@ -40,7 +40,7 @@ class rainbownews_top_advertisement extends WP_Widget {
 
 
     function form( $instance ) {
-        $defaults[ 'title' ]    = '';  
+        $defaults[ 'title' ]    = '';
         $instance               = wp_parse_args( (array) $instance, $defaults );
         $title                  = $instance[ 'title' ];
         $ads_url                 = $instance[ 'ads_url' ];
@@ -59,7 +59,7 @@ class rainbownews_top_advertisement extends WP_Widget {
             <input id="<?php echo $this->get_field_id( 'ads_url' ); ?>" class="widefat" name="<?php echo $this->get_field_name( 'ads_url' ); ?>" type="text" value="<?php echo $ads_url; ?>" size="3" />
         </p>
 
- 
+
         <?php
     }// end of form function.
 
