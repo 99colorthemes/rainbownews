@@ -98,6 +98,15 @@ function rainbownews_scripts() {
 add_action( 'wp_enqueue_scripts', 'rainbownews_scripts' );
 
 /**
+ * Image Uploader
+ */
+add_action('admin_enqueue_scripts', 'rainbownews_image_uploader');
+function rainbownews_image_uploader() {
+	wp_enqueue_media();
+	wp_enqueue_script('rainbownews-widget-image-upload', get_template_directory_uri() . '/js/image-uploader.js', false, '20150309', true);
+}
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';

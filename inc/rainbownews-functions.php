@@ -30,5 +30,45 @@ function rainbownews_widgets_init() {
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>',
     ) );
+
+    register_sidebar( array(
+        'name'          => esc_html__( 'Front Page: Left Area', 'rainbownews' ),
+        'id'            => 'rainbownews_front_page_left_area',
+        'description'   => esc_html__( 'Add widgets here.', 'rainbownews' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => esc_html__( 'Front Page: Right Area', 'rainbownews' ),
+        'id'            => 'rainbownews_front_page_right_area',
+        'description'   => esc_html__( 'Add widgets here.', 'rainbownews' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => esc_html__( 'Front Page: Latest Post', 'rainbownews' ),
+        'id'            => 'rainbownews_front_page_latest_post',
+        'description'   => esc_html__( 'Add widgets here.', 'rainbownews' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => esc_html__( 'Front Page: Content Area', 'rainbownews' ),
+        'id'            => 'rainbownews_front_page_content_area',
+        'description'   => esc_html__( 'Add widgets here.', 'rainbownews' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
 }
 add_action( 'widgets_init', 'rainbownews_widgets_init' );
