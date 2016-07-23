@@ -101,12 +101,12 @@ class rainbownews_featured_post extends WP_Widget {
 
 
 
-   <!--    <div class="nnc-highlight-block">
+   <div class="nnc-highlight-block">
        <?php
        $i=1;
        while( $get_featured_posts->have_posts() ):$get_featured_posts->the_post();
            ?>
-           <?php if( $i == 1 ) { $featured = 'colormag-featured-post-medium'; } else { $featured = 'colormag-featured-post-small'; } ?>
+
            <?php if( $i == 1 ) { echo '<div class="nnc-hightlight-large">'; } elseif( $i == 2 ) { echo '<div class="nnc-hightlight-small-block nnc-clearblock">'; } elseif ($i > 2) { echo '<div class="nnc-hightlight-small">'; } ?>
 
 
