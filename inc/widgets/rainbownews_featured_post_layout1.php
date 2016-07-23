@@ -102,7 +102,206 @@ class rainbownews_featured_post_layout1 extends WP_Widget {
         }
         echo $before_widget;
         ?>
-       
+        <div class="nnc-category">
+            <div class="nnc-title nnc-clearblock">
+                <h2 class="widget-title"><span style="color:red;"></span></h2>
+
+                <div class="nnc-viewmore"><a href="#"><i class="fa fa-th-large" title="View All"></i></a>
+                </div>
+            </div>
+            <div class="nnc-category-block nnc-clearblock">
+                <div class="nnc-category-large">
+                    <figure class="nnc-img">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/c1.png">
+                    </figure>
+                    <div class="nnc-dtl1">
+                        <div class="nnc-entry-title"><a href="#">Watch What It's Like to Play Big Bird on
+                                Sesame Street</a></div>
+                        <div class="nnc-entry-meta">
+                            <span class="author">By <a href="#" title="admin">lo</a></span>
+											<span class="posted-on">
+												<a href="#" title="3:39 pm" rel="bookmark">
+                                                    <time class="entry-date" datetime="">
+                                                        <i class="fa fa-calendar"></i> May 18, 2016
+                                                    </time>
+                                                </a>
+											</span>
+                                        <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> <a
+                                                href="#" title="No Comments">No Comments</a></span>
+                        </div>
+                        <div class="nnc-category-list">
+											<span class="cat-links">
+												<a href="#" rel="category tag" style="background: red;">General</a>&nbsp;
+												<a href="#" rel="category tag" style="background: blue;">Latest</a>&nbsp;
+												<a href="#" rel="category tag" style="background: #333;">News</a>&nbsp;
+											</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="nnc-category-large">
+                    <figure class="nnc-img">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/c2.png">
+                    </figure>
+                    <div class="nnc-category-dtl">
+                        <div class="nnc-entry-title"><a href="#">Watch What It's Like to Play Big Bird on
+                                Sesame Street</a></div>
+                        <div class="nnc-entry-meta">
+                            <span class="author">By <a href="#" title="admin">lo</a></span>
+											<span class="posted-on">
+												<a href="#" title="3:39 pm" rel="bookmark">
+                                                    <time class="entry-date" datetime="">
+                                                        <i class="fa fa-calendar"></i> May 18, 2016
+                                                    </time>
+                                                </a>
+											</span>
+                                        <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> <a
+                                                href="#" title="No Comments">No Comments</a></span>
+                        </div>
+                        <div class="nnc-category-list">
+											<span class="cat-links">
+												<a href="#" rel="category tag" style="background: red;">General</a>&nbsp;
+												<a href="#" rel="category tag" style="background: blue;">Latest</a>&nbsp;
+												<a href="#" rel="category tag" style="background: #333;">News</a>&nbsp;
+											</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="nnc-category-small nnc-clearblock">
+                    <div class="nnc-category-small-single">
+                        <figure class="nnc-img">
+                            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/c1s.png"></a>
+                        </figure>
+                        <div class="nnc-category-dtl">
+                            <div class="nnc-entry-title"><a href="#">Watch What It's Like to Play Big Bird
+                                    on Sesame Street</a></div>
+                            <div class="nnc-entry-meta">
+												<span class="posted-on">
+													<a href="#" title="3:39 pm" rel="bookmark">
+                                                        <time class="entry-date" datetime="">
+                                                            <i class="fa fa-calendar"></i> May 18, 2016
+                                                        </time>
+                                                    </a>
+												</span>
+                                            <span class="comments-link"><i class="fa fa-comments"
+                                                                           aria-hidden="true"></i> <a href="#"
+                                                                                                      title="No Comments">No
+                                                    Comments</a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nnc-category-small-single">
+                        <figure class="nnc-img">
+                            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/c1s.png"></a>
+                        </figure>
+                        <div class="nnc-category-dtl">
+                            <div class="nnc-entry-title"><a href="#">Watch What It's Like to Play Big Bird
+                                    on Sesame Street</a></div>
+                            <div class="nnc-entry-meta">
+												<span class="posted-on">
+													<a href="#" title="3:39 pm" rel="bookmark">
+                                                        <time class="entry-date" datetime="">
+                                                            <i class="fa fa-calendar"></i> May 18, 2016
+                                                        </time>
+                                                    </a>
+												</span>
+                                            <span class="comments-link"><i class="fa fa-comments"
+                                                                           aria-hidden="true"></i> <a href="#"
+                                                                                                      title="No Comments">No
+                                                    Comments</a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nnc-category-small-single">
+                        <figure class="nnc-img">
+                            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/c1s.png"></a>
+                        </figure>
+                        <div class="nnc-category-dtl">
+                            <div class="nnc-entry-title"><a href="#">Watch What It's Like to Play Big Bird
+                                    on Sesame Street</a></div>
+                            <div class="nnc-entry-meta">
+												<span class="posted-on">
+													<a href="#" title="3:39 pm" rel="bookmark">
+                                                        <time class="entry-date" datetime="">
+                                                            <i class="fa fa-calendar"></i> May 18, 2016
+                                                        </time>
+                                                    </a>
+												</span>
+                                            <span class="comments-link"><i class="fa fa-comments"
+                                                                           aria-hidden="true"></i> <a href="#"
+                                                                                                      title="No Comments">No
+                                                    Comments</a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nnc-category-small-single">
+                        <figure class="nnc-img">
+                            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/c1s.png"></a>
+                        </figure>
+                        <div class="nnc-category-dtl">
+                            <div class="nnc-entry-title"><a href="#">Watch What It's Like to Play Big Bird
+                                    on Sesame Street</a></div>
+                            <div class="nnc-entry-meta">
+												<span class="posted-on">
+													<a href="#" title="3:39 pm" rel="bookmark">
+                                                        <time class="entry-date" datetime="">
+                                                            <i class="fa fa-calendar"></i> May 18, 2016
+                                                        </time>
+                                                    </a>
+												</span>
+                                            <span class="comments-link"><i class="fa fa-comments"
+                                                                           aria-hidden="true"></i> <a href="#"
+                                                                                                      title="No Comments">No
+                                                    Comments</a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nnc-category-small-single">
+                        <figure class="nnc-img">
+                            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/c1s.png"></a>
+                        </figure>
+                        <div class="nnc-category-dtl">
+                            <div class="nnc-entry-title"><a href="#">Watch What It's Like to Play Big Bird
+                                    on Sesame Street</a></div>
+                            <div class="nnc-entry-meta">
+												<span class="posted-on">
+													<a href="#" title="3:39 pm" rel="bookmark">
+                                                        <time class="entry-date" datetime="">
+                                                            <i class="fa fa-calendar"></i> May 18, 2016
+                                                        </time>
+                                                    </a>
+												</span>
+                                            <span class="comments-link"><i class="fa fa-comments"
+                                                                           aria-hidden="true"></i> <a href="#"
+                                                                                                      title="No Comments">No
+                                                    Comments</a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nnc-category-small-single">
+                        <figure class="nnc-img">
+                            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/c1s.png"></a>
+                        </figure>
+                        <div class="nnc-category-dtl">
+                            <div class="nnc-entry-title"><a href="#">Watch What It's Like to Play Big Bird
+                                    on Sesame Street</a></div>
+                            <div class="nnc-entry-meta">
+												<span class="posted-on">
+													<a href="#" title="3:39 pm" rel="bookmark">
+                                                        <time class="entry-date" datetime="">
+                                                            <i class="fa fa-calendar"></i> May 18, 2016
+                                                        </time>
+                                                    </a>
+												</span>
+                                            <span class="comments-link"><i class="fa fa-comments"
+                                                                           aria-hidden="true"></i> <a href="#"
+                                                                                                      title="No Comments">No
+                                                    Comments</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- </div> -->
         <?php echo $after_widget;
     }
