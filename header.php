@@ -52,7 +52,7 @@
 	</div>
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="nnc-logobar">
+		<div class="nnc-logo-bar">
 			<div class="nnc-container">
 				<div class="site-branding nnc-logo">
 					<?php
