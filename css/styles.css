@@ -167,13 +167,12 @@ img {
 	font-family: 'Droid Sans', sans-serif;
 }
 
-.nnc-bottom-header {
+.nnc-logobar {
 	padding: 10px 0;
 }
 
 .nnc-logo {
-	float: left;
-	line-height: 0;
+	float: left; 
 	padding-top: 30px;
 }
 
