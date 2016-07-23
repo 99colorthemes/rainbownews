@@ -100,13 +100,13 @@ function rainbownews_scripts() {
 	wp_enqueue_style( 'swiper', get_template_directory_uri() . '/css/swiper.css', false, '1.0.0' );
 
 	//Register jquery
-	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery-2.2.3.js', array(), '2.2.3', true );
+	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery-2.2.3.js', array( 'jquery' ), '2.2.3', true );
 
 	//Register swiper
-	wp_enqueue_script( 'swiper', get_template_directory_uri() . '/js/swiper.js', array(), '3.3.1', true );
+	wp_enqueue_script( 'swiper', get_template_directory_uri() . '/js/swiper.js', array( 'jquery' ), '3.3.1', true );
 
 	//Register main.js
-	wp_enqueue_script( 'rainbownews-main-js', get_template_directory_uri() . '/js/main.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'rainbownews-main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), '1.0.0', true );
 
 	wp_enqueue_script( 'rainbownews-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 

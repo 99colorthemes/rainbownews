@@ -96,18 +96,64 @@ class rainbownews_featured_post extends WP_Widget {
 
 
  echo $before_widget; ?>
-<!-- ~~~=| Banner START |=~~~ -->
 
-    
 
-                 
+
+
+
+   <!--    <div class="nnc-highlight-block">
+       <?php
+       $i=1;
+       while( $get_featured_posts->have_posts() ):$get_featured_posts->the_post();
+           ?>
+           <?php if( $i == 1 ) { $featured = 'colormag-featured-post-medium'; } else { $featured = 'colormag-featured-post-small'; } ?>
+           <?php if( $i == 1 ) { echo '<div class="nnc-hightlight-large">'; } elseif( $i == 2 ) { echo '<div class="nnc-hightlight-small-block nnc-clearblock">'; } elseif ($i > 2) { echo '<div class="nnc-hightlight-small">'; } ?>
+
+
+               <figure class="nnc-slide-img">
+                   <img src="<?php echo get_template_directory_uri(); ?>/images/f2.png">
+               </figure>
+               <div class="nnc-dtl">
+                   <div class="nnc-entry-title"><a href="#">Travelling with Kids on the Capricorn Coast</a></div>
+                   <div class="nnc-entry-meta">
+								<span class="posted-on">
+									<a href="#" title="3:39 pm" rel="bookmark">
+                                        <time class="entry-date" datetime="">
+                                            June 28
+                                        </time><br>
+                                        <time>2016</time>
+                                    </a>
+								</span>
+                       <span class="author"><i class="fa fa-user" aria-hidden="true"></i> <a href="#" title="admin">admin</a></span>
+                       <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> <a href="#">No Comments</a></span>
+                   </div>
+                   <div class="nnc-category-list">
+								<span class="cat-links">
+									<a href="#" rel="category tag" style="background: red;">General</a>&nbsp;
+									<a href="#" rel="category tag" style="background: blue;">Latest</a>&nbsp;
+									<a href="#" rel="category tag" style="background: #333;">News</a>&nbsp;
+								</span>
+                   </div>
+               </div>
+
+
+
+ <?php if( $i == 1 ) { echo '</div>'; }
+            $i++;
+            if($i == 2 ){ echo '</div>'; }
+         if ( $i > 2 ) { echo '</div>'; }
+       endwhile;
+         // Reset Post Data
+         wp_reset_query();
+         ?>
+       </div>
+
+
 
                    
 
-<!-- ~~~=| Banner END |=~~~ -->
-
 <?php echo $after_widget; ?>
-        <?php
+ <?php
 }// end of widdget function.
 }// end of apply for action widget.
 

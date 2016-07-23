@@ -27,12 +27,7 @@
 	<div class="nnc-top-header">
 		<div class="nnc-container">
 			<div class="nnc-top-menu">
-				<ul>
-					<li><a href="#">HOME</a></li>
-					<li><a href="#">ABOUT US</a></li>
-					<li><a href="#">PAGES</a></li>
-					<li><a href="#">CONTACT US</a></li>
-				</ul>
+				<?php wp_nav_menu( array( 'theme_location' => 'Top Menu', 'menu' => 'Top Menu', 'menu_id' => 'top-menu' ) ); ?>
 			</div>
 			<div class="nnc-social">
 				<ul>
@@ -70,9 +65,14 @@
 					endif; ?>
 				</div><!-- .site-branding -->
 
-				<div class="nnc-top-ads">
-					<img src="<?php echo get_template_directory_uri() ?> /images/wide-ads.png" alt="advertisement">
-				</div>
+				<!-- widget advertisement -->
+				<?php
+				     if( is_active_sidebar( 'rainbownews_top_advertisement' ) ) {
+				        if ( !dynamic_sidebar( 'rainbownews_top_advertisement' ) ):
+				        endif;
+				     }
+			     ?>
+				
 			</div>
 		</div>
 

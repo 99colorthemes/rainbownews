@@ -328,6 +328,10 @@ img {
 	padding-right: 2px;
 }
 
+.nnc-highlight-slider .nnc-slide-img {
+	height: 377px;
+}
+
 .swiper-container { 
 	position: relative;
     -webkit-transition: all 0.5s ease-in-out;
