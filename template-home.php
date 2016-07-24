@@ -112,7 +112,12 @@
             <div id="primary">
                 <main id="main" class="site-main">
 
-                   ///politics layout1
+                    <?php
+                    if (is_active_sidebar('rainbownews_front_page_content_area')) {
+                        if (!dynamic_sidebar('rainbownews_front_page_content_area')):
+                        endif;
+                    }
+                    ?>
 
                     <div class="nnc-middle-ads">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/wide-ads2.png" alt="advertisement">
