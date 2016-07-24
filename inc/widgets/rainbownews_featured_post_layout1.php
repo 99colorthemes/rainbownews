@@ -22,7 +22,7 @@ class rainbownews_featured_post_layout1 extends WP_Widget
 
     function __construct()
     {
-        $widget_ops = array('classname' => 'widget_featured_post_layout1 widget_featured_meta', 'description' => __('Display latest posts or posts of specific category.', 'colormag'));
+        $widget_ops = array('classname' => 'widget_featured_post_layout1 widget_featured_meta', 'description' => __('Display latest posts or posts of specific category.', 'rainbownews'));
         $control_ops = array('width' => 200, 'height' => 250);
         parent::__construct(false, $name = __(' NNC: Featured Posts (Layout 1)', 'rainbownews'), $widget_ops);
     }

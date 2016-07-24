@@ -158,3 +158,50 @@ require get_template_directory() . '/inc/jetpack.php';
 require get_template_directory() . '/inc/rainbownews-functions.php'; 
 
 require get_template_directory() . '/inc/rainbownews-widget.php';
+
+
+/**************************************************************************************/
+
+/*
+ * Category Color for widgets and other
+ */
+if ( !function_exists('rainbownews_colored_category') ) :
+   function rainbownews_colored_category() {
+      global $post;
+      $categories = get_the_category();
+      $separator = '&nbsp;';
+      $output = '';
+      if($categories) {
+         $output .= '<div class="above-entry-meta"><span class="cat-links">';
+         foreach($categories as $category) {
+            $color_code = rainbownews_category_color(get_cat_id($category->cat_name));
+            if (!empty($color_code)) {
+               $output .= '<a href="'.get_category_link( $category->term_id ).'" style="background:' . rainbownews_category_color(get_cat_id($category->cat_name)) . '" rel="category tag">'.$category->cat_name.'</a>'.$separator;
+            } else {
+               $output .= '<a href="'.get_category_link( $category->term_id ).'"  rel="category tag">'.$category->cat_name.'</a>'.$separator;
+            }
+      }
+         $output .='</span></div>';
+         echo trim($output, $separator);
+      }
+   }
+endif;
+
+/**************************************************************************************/
+
+/*
+ * Category Color Options
+ */
+if ( ! function_exists( 'rainbownews_category_color' ) ) :
+function rainbownews_category_color( $wp_category_id ) {
+   $args = array(
+      'orderby' => 'id',
+      'hide_empty' => 0
+   );
+   $category = get_categories( $args );
+   foreach ($category as $category_list ) {
+      $color = get_theme_mod('rainbownews_category_color_'.$wp_category_id);
+      return $color;
+   }
+}
+endif;

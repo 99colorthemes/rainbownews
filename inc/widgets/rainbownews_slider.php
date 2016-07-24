@@ -119,28 +119,25 @@ class rainbownews_slider extends WP_Widget
                     </figure>
                     <?php endif; ?>
                     <div class="nnc-dtl">
-                        <div class="nnc-entry-title"><a href="#"><?php the_title(); ?></a></div>
+                        <div class="nnc-entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_title(); ?></a></div>
                         <div class="nnc-entry-meta">
                                                 <span class="posted-on">
-                                                    <a href="#" title="3:39 pm" rel="bookmark">
+                                                    <a href="<?php the_permalink(); ?>" title="<?php echo get_the_time(); ?>" rel="bookmark">
                                                         <time class="entry-date" datetime="">
-                                                            June 28
+                                                            <?php esc_attr( the_time("M d") ); ?>
                                                         </time>
                                                         <br>
-                                                        <time>2016</time>
+                                                        <time><?php esc_attr( the_time("Y") ); ?></time>
                                                     </a>
                                                 </span>
-                            <span class="author"><i class="fa fa-user" aria-hidden="true"></i> <a href="#"
-                                                                                                  title="admin">admin</a></span>
-                            <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> <a href="#">No
-                                    Comments</a></span>
+                            <span class="author">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo get_the_author(); ?>"><?php echo esc_html(get_the_author() ); ?></a>
+                            </span>
+                            <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> <a href="#"><?php comments_popup_link( 'No Comment', '1', '%' );?></a></span>
                         </div>
                         <div class="nnc-category-list">
-                                                <span class="cat-links">
-                                                    <a href="#" rel="category tag" style="background: red;">General</a>&nbsp;
-                                                    <a href="#" rel="category tag" style="background: blue;">Latest</a>&nbsp;
-                                                    <a href="#" rel="category tag" style="background: #333;">News</a>&nbsp;
-                                                </span>
+                            <?php rainbownews_colored_category(); ?>
                         </div>
                     </div>
                 </div>
