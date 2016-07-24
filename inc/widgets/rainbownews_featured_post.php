@@ -131,7 +131,7 @@ class rainbownews_featured_post extends WP_Widget
                     <?php endif; ?>
                     <?php }else{ ?>
                         <figure class="nnc-slide-img">
-                            <?php the_post_thumbnail('small'); ?>
+                            <?php the_post_thumbnail('medium'); ?>
                         </figure>
                     <?php } ?>
                     <div class="nnc-dtl">

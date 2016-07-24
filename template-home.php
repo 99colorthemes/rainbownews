@@ -77,24 +77,20 @@
                             </figure>
                             <div class="nnc-dtl">
                                 <div class="nnc-entry-title"><a
-                                        href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></div>
+                                        href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php echo get_the_title(); ?></a></div>
                                 <div class="nnc-entry-meta">
 									<span class="posted-on">
-										<a href="#" title="3:39 pm" rel="bookmark">
+										<a href="#" title="<?php get_the_time(); ?>" rel="bookmark">
                                             <time class="entry-date" datetime="">
-                                                <i class="fa fa-calendar"></i> May 18, 2016
+                                                <i class="fa fa-calendar"></i><?php the_date() ?>
                                             </time>
                                         </a>
 									</span>
                                 <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> <a
-                                        href="#" title="No Comments">No Comments</a></span>
+                                        href="#" title="No Comments"><?php comments_popup_link( 'No Comment', '1', '%' );?></a></span>
                                 </div>
                                 <div class="nnc-category-list">
-									<span class="cat-links">
-										<a href="#" rel="category tag" style="background: red;">General</a>&nbsp;
-										<a href="#" rel="category tag" style="background: blue;">Latest</a>&nbsp;
-										<a href="#" rel="category tag" style="background: #333;">News</a>&nbsp;
-									</span>
+									<?php rainbownews_colored_category(); ?>
                                 </div>
                             </div>
                         </div>
