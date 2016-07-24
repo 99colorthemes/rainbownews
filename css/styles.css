@@ -328,8 +328,8 @@ img {
 	padding-right: 2px;
 }
 
-.nnc-highlight-slider .nnc-slide-img {
-	max-height: 376px;
+.nnc-highlight-slider .nnc-slide-img { 
+	line-height: 0;
 }
 
 .swiper-container { 
@@ -481,7 +481,8 @@ span.cat-links a {
 	display: inline-block;
 	font-size: 12px;
 	background: #000;
-	padding: 8px; 
+	padding: 8px;
+	margin-bottom: 5px;
 	color: #fff;
 	outline-color: #000;
 }
@@ -507,7 +508,12 @@ span.catlinks a:before {
 
 .nnc-hightlight-large .nnc-slide-img {
 	line-height: 0;
-	max-height: 180px; 
+	max-height: 206px; 
+}
+
+.nnc-hightlight-small .nnc-slide-img {
+	line-height: 0;
+	max-height: 181px;
 }
 
 .nnc-hightlight-large:hover img {
