@@ -82,7 +82,7 @@
 									<span class="posted-on">
 										<a href="#" title="<?php get_the_time(); ?>" rel="bookmark">
                                             <time class="entry-date" datetime="">
-                                                <i class="fa fa-calendar"></i><?php the_date() ?>
+                                                <i class="fa fa-calendar"></i><?php echo get_the_date(); ?>
                                             </time>
                                         </a>
 									</span>
