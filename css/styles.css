@@ -329,7 +329,7 @@ img {
 }
 
 .nnc-highlight-slider .nnc-slide-img {
-	height: 377px;
+	max-height: 376px;
 }
 
 .swiper-container { 
@@ -505,14 +505,15 @@ span.catlinks a:before {
 	overflow: hidden;
 }
 
+.nnc-hightlight-large .nnc-slide-img {
+	line-height: 0;
+	max-height: 180px; 
+}
+
 .nnc-hightlight-large:hover img {
 	overflow: hidden;
 	transform: scale(1.2) rotate(3deg);
-}
-
-.nnc-slide-img {
-	line-height: 0;
-}
+} 
 
 .nnc-hightlight-small .nnc-highlight-single {
 	width: calc(50% - 1px);
