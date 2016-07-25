@@ -330,6 +330,7 @@ img {
 
 .nnc-highlight-slider .nnc-slide-img { 
 	line-height: 0;
+	max-height: 388px;
 }
 
 .swiper-container { 
@@ -513,7 +514,7 @@ span.catlinks a:before {
 
 .nnc-hightlight-small .nnc-slide-img {
 	line-height: 0;
-	max-height: 181px;
+	max-height: 180px;
 }
 
 .nnc-hightlight-large:hover img {
