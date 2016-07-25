@@ -849,6 +849,7 @@ h2.widget-title {
 
 
 
+
 /*======================================
 =            Category-block            =
 ======================================*/ 
@@ -856,25 +857,30 @@ h2.widget-title {
     padding: 30px 0 0;
 }
 
-.nnc-category:nth-of-type(1) {
+.nnc-category .nnc-category-single:nth-of-type(1) {
 	padding-top: 0;
 }
 
-.nnc-category-large {
+.nnc-category-large .nnc-category-single {
 	width: calc(48% - 5px);
     float: left;
     margin-right: 42px;
 	overflow: hidden;
 }
 
-.nnc-category-large:hover .nnc-img img {
+.nnc-category-large .nnc-category-single:hover .nnc-img img {
 	overflow: hidden;
 	transform: scale(1.2) rotate(3deg);
 }
 
-.nnc-category-large:nth-of-type(2) {
+.nnc-category-large .nnc-category-single:nth-of-type(2) {
 	margin-right: 0;
 } 
+
+.nnc-category-large .nnc-category-single .nnc-img {
+	float: none;
+	margin-bottom: 10px;
+}
 
 .nnc-category .nnc-entry-title a {
 	font-size: 16px;
@@ -976,7 +982,7 @@ h2.widget-title {
 /*======================================
 =            Category Small            =
 ======================================*/
-.nnc-category-small-single {
+.nnc-category-single {
 	width: calc(48% - 5px);
     float: left;
     margin-right: 42px;
@@ -986,27 +992,27 @@ h2.widget-title {
 	overflow: hidden;
 }
 
-.nnc-category-small-single:hover .nnc-img img {
+.nnc-category-single:hover .nnc-img img {
 	overflow: hidden;
 	transform: scale(1.2) rotate(3deg);
 }
 
-.nnc-category-small-single:hover .nnc-img:after { 
+.nnc-category-single:hover .nnc-img:after { 
 	background: rgba(00,000,000,.3); 
 }
 
-.nnc-category-small-single:nth-of-type(2n) {
+.nnc-category-single:nth-of-type(2n) {
 	margin-right: 0;
 } 
 
-.nnc-category-small-single .nnc-img { 
+.nnc-category-single .nnc-img { 
 	margin-bottom: 0;
 	float: left; 
 	overflow: hidden;
 	position: relative;
 }
 
-.nnc-category-small-single .nnc-img:after { 
+.nnc-category-single .nnc-img:after { 
 	content: '';
 	background: rgba(00,000,000,0); 
 	position: absolute;
@@ -1020,12 +1026,12 @@ h2.widget-title {
 	transition: 0.5s ease-in-out;
 }
 
-.nnc-category-small-single .nnc-category-dtl {
+.nnc-category-single .nnc-category-dtl {
     float: right;
     width: 66%;
 }
 
-.nnc-category-small-single .nnc-entry-title a {
+.nnc-category-single .nnc-entry-title a {
 	font-size: 14px;
 	line-height: 20px;
 }

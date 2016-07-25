@@ -139,7 +139,7 @@ class rainbownews_featured_post extends WP_Widget
                         <?php if ($i == 1) { ?>
                             <div class="nnc-entry-meta">
 								<span class="posted-on">
-									<a href="#" title="<?php get_the_time(); ?>" rel="bookmark">
+									<a href="<?php the_permalink(); ?>" title="<?php get_the_time(); ?>" rel="bookmark">
                                         <time class="entry-date" datetime="">
                                             <?php esc_attr( the_time("M d") ); ?>
                                         </time>
@@ -151,7 +151,7 @@ class rainbownews_featured_post extends WP_Widget
                                     <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php the_author(); ?>"><?php echo esc_html(get_the_author() ); ?></a>
                                  </span>
                                 <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> <a
-                                        href="#"><?php comments_popup_link( 'No Comment', '1', '%' );?></a></span>
+                                        href="<?php the_permalink(); ?>"><?php comments_popup_link( 'No Comment', '1', '%' );?></a></span>
                             </div>
                         <?php } ?>
                         <div class="nnc-category-list">

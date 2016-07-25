@@ -61,7 +61,8 @@
                     <div class="nnc-viewmore"><i class="fa fa-th-large"></i></div>
                 </div>
                 <!-- use (nnc-latest-layout-2) class for Layout2 -->
-                <div class="nnc-latest-block nnc-clearblock nnc-latest-layout-2">
+                 <?php $latest_news_layout = get_theme_mod('rainbownews_latest_news_layout_style_setting', 'menu-1'); ?>
+                <div class="nnc-latest-block nnc-clearblock <?php echo $latest_news_layout == 'menu-1'?'':'nnc-latest-layout-2'; ?>">
                     <?php
                     $recent_post_args = array('post-type' => 'post',
                         'post_status' => 'publish',
@@ -73,16 +74,16 @@
                         ?>
                         <div class="nnc-latest-single">
                             <figure class="nnc-img">
-                                <?php the_post_thumbnail('small'); ?>
+                                <?php the_post_thumbnail('large'); ?>
                             </figure>
                             <div class="nnc-dtl">
                                 <div class="nnc-entry-title"><a
                                         href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php echo get_the_title(); ?></a></div>
                                 <div class="nnc-entry-meta">
 									<span class="posted-on">
-										<a href="#" title="<?php get_the_time(); ?>" rel="bookmark">
+										<a href="<?php the_permalink(); ?>" title="<?php echo get_the_time(); ?>" rel="bookmark">
                                             <time class="entry-date" datetime="">
-                                                <i class="fa fa-calendar"></i><?php echo get_the_date(); ?>
+                                                <i class="fa fa-calendar"></i> <?php echo get_the_date(); ?>
                                             </time>
                                         </a>
 									</span>
