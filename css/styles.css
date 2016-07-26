@@ -1039,45 +1039,59 @@ h2.widget-title {
 
 /*=====  End of Category Small  ======*/
 
-/*Category Layout 2*/ 
+/*Category Layout 2*/
 .nnc-category-dtl p {
 	font-size: 14px;
 	font-family: 'open-sans', sans-serif;
 	color: #666;
 	line-height: 20px;
-	padding-top: 12px; 
-} 
-
-.nnc-category-layout-2 .nnc-category-small-single {
-    width: 100%;
-    float: none;
-    margin-right: 0;
-    margin-top: 20px;
-    overflow: hidden;
+	padding-top: 12px;
 }
 
-.nnc-category-layout-2 .nnc-category-small-block {
+.nnc-category-layout-2 .nnc-category-single {
 	width: calc(48% - 5px);
+	margin-right: 0;
+	margin-top: 20px;
+	overflow: hidden;
 }
 
-.nnc-category-layout-2 .nnc-category-small-single:first-of-type {
+.nnc-category-layout-2 .nnc-category-single .nnc-category-dtl {
+	width: 100%;
+}
+
+.nnc-category-small .nnc-category-single .nnc-category-dtl {
+	float: right;
+	width: 66%;
+}
+
+.nnc-category-layout-2 .nnc-category-small {
+	width: calc(48% - 5px);
+	float: right;
+}
+
+.nnc-category-layout-2 .nnc-category-small .nnc-category-single {
+	float: none;
+	width: 100%;
+}
+
+.nnc-category-layout-2 .nnc-category-single:first-of-type {
 	margin-top: 0;
 }
 
-.nnc-category-layout-3 .nnc-category-small-single {
-    width: 100%;
-    float: none;
-    margin-right: 42px;
-    margin-top: 20px;
-    overflow: hidden;
-} 
-
-.nnc-category.nnc-category-layout-3 {
-	width: calc(48% - 5px); 
-    margin-right: 0; 
+.nnc-category-layout-3 .nnc-category-single {
+	width: 100%;
+	float: none;
+	margin-right: 42px;
+	margin-top: 20px;
+	overflow: hidden;
 }
 
-.nnc-category-layout-3 .nnc-category-small-single:nth-of-type(1) {
+.nnc-category.nnc-category-layout-3 {
+	width: calc(48% - 5px);
+	margin-right: 0;
+}
+
+.nnc-category-layout-3 .nnc-category-single:nth-of-type(1) {
 	margin-top: 0;
 }
 
