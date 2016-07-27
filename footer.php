@@ -28,6 +28,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-2.2.3.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jQuery.scrollSpeed.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/swiper.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/newsTicker.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
 
 </body>

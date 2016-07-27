@@ -13,7 +13,13 @@
         <div class="nnc-container">
             <div class="nnc-trending-single">
                 <div class="nnc-trend-title">Trending Now</div>
-
+                <ul class="newsticker"> 
+                    <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elitum.</a></li> 
+                    <li><a href="#">psum dolor sit amet, consectetur adipisicing elitum.</a></li> 
+                    <li><a href="#">Loolor sit amet, consectetur adipisicing elitum.</a></li> 
+                    <li><a href="#">um dolor sit amet, consectetur adipisicing elitum.</a></li> 
+                    <li><a href="#">em ipsum dolor sit amet, consectetur adipisicing elitum.</a></li>   
+                </ul>
             </div>
             <div class="nnc-search nnc-clearblock">
                 <form class="s-form" action="" method="POST" role="form">
@@ -120,144 +126,13 @@
                         <img src="<?php echo get_template_directory_uri(); ?>/images/wide-ads2.png" alt="advertisement">
                     </div>
 
-                    <div class="nnc-category nnc-category-layout-2">
-                        <div class="nnc-title nnc-clearblock">
-                            <h2 class="widget-title"><span style="color:grey;">Business</span></h2>
 
-                            <div class="nnc-viewmore"><a href="#"><i class="fa fa-th-large" title="View All"></i></a>
-                            </div>
-                        </div>
-                        <div class="nnc-category-block nnc-clearblock">
-                            <div class="nnc-category-large nnc-left">
-                                <figure class="nnc-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/images/c1.png">
-                                </figure>
-                                <div class="nnc-category-dtl">
-                                    <div class="nnc-entry-title"><a href="#">Watch What It's Like to Play Big Bird on
-                                            Sesame Street</a></div>
-                                    <div class="nnc-entry-meta">
-                                        <span class="author">By <a href="#" title="admin">Sanjaya Yonjan</a></span>
-											<span class="posted-on">
-												<a href="#" title="3:39 pm" rel="bookmark">
-                                                    <time class="entry-date" datetime="">
-                                                        <i class="fa fa-calendar"></i> May 18, 2016
-                                                    </time>
-                                                </a>
-											</span>
-                                        <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> <a
-                                                href="#" title="No Comments">No Comments</a></span>
-                                    </div>
-                                    <div class="nnc-category-list">
-											<span class="cat-links">
-												<a href="#" rel="category tag" style="background: red;">General</a>&nbsp;
-												<a href="#" rel="category tag" style="background: blue;">Latest</a>&nbsp;
-												<a href="#" rel="category tag" style="background: #333;">News</a>&nbsp;
-											</span>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat.</p>
-                                </div>
-                            </div>
-                            <div class="nnc-category-small-block nnc-right">
-                                <div class="nnc-category-small-single">
-                                    <figure class="nnc-img">
-                                        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/c1s.png"></a>
-                                    </figure>
-                                    <div class="nnc-category-dtl">
-                                        <div class="nnc-entry-title"><a href="#">Watch What It's Like to Play Big Bird
-                                                on Sesame Street</a></div>
-                                        <div class="nnc-entry-meta">
-												<span class="posted-on">
-													<a href="#" title="3:39 pm" rel="bookmark">
-                                                        <time class="entry-date" datetime="">
-                                                            <i class="fa fa-calendar"></i> May 18, 2016
-                                                        </time>
-                                                    </a>
-												</span>
-                                            <span class="comments-link"><i class="fa fa-comments"
-                                                                           aria-hidden="true"></i> <a href="#"
-                                                                                                      title="No Comments">No
-                                                    Comments</a></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="nnc-category-small-single">
-                                    <figure class="nnc-img">
-                                        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/c1s.png"></a>
-                                    </figure>
-                                    <div class="nnc-category-dtl">
-                                        <div class="nnc-entry-title"><a href="#">Watch What It's Like to Play Big Bird
-                                                on Sesame Street</a></div>
-                                        <div class="nnc-entry-meta">
-												<span class="posted-on">
-													<a href="#" title="3:39 pm" rel="bookmark">
-                                                        <time class="entry-date" datetime="">
-                                                            <i class="fa fa-calendar"></i> May 18, 2016
-                                                        </time>
-                                                    </a>
-												</span>
-                                            <span class="comments-link"><i class="fa fa-comments"
-                                                                           aria-hidden="true"></i> <a href="#"
-                                                                                                      title="No Comments">No
-                                                    Comments</a></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="nnc-category-small-single">
-                                    <figure class="nnc-img">
-                                        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/c1s.png"></a>
-                                    </figure>
-                                    <div class="nnc-category-dtl">
-                                        <div class="nnc-entry-title"><a href="#">Watch What It's Like to Play Big Bird
-                                                on Sesame Street</a></div>
-                                        <div class="nnc-entry-meta">
-												<span class="posted-on">
-													<a href="#" title="3:39 pm" rel="bookmark">
-                                                        <time class="entry-date" datetime="">
-                                                            <i class="fa fa-calendar"></i> May 18, 2016
-                                                        </time>
-                                                    </a>
-												</span>
-                                            <span class="comments-link"><i class="fa fa-comments"
-                                                                           aria-hidden="true"></i> <a href="#"
-                                                                                                      title="No Comments">No
-                                                    Comments</a></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="nnc-category-small-single">
-                                    <figure class="nnc-img">
-                                        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/c1s.png"></a>
-                                    </figure>
-                                    <div class="nnc-category-dtl">
-                                        <div class="nnc-entry-title"><a href="#">Watch What It's Like to Play Big Bird
-                                                on Sesame Street</a></div>
-                                        <div class="nnc-entry-meta">
-												<span class="posted-on">
-													<a href="#" title="3:39 pm" rel="bookmark">
-                                                        <time class="entry-date" datetime="">
-                                                            <i class="fa fa-calendar"></i> May 18, 2016
-                                                        </time>
-                                                    </a>
-												</span>
-                                            <span class="comments-link"><i class="fa fa-comments"
-                                                                           aria-hidden="true"></i> <a href="#"
-                                                                                                      title="No Comments">No
-                                                    Comments</a></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="nnc-middle-ads">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/wide-ads3.png" alt="advertisement">
                     </div>
 
-                    <div class="nnc-category nnc-category-layout-3 nnc-left">
+                    <!--<div class="nnc-category nnc-category-layout-3 nnc-left">
                         <div class="nnc-title nnc-clearblock">
                             <h2 class="widget-title"><span style="color:red;">Politics</span></h2>
 
@@ -266,9 +141,9 @@
                         </div>
                         <div class="nnc-category-block nnc-clearblock">
                             <div class="nnc-category-small nnc-clearblock">
-                                <div class="nnc-category-small-single">
+                                <div class="nnc-category-single">
                                     <figure class="nnc-img">
-                                        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/c1s.png"></a>
+                                        <a href="#"><img src="<?php /*echo get_template_directory_uri(); */?>/images/c1s.png"></a>
                                     </figure>
                                     <div class="nnc-category-dtl">
                                         <div class="nnc-entry-title"><a href="#">Watch What It's Like to Play Big Bird
@@ -288,9 +163,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="nnc-category-small-single">
+                                <div class="nnc-category-single">
                                     <figure class="nnc-img">
-                                        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/c1s.png"></a>
+                                        <a href="#"><img src="<?php /*echo get_template_directory_uri(); */?>/images/c1s.png"></a>
                                     </figure>
                                     <div class="nnc-category-dtl">
                                         <div class="nnc-entry-title"><a href="#">Watch What It's Like to Play Big Bird
@@ -310,9 +185,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="nnc-category-small-single">
+                                <div class="nnc-category-single">
                                     <figure class="nnc-img">
-                                        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/c1s.png"></a>
+                                        <a href="#"><img src="<?php /*echo get_template_directory_uri(); */?>/images/c1s.png"></a>
                                     </figure>
                                     <div class="nnc-category-dtl">
                                         <div class="nnc-entry-title"><a href="#">Watch What It's Like to Play Big Bird
@@ -332,9 +207,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="nnc-category-small-single">
+                                <div class="nnc-category-single">
                                     <figure class="nnc-img">
-                                        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/c1s.png"></a>
+                                        <a href="#"><img src="<?php /*echo get_template_directory_uri(); */?>/images/c1s.png"></a>
                                     </figure>
                                     <div class="nnc-category-dtl">
                                         <div class="nnc-entry-title"><a href="#">Watch What It's Like to Play Big Bird
@@ -367,9 +242,9 @@
                         </div>
                         <div class="nnc-category-block nnc-clearblock">
                             <div class="nnc-category-small nnc-clearblock">
-                                <div class="nnc-category-small-single">
+                                <div class="nnc-category-single">
                                     <figure class="nnc-img">
-                                        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/c1s.png"></a>
+                                        <a href="#"><img src="<?php /*echo get_template_directory_uri(); */?>/images/c1s.png"></a>
                                     </figure>
                                     <div class="nnc-category-dtl">
                                         <div class="nnc-entry-title"><a href="#">Watch What It's Like to Play Big Bird
@@ -389,9 +264,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="nnc-category-small-single">
+                                <div class="nnc-category-single">
                                     <figure class="nnc-img">
-                                        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/c1s.png"></a>
+                                        <a href="#"><img src="<?php /*echo get_template_directory_uri(); */?>/images/c1s.png"></a>
                                     </figure>
                                     <div class="nnc-category-dtl">
                                         <div class="nnc-entry-title"><a href="#">Watch What It's Like to Play Big Bird
@@ -411,9 +286,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="nnc-category-small-single">
+                                <div class="nnc-category-single">
                                     <figure class="nnc-img">
-                                        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/c1s.png"></a>
+                                        <a href="#"><img src="<?php /*echo get_template_directory_uri(); */?>/images/c1s.png"></a>
                                     </figure>
                                     <div class="nnc-category-dtl">
                                         <div class="nnc-entry-title"><a href="#">Watch What It's Like to Play Big Bird
@@ -433,9 +308,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="nnc-category-small-single">
+                                <div class="nnc-category-single">
                                     <figure class="nnc-img">
-                                        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/c1s.png"></a>
+                                        <a href="#"><img src="<?php /*echo get_template_directory_uri(); */?>/images/c1s.png"></a>
                                     </figure>
                                     <div class="nnc-category-dtl">
                                         <div class="nnc-entry-title"><a href="#">Watch What It's Like to Play Big Bird
@@ -457,7 +332,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </main>
             </div>
 

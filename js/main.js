@@ -73,4 +73,15 @@ jQuery(document).ready(function(){
             jQuery(this).attr('placeholder',jQuery(this).data('placeholder'));
     });
 
+    // News Ticker   
+    $('.newsticker').newsTicker({
+        row_height: 38,
+        max_rows: 1,
+        speed: 1000,
+        direction: 'down',
+        duration: 4000,
+        autostart: 1,
+        pauseOnHover: 1
+    }); 
+
 });
