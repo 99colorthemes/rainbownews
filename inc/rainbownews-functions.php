@@ -85,3 +85,32 @@ function rainbownews_excerpt( $rainbownews_content , $rainbownews_letter_count){
     return $rainbownews_excerpt;
 }
 
+/*----------  Trending News  ----------*/
+
+
+function rainbownews_trending_news()
+{
+    $rainbownews = array('post_type' => 'post',
+                                'posts_per_page' => 5,
+                                'ignore_sticky_posts' => true,
+                                'post_status' => 'publish'
+                                );
+    $query = new WP_Query($rainbownews);
+    ?>
+
+
+    <div class="nnc-trending-single">
+        <div class="nnc-trend-title"><?php echo __('Trending News', 'rainbownews'); ?></div>
+        <ul class="newsticker"> 
+            <?php
+                while($query->have_posts() ){
+                    $query->the_post();
+                ?> 
+                <li class="pm_single_title"><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></li> 
+            <?php
+            }
+            ?>  
+        </ul>
+    </div> 
+    <?php
+}

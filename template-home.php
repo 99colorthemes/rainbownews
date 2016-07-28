@@ -11,16 +11,11 @@
     <!-- trending-start -->
     <div class="nnc-trending-news">
         <div class="nnc-container">
-            <div class="nnc-trending-single">
-                <div class="nnc-trend-title">Trending Now</div>
-                <ul class="newsticker"> 
-                    <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elitum.</a></li> 
-                    <li><a href="#">psum dolor sit amet, consectetur adipisicing elitum.</a></li> 
-                    <li><a href="#">Loolor sit amet, consectetur adipisicing elitum.</a></li> 
-                    <li><a href="#">um dolor sit amet, consectetur adipisicing elitum.</a></li> 
-                    <li><a href="#">em ipsum dolor sit amet, consectetur adipisicing elitum.</a></li>   
-                </ul>
-            </div>
+
+            <?php 
+               rainbownews_trending_news(); 
+            ?>
+
             <div class="nnc-search nnc-clearblock">
                 <?php get_search_form(); ?>
             </div>
