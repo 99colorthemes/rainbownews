@@ -10,21 +10,21 @@
 /* 
 Rainbownews Slider Widget Section
 */
-add_action('widgets_init', 'register_rainbownews_featured_post_layout2');
+add_action('widgets_init', 'register_rainbownews_featured_post_layout4');
 
-function register_rainbownews_featured_post_layout2()
+function register_rainbownews_featured_post_layout4()
 {
-    register_widget("rainbownews_featured_post_layout2");
+    register_widget("rainbownews_featured_post_layout4");
 }
 
-class rainbownews_featured_post_layout2 extends WP_Widget
+class rainbownews_featured_post_layout4 extends WP_Widget
 {
 
     function __construct()
     {
-        $widget_ops = array('classname' => 'widget_featured_post_layout2 widget_featured_meta', 'description' => __('Display latest posts or posts of specific category.', 'rainbownews'));
+        $widget_ops = array('classname' => 'widget_featured_post_layout4 widget_featured_meta', 'description' => __('Display latest posts or posts of specific category.', 'rainbownews'));
         $control_ops = array('width' => 200, 'height' => 250);
-        parent::__construct(false, $name = __(' NNC: Featured Posts (Layout 2)', 'rainbownews'), $widget_ops);
+        parent::__construct(false, $name = __(' NNC: Featured Posts (Layout 4)', 'rainbownews'), $widget_ops);
     }
 
     function form($instance)
@@ -114,76 +114,56 @@ class rainbownews_featured_post_layout2 extends WP_Widget
                 'category__in' => $category
             ));
         }
-        echo $before_widget;
+
         ?>
 
-        <div class="nnc-category nnc-category-layout-2">
-            <div class="nnc-title nnc-clearblock">
-                <h2 class="widget-title"><span style="color:grey;">Business</span></h2>
-                <div class="nnc-viewmore"><a href="#"><i class="fa fa-th-large" title="View All"></i></a></div>
+        <div class="nnc-category nnc-category-layout-3 nnc-right">
+        <div class="nnc-title nnc-clearblock">
+            <h2 class="widget-title"><span style="color:red;"><?php echo $title; ?></span></h2>
+
+            <div class="nnc-viewmore"><a href="#"><i class="fa fa-th-large" title="View All"></i></a>
             </div>
-            <div class="nnc-category-block nnc-clearblock">
+        </div>
+        <div class="nnc-category-block nnc-clearblock">
+        <div class="nnc-category-small nnc-clearblock">
         <?php
-        $i = 1;
         while ($get_featured_posts->have_posts()):$get_featured_posts->the_post();
             ?>
-
-            <?php if ($i == 1) {
-                echo '<div class="nnc-category-large">';
-            } elseif ($i == 2) {
-                echo '<div class="nnc-category-small">';
-            } ?>
-                    <div class="nnc-category-single">
-                        <?php if($i == 1 || $i == 2) { ?>
-                            <?php if (has_post_thumbnail()) : ?>
-                                <figure class="nnc-img">
-                                    <?php the_post_thumbnail('large'); ?>
-                                </figure>
-                            <?php endif; ?>
-                        <?php }else{ ?>
-                            <figure class="nnc-img">
-                                <?php the_post_thumbnail('thumbnail'); ?>
-                            </figure>
-                        <?php } ?>
-                        <div class="nnc-category-dtl">
-                            <div class="nnc-entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_title(); ?></a></div>
-                            <div class="nnc-entry-meta">
-                                <?php if($i == 1){ ?>
-                                <span class="author">By <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"  title="<?php the_author(); ?>"><?php echo esc_html(get_the_author() ); ?></a></span>
-                                <?php } ?>
-												<span class="posted-on">
-													<a href="<?php the_permalink(); ?>" title="<?php echo get_the_time(); ?>" rel="bookmark">
-                                                        <time class="entry-date" datetime="">
-                                                            <i class="fa fa-calendar"></i><?php echo get_the_date(); ?>
-                                                        </time>
-                                                    </a>
-												</span>
-                                <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i>  <a href="<?php the_permalink(); ?>" title="No Comments"><?php comments_popup_link( 'No Comment', '1', '%' );?></a></span>
-                            </div>
-                            <div class="nnc-category-list">
-                                <?php if($i == 1)
-                                    rainbownews_colored_category();
-                                ?>
-                            </div>
-                            <?php if($i == 1){?>
-                                <?php echo rainbownews_excerpt(get_the_content(), 200); ?>
-                             <?php } ?>
-                        </div>
+            <div class="nnc-category-single">
+                <?php if (has_post_thumbnail()) : ?>
+                    <figure class="nnc-img">
+                        <?php the_post_thumbnail('small'); ?>
+                    </figure>
+                <?php endif; ?>
+                <div class="nnc-category-dtl">
+                    <div class="nnc-entry-title">
+                        <a href="<?php the_permalink(); ?>"
+                           title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
                     </div>
-            <?php if ($i == 1) {
-                echo '</div>';
-            }
-            $i++;
+                    <div class="nnc-entry-meta">
+												  <span class="posted-on">
+                                <a href="<?php the_permalink(); ?>" title="<?php echo get_the_time(); ?>"
+                                   rel="bookmark">
+                                    <time class="entry-date" datetime="">
+                                        <i class="fa fa-calendar"></i><?php echo get_the_date(); ?>
+                                    </time>
+                                </a>
+                            </span>
+                                           <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i>
+                                <a href="<?php the_permalink(); ?>"
+                                   title="No Comments"><?php comments_popup_link('No Comment', '1', '%'); ?></a>
+                                   </span>
+                    </div>
+                </div>
+            </div>
+            <?php
         endwhile;
-        if ($i == 2) {
-            echo '</div>';
-        }
-
         // Reset Post Data
         wp_reset_query();
         ?>
             </div>
-        </div>
+            </div>
+            </div>
 
 
         <?php echo $after_widget;

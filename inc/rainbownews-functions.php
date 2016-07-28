@@ -72,3 +72,16 @@ function rainbownews_widgets_init() {
     ) );
 }
 add_action( 'widgets_init', 'rainbownews_widgets_init' );
+
+
+function rainbownews_excerpt( $rainbownews_content , $rainbownews_letter_count){
+    $rainbownews_letter_count = !empty($rainbownews_letter_count) ? $rainbownews_letter_count : 100 ;
+    $rainbownews_striped_content = strip_shortcodes($rainbownews_content);
+    $rainbownews_striped_content = strip_tags($rainbownews_striped_content);
+    $rainbownews_excerpt = mb_substr($rainbownews_striped_content, 0 , $rainbownews_letter_count);
+    if(strlen($rainbownews_striped_content) > strlen($rainbownews_excerpt)){
+        $rainbownews_excerpt.= "...";
+    }
+    return $rainbownews_excerpt;
+}
+
