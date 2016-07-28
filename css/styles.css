@@ -532,6 +532,10 @@ span.catlinks a:before {
 	width: 50%;
 }
 
+.nnc-highlight-slider .nnc-highlight-block {
+	width: 100%;
+}
+
 .nnc-hightlight-large {
 	position: relative;
 	margin-bottom: 2px;
@@ -788,7 +792,7 @@ h2.widget-title:after {
 =            Content            =
 ===============================*/
 
-.site-content .widget {
+#primary .widget {
 	margin: 0;
 }
 
