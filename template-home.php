@@ -22,12 +22,7 @@
                 </ul>
             </div>
             <div class="nnc-search nnc-clearblock">
-                <form class="s-form" action="" method="POST" role="form">
-                    <div class="search-form">
-                        <input type="text" id="" placeholder="Search Here...">
-                    </div>
-                    <div class="search-icon"><i class="fa fa-search"></i></div>
-                </form>
+                <?php get_search_form(); ?>
             </div>
         </div>
     </div>
@@ -136,6 +131,7 @@
 
 
                 </main>
+                </div>
             </div>
 
             <aside id="secondary" class="widget-area" role="complementary">

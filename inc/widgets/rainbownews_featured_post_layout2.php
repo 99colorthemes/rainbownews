@@ -119,8 +119,22 @@ class rainbownews_featured_post_layout2 extends WP_Widget
 
         <div class="nnc-category nnc-category-layout-2">
             <div class="nnc-title nnc-clearblock">
-                <h2 class="widget-title"><span style="color:grey;">Business</span></h2>
-                <div class="nnc-viewmore"><a href="#"><i class="fa fa-th-large" title="View All"></i></a></div>
+                <?php
+                if ($type != 'latest') {
+                    $border_color = 'style="border-bottom-color:' . rainbownews_category_color($category) . ';"';
+                    $title_color = 'style="color:' . rainbownews_category_color($category) . ';"';
+                } else {
+                    $border_color = '';
+                    $title_color = '';
+                }
+                if (!empty($title)) {
+                    echo '<h2 class="widget-title" ' . $border_color . '><span ' . $title_color . '>' . esc_html($title) . '</span></h2>';
+                }
+                if($category != '')
+                $cat_slug = get_category( $category );
+
+                ?>
+                <div class="nnc-viewmore"><a href="<?php echo site_url(). __('/category/', 'power-mag') . $cat_slug->slug; ?>"><i class="fa fa-th-large" title="View All"></i></a>
             </div>
             <div class="nnc-category-block nnc-clearblock">
         <?php
