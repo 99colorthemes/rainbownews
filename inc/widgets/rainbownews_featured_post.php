@@ -112,15 +112,16 @@ class rainbownews_featured_post extends WP_Widget
 
         <div class="nnc-highlight-block">
             <?php
-                $i = 1;
-                while ($get_featured_posts->have_posts()):$get_featured_posts->the_post();
+            $i = 1;
+            while ($get_featured_posts->have_posts()):$get_featured_posts->the_post();
 
                 if ($i == 1) {
-                   echo '<div class="nnc-hightlight-large">';
+                    echo '<div class="nnc-hightlight-large">';
                 } elseif ($i == 2) {
-                   echo '<div class="nnc-hightlight-small nnc-clearblock">';
+                    echo '<div class="nnc-hightlight-small nnc-clearblock">';
                 }
-            ?>
+                ?>
+
                 <div class="nnc-highlight-single">
                     <?php if ($i == 1) { ?>
                         <?php if (has_post_thumbnail()) : ?>
@@ -177,8 +178,7 @@ class rainbownews_featured_post extends WP_Widget
         </div>
 
 
-        <?php echo $after_widget; ?>
-        <?php
+        <?php echo $after_widget;
     }// end of widdget function.
 }// end of apply for action widget.
 

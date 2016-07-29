@@ -127,8 +127,6 @@
 
                 </main>
                 </div>
-            </div>
-
             <aside id="secondary" class="widget-area" role="complementary">
                 <section id="search-2" class="widget widget_search"><h2 class="widget-title"><span style="color:red;">Search</span>
                     </h2>
@@ -194,7 +192,8 @@
                 </section>
 
             </aside>
-        </div>
-    </div>
+            </div>
 
+
+        </div>
 <?php get_footer(); ?>
