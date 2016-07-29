@@ -135,7 +135,7 @@ class rainbownews_featured_post_layout3 extends WP_Widget
                 $cat_slug = get_category( $category );
 
                 ?>
-                <div class="nnc-viewmore"><a href="<?php echo site_url(). __('/category/', 'power-mag') . $cat_slug->slug; ?>"><i class="fa fa-th-large" title="View All"></i></a>
+                <div class="nnc-viewmore"><a href="<?php echo site_url(). __('/category/', 'rainbownews') . $cat_slug->slug; ?>"><i class="fa fa-th-large" title="View All"></i></a>
             </div>
             </div>
             <div class="nnc-category-block nnc-clearblock">
@@ -158,7 +158,7 @@ class rainbownews_featured_post_layout3 extends WP_Widget
                                 <a href="<?php the_permalink(); ?>" title="<?php echo get_the_time(); ?>"
                                    rel="bookmark">
                                     <time class="entry-date" datetime="">
-                                        <i class="fa fa-calendar"></i><?php echo get_the_date(); ?>
+                                        <i class="fa fa-calendar"></i> <?php echo get_the_date(); ?>
                                     </time>
                                 </a>
                             </span>

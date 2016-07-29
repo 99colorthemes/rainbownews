@@ -134,7 +134,7 @@ class rainbownews_featured_post_layout2 extends WP_Widget
                 $cat_slug = get_category( $category );
 
                 ?>
-                <div class="nnc-viewmore"><a href="<?php echo site_url(). __('/category/', 'power-mag') . $cat_slug->slug; ?>"><i class="fa fa-th-large" title="View All"></i></a>
+                <div class="nnc-viewmore"><a href="<?php echo site_url(). __('/category/', 'rainbownews') . $cat_slug->slug; ?>"><i class="fa fa-th-large" title="View All"></i></a>
             </div>
             <div class="nnc-category-block nnc-clearblock">
         <?php
@@ -168,7 +168,7 @@ class rainbownews_featured_post_layout2 extends WP_Widget
 												<span class="posted-on">
 													<a href="<?php the_permalink(); ?>" title="<?php echo get_the_time(); ?>" rel="bookmark">
                                                         <time class="entry-date" datetime="">
-                                                            <i class="fa fa-calendar"></i><?php echo get_the_date(); ?>
+                                                            <i class="fa fa-calendar"></i> <?php echo get_the_date(); ?>
                                                         </time>
                                                     </a>
 												</span>
@@ -179,9 +179,8 @@ class rainbownews_featured_post_layout2 extends WP_Widget
                                     rainbownews_colored_category();
                                 ?>
                             </div>
-                            <?php if($i == 1){?>
-                                <?php echo rainbownews_excerpt(get_the_content(), 200); ?>
-                             <?php } ?>
+
+                            <?php if($i == 1) : ?><p> <?php echo rainbownews_excerpt(get_the_content(), 200); ?></p><?php endif; ?>
                         </div>
                     </div>
             <?php if ($i == 1) {

@@ -134,7 +134,7 @@ class rainbownews_featured_post_layout1 extends WP_Widget
                 $cat_slug = get_category( $category );
 
                 ?>
-                <div class="nnc-viewmore"><a href="<?php echo site_url(). __('/category/', 'power-mag') . $cat_slug->slug; ?>"><i class="fa fa-th-large" title="View All"></i></a>
+                <div class="nnc-viewmore"><a href="<?php echo site_url(). __('/category/', 'rainbownews') . $cat_slug->slug; ?>"><i class="fa fa-th-large" title="View All"></i></a>
             </div>
 
             <div class="nnc-category-block nnc-clearblock">
