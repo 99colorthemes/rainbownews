@@ -527,7 +527,7 @@ span.catlinks a:before {
 	height: 200px;
 }
 
-.nnc-highlight-block {
+.nnc-highlight-post {
 	float: right;
 	width: 50%;
 }
@@ -594,7 +594,7 @@ span.catlinks a:before {
 =            Latest            =
 ==============================*/
 .nnc-top-latest { 
-	padding: 28px 0 0 0;
+	/*padding: 28px 0 0 0;*/
 } 
 
 .nnc-title {
