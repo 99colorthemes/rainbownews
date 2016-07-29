@@ -124,7 +124,7 @@ class rainbownews_featured_post_layout1 extends WP_Widget
                     $title_color = 'style="color:' . rainbownews_category_color($category) . ';"';
                 } else {
                     $border_color = '';
-                    $title_color = '';
+                    $title_color = 'style="color:#4db2ec;"';
                 }
                 if (!empty($title)) {
                     echo '<h2 class="widget-title" ' . $border_color . '><span ' . $title_color . '>' . esc_html($title) . '</span></h2>';
