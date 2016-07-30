@@ -60,6 +60,7 @@ function rainbownews_widgets_init() {
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>',
     ) );
+
 }
 add_action( 'widgets_init', 'rainbownews_widgets_init' );
 
