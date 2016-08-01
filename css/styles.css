@@ -629,7 +629,7 @@ h2.widget-title:after {
 } 
 
 .widget-title > span:before {
-    content: '\f00a';
+    content: '\f260';
     font-family: 'FontAwesome';  
     position: absolute;
     top: 1px;
@@ -1170,18 +1170,33 @@ h2.widget-title {
 .nnc-footer {
 	margin-top: 40px;
 	padding: 40px 0 0;
-	background: #f1f1f1;
+	background: #fcfcfc;
+	border-top: 4px solid #4db2ec;
 }
 
 .nnc-footer-single {
-    width: 30%;
-    float: left;
-    margin-left: 58px;
-    padding-bottom: 40px;
+	width: 20%;
+	float: left;
+	margin-left: 58px;
+	padding-bottom: 40px;
 }
 
-.nnc-footer-single:nth-child(1) { 
+.nnc-footer-single:nth-child(1) {
 	margin-left: 0;
+}
+
+.nnc-footer .widget-title > span {
+	background: none;
+}
+
+.nnc-bottom-footer {
+	background: #222;
+	padding: 14px 0;
+}
+
+.nnc-bottom-footer p {
+	color: #fff;
+	font-size: 13px;
 }
 
 
@@ -1194,6 +1209,94 @@ h2.widget-title {
 
 
 /*=====  End of Category Post Layout  ======*/
+
+
+/*=========================================
+=            Category layout 1            =
+=========================================*/
+/*----------  Breadcrumbs  ----------*/
+.nnc-trending-single {
+	background: #333;
+}
+
+.nnc-category-small-block .nnc-hightlight-large {
+	width: 50%;
+	float: left;
+}
+
+a.nnc-readmore {
+	background: #333;
+	color: #fff;
+	font-size: 14px;
+	padding: 12px;
+	display: inline-block;
+	margin-top: 10px;
+}
+
+a.nnc-readmore:hover {
+	background: #4db2ec;
+	color: #fff;
+}
+
+.nnc-category-highlight-block .nnc-highlight-single {
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+	border-bottom: 2px solid #333;
+}
+
+.nnc-category-small-block .nnc-hightlight-large {
+	width: calc(52% - 37px);
+	float: left;
+	margin-right: 40px;
+}
+
+.nnc-hightlight-large:nth-child(2n) {
+	margin-right: 0;
+}
+
+.nnc-category-small-block .nnc-highlight-single .nnc-dtl .nnc-entry-title a {
+	font-size: 16px;
+}
+
+.nnc-pagination li {
+	display: inline-block;
+}
+
+.nnc-pagination li a {
+	display: inline-block;
+	background: #222;
+	width: 34px;
+	height: 34px;
+	line-height: 34px;
+	font-size: 14px;
+	text-align: center;
+	color: #fff;
+}
+
+.nnc-pagination li a:hover {
+	background: #4db2ec;
+}
+
+.nnc-pagination li.active a {
+	background: #4db2ec;
+}
+
+.nnc-category-highlight-block .nnc-dtl {
+	background: none;
+	position: static;
+	padding: 18px 18px 0 18px;
+	background: red;
+}
+
+.nnc-category-highlight-block .nnc-entry-title a {
+	color: #000;
+}
+
+.nnc-category-highlight-block .nnc-entry-title a:hover {
+	color: #4db2ec;
+}
+
+/*=====  End of Category layout 1  ======*/
 
 
 /*-------------Scroll to top--------------*/

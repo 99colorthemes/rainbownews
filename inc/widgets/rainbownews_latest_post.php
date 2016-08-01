@@ -10,21 +10,21 @@
 /* 
 Rainbownews Slider Widget Section
 */
-add_action('widgets_init', 'register_rainbownews_featured_post_layout2');
+add_action('widgets_init', 'register_rainbownews_latest_post');
 
-function register_rainbownews_featured_post_layout2()
+function register_rainbownews_latest_post()
 {
-    register_widget("rainbownews_featured_post_layout2");
+    register_widget("rainbownews_latest_post");
 }
 
-class rainbownews_featured_post_layout2 extends WP_Widget
+class rainbownews_latest_post extends WP_Widget
 {
 
     function __construct()
     {
-        $widget_ops = array('classname' => 'widget_featured_post_layout2 widget_featured_meta', 'description' => __('Display latest posts or posts of specific category.', 'rainbownews'));
+        $widget_ops = array('classname' => 'widget_latest_post', 'description' => __('Display latest posts or posts of specific category.', 'rainbownews'));
         $control_ops = array('width' => 200, 'height' => 250);
-        parent::__construct(false, $name = __(' NNC: News [ Layout 2 ]', 'rainbownews'), $widget_ops);
+        parent::__construct(false, $name = __(' NNC: Latest Post ', 'rainbownews'), $widget_ops);
     }
 
     function form($instance)
@@ -34,15 +34,18 @@ class rainbownews_featured_post_layout2 extends WP_Widget
         $tg_defaults['number'] = 4;
         $tg_defaults['type'] = 'latest';
         $tg_defaults['category'] = '';
+        $tg_defaults['style'] = 'style1';
+
         $instance = wp_parse_args((array)$instance, $tg_defaults);
         $title = esc_attr($instance['title']);
         $text = esc_textarea($instance['text']);
         $number = $instance['number'];
         $type = $instance['type'];
         $category = $instance['category'];
+        $style = $instance['style'];
         ?>
         <p><?php _e('Layout will be as below:', 'rainbownews') ?></p>
-        <!--   <div style="text-align: center;"><img src="<?php echo get_template_directory_uri(); ?>/<?php echo get_template_directory_uri() . '/img/style-2.jpg' ?>"></div> -->
+        <!--   <div style="text-align: center;"><img src="<?php echo get_template_directory_uri(); ?>/<?php echo get_template_directory_uri() . '/img/style-1.jpg' ?>"></div> -->
         <p>
             <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'rainbownews'); ?></label>
             <input id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>"
@@ -66,6 +69,12 @@ class rainbownews_featured_post_layout2 extends WP_Widget
                    name="<?php echo $this->get_field_name('type'); ?>"
                    value="category"/><?php _e('Show posts from a category', 'rainbownews'); ?><br/></p>
 
+        <p><input type="radio" <?php checked($style, 'style1') ?> id="<?php echo $this->get_field_id('style'); ?>"
+                  name="<?php echo $this->get_field_name('style'); ?>"
+                  value="style1"/><?php _e('Style 1', 'rainbownews'); ?><br/>
+            <input type="radio" <?php checked($style, 'style2') ?> id="<?php echo $this->get_field_id('style'); ?>"
+                   name="<?php echo $this->get_field_name('style'); ?>"
+                   value="style2"/><?php _e('Style 2', 'rainbownews'); ?><br/></p>
         <p>
             <label for="<?php echo $this->get_field_id('category'); ?>"><?php _e('Select category', 'rainbownews'); ?>
                 :</label>
@@ -84,6 +93,7 @@ class rainbownews_featured_post_layout2 extends WP_Widget
             $instance['text'] = stripslashes(wp_filter_post_kses(addslashes($new_instance['text'])));
         $instance['number'] = absint($new_instance['number']);
         $instance['type'] = $new_instance['type'];
+        $instance['style'] = $new_instance['style'];
         $instance['category'] = $new_instance['category'];
 
         return $instance;
@@ -99,6 +109,7 @@ class rainbownews_featured_post_layout2 extends WP_Widget
         $text = isset($instance['text']) ? $instance['text'] : '';
         $number = empty($instance['number']) ? 4 : $instance['number'];
         $type = isset($instance['type']) ? $instance['type'] : 'latest';
+        $style = isset($instance['style']) ? $instance['style'] : 'style1';
         $category = isset($instance['category']) ? $instance['category'] : '';
 
         if ($type == 'latest') {
@@ -116,8 +127,7 @@ class rainbownews_featured_post_layout2 extends WP_Widget
         }
         echo $before_widget;
         ?>
-
-        <div class="nnc-category nnc-category-layout-2">
+        <div class="nnc-latest">
             <div class="nnc-title nnc-clearblock">
                 <?php
                 if ($type != 'latest') {
@@ -131,74 +141,51 @@ class rainbownews_featured_post_layout2 extends WP_Widget
                     echo '<h2 class="widget-title" ' . $border_color . '><span ' . $title_color . '>' . esc_html($title) . '</span></h2>';
                 }
                 if($category != '')
-                $cat_slug = get_category( $category );
+                    $cat_slug = get_category( $category );
 
                 ?>
-                <div class="nnc-viewmore"><a <?php if(!empty($cat_slug->slug)){ ?> href="<?php echo site_url(). __('/category/', 'rainbownews') . $cat_slug->slug; ?>" <?php }?>><i class="fa fa-th-large" title="View All"></i></a>
+                <div class="nnc-viewmore"><a <?php if(!empty($cat_slug->slug)) { ?> href="<?php echo site_url(). __('/category/', 'rainbownews') . $cat_slug->slug; ?>" <?php } ?>><i class="fa fa-th-large" title="View All"></i></a>
             </div>
-            <div class="nnc-category-block nnc-clearblock">
-        <?php
-        $i = 1;
-        while ($get_featured_posts->have_posts()):$get_featured_posts->the_post();
-            ?>
-
-            <?php if ($i == 1) {
-                echo '<div class="nnc-category-large">';
-            } elseif ($i == 2) {
-                echo '<div class="nnc-category-small">';
-            } ?>
-                    <div class="nnc-category-single">
-                        <?php if($i == 1 || $i == 2) { ?>
-                            <?php if (has_post_thumbnail()) : ?>
-                                <figure class="nnc-img">
-                                    <?php the_post_thumbnail('large'); ?>
-                                </figure>
-                            <?php endif; ?>
-                        <?php }else{ ?>
+            <!-- use (nnc-latest-layout-2) class for Layout2 -->
+            <div class="nnc-latest-block nnc-clearblock <?php echo $style == 'style1'?'':'nnc-latest-layout-2'; ?> ">
+                <?php
+                while ($get_featured_posts->have_posts()):$get_featured_posts->the_post();
+                    ?>
+                    <div class="nnc-latest-single">
+                        <?php if (has_post_thumbnail()) : ?>
                             <figure class="nnc-img">
-                                <?php the_post_thumbnail('thumbnail'); ?>
+                                <?php the_post_thumbnail('large'); ?>
                             </figure>
-                        <?php } ?>
-                        <div class="nnc-category-dtl">
-                            <div class="nnc-entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_title(); ?></a></div>
+                        <?php endif; ?>
+                        <div class="nnc-dtl">
+                            <div class="nnc-entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></div>
                             <div class="nnc-entry-meta">
-                                <?php if($i == 1){ ?>
-                                <span class="author">By <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"  title="<?php the_author(); ?>"><?php echo esc_html(get_the_author() ); ?></a></span>
-                                <?php } ?>
-												<span class="posted-on">
-													<a href="<?php the_permalink(); ?>" title="<?php echo get_the_time(); ?>" rel="bookmark">
-                                                        <time class="entry-date" datetime="">
-                                                            <i class="fa fa-calendar"></i> <?php echo get_the_date(); ?>
-                                                        </time>
-                                                    </a>
-												</span>
-                                <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i>  <a href="<?php the_permalink(); ?>" title="No Comments"><?php comments_popup_link( 'No Comment', '1', '%' );?></a></span>
+									<span class="posted-on">
+                                         <a href="<?php the_permalink(); ?>" title="<?php echo get_the_time(); ?>"
+                                            rel="bookmark">
+                                             <time class="entry-date" datetime="">
+                                                 <i class="fa fa-calendar"></i> <?php echo get_the_date(); ?>
+                                             </time>
+                                         </a>
+									</span>
+                                <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> <a
+                                        href="<?php the_permalink(); ?>" title="No Comments"><?php comments_popup_link('No Comment', '1', '%'); ?></a></span>
                             </div>
                             <div class="nnc-category-list">
-                                <?php if($i == 1)
-                                    rainbownews_colored_category();
-                                ?>
+                                <?php  rainbownews_colored_category(); ?>
                             </div>
-
-                            <?php if($i == 1) : ?><p> <?php echo rainbownews_excerpt(get_the_content(), 200); ?></p><?php endif; ?>
                         </div>
                     </div>
-            <?php if ($i == 1) {
-                echo '</div>';
-            }
-            $i++;
-        endwhile;
-        if ($i == 2) {
-            echo '</div>';
-        }
+                    <?php
+                endwhile;
+                // Reset Post Data
+                wp_reset_query();
+                ?>
 
-        // Reset Post Data
-        wp_reset_query();
-        ?>
             </div>
         </div>
 
-
+        <!-- </div> -->
         <?php echo $after_widget;
     }
 }// end of apply for action widget.

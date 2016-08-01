@@ -24,7 +24,7 @@ class rainbownews_featured_post_layout1 extends WP_Widget
     {
         $widget_ops = array('classname' => 'widget_featured_post_layout1 widget_featured_meta', 'description' => __('Display latest posts or posts of specific category.', 'rainbownews'));
         $control_ops = array('width' => 200, 'height' => 250);
-        parent::__construct(false, $name = __(' NNC: Featured Posts (Layout 1)', 'rainbownews'), $widget_ops);
+        parent::__construct(false, $name = __(' NNC: News [ Layout 1 ]', 'rainbownews'), $widget_ops);
     }
 
     function form($instance)
@@ -134,7 +134,7 @@ class rainbownews_featured_post_layout1 extends WP_Widget
                 $cat_slug = get_category( $category );
 
                 ?>
-                <div class="nnc-viewmore"><a href="<?php echo site_url(). __('/category/', 'rainbownews') . $cat_slug->slug; ?>"><i class="fa fa-th-large" title="View All"></i></a>
+                <div class="nnc-viewmore"><a <?php if(!empty($cat_slug->slug)){ ?> href="<?php echo site_url(). __('/category/', 'rainbownews') . $cat_slug->slug; ?>" <?php }?>><i class="fa fa-th-large" title="View All"></i></a>
             </div>
 
             <div class="nnc-category-block nnc-clearblock">

@@ -106,7 +106,7 @@ class rainbownews_top_advertisement extends WP_Widget {
 
 
 
- <div class="nnc-top-ads">
+    <div class="nnc-top-ads">
          <?php if ( !empty( $title ) ) { ?>
             <div class="nnc-advertisement-title">
                <?php echo $before_title. esc_html( $title ) . $after_title; ?>
@@ -125,7 +125,7 @@ class rainbownews_top_advertisement extends WP_Widget {
                $output .= '</div>';
                echo $output;
             } ?>
-      </div>
+    </div>
 
 
 
