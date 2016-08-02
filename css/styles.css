@@ -169,6 +169,78 @@ img {
 	font-family: 'Droid Sans', sans-serif;
 }
 
+/*--------------------------------------------------------------
+   Social Link css
+--------------------------------------------------------------*/
+ 
+  
+
+.nnc-social li a {
+    height: 20px;
+    line-height: 20px;
+    width: 20px;
+    display: block;
+}
+
+.nnc-social li a::before {
+    display: block;
+    padding: 0 10px;
+    font-family: FontAwesome;
+    font-size: 14px;
+    vertical-align: top;
+    content: "\f005";
+    color: #ffffff;
+    text-align: center;
+}
+.nnc-social li a[href*="facebook.com"],
+.nnc-social li a[href*="instagram.com"],
+.nnc-social li a[href*="twitter.com"],
+.nnc-social li a[href*="plus.google.com"],
+.nnc-social li a[href*="youtube.com"],
+.nnc-social li a[href*="pinterest.com"] {
+    font: 0/0 a;
+    color: transparent;
+}
+
+.nnc-social li a[href*="facebook.com"]::before,
+.nnc-social li a[href*="instagram.com"]::before,
+.nnc-social li a[href*="twitter.com"]::before,
+.nnc-social li a[href*="plus.google.com"]::before,
+.nnc-social li a[href*="youtube.com"]::before,
+.nnc-social li a[href*="pinterest.com"]::before {
+    content: '\f09a';
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0;
+    color: #ffffff;
+    color: #444;
+}
+
+.nnc-social li a[href*="twitter.com"]::before {
+    content: '\f099';
+    color: #444;
+}
+
+.nnc-social li a[href*="plus.google.com"]::before {
+    content: '\f0d5';
+    color: #444;
+}
+
+.nnc-social li a[href*="youtube.com"]::before {
+    content: '\f167';
+    color: #444;
+}
+
+.nnc-social li a[href*="pinterest.com"]::before {
+    content: '\f0d2';
+    color: #444;
+}
+
+.nnc-social li a[href*="instagram.com"]::before {
+    content: '\f16d';
+    color: #444;
+}
+
 .nnc-logo-bar {
 	padding: 10px 0;
 }
@@ -233,16 +305,27 @@ img {
 .nnc-trending-single { 
 	float: left;
 	width: 70%;
-	max-height: 40px;
-	border: 1px solid #eee;
+	max-height: 40px; 
+	background: #333;
 } 
 
 .nnc-trend-title {
 	font-size: 14px;
 	background: #4db2ec;
 	float: left;
-	padding: 12px;
+	padding: 13px;
 	color: #fff;
+	position: relative;
+} 
+
+.nnc-trend-title:after { 
+    position: absolute;
+    top: 6px;
+    right: -14px;
+    content: ''; 
+    border-left: 28px solid transparent;
+    border-bottom: 28px solid #4db2ec;
+    transform: rotate(-45deg);
 } 
 
 .newsticker {
@@ -253,12 +336,12 @@ img {
 }
 
 .newsticker li {
-	padding: 11px; 
+	padding: 12px 12px 12px 36px; 
 }
 
 .newsticker li a {
 	text-decoration: none;
-	color: #666;
+	color: #fff; 
 	font-size: 14px;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -297,8 +380,8 @@ img {
 
 .search-icon i {
     padding: 12px;
-    border-left: 1px solid #eee;
-    color: #ccc;
+    border-left: 1px solid #333;
+    color: #fff;
 }
 
 .search-icon i:hover {
@@ -310,35 +393,32 @@ img {
 	width: 100%;
 }
 
-.search-form input[type="text"] {
-    background: none; 
-    padding: 8px;
-    border-top: 1px solid #eee; 
-    border-right: 1px solid #eee; 
-    border-left: 1px solid #fff; 
-    border-bottom: 1px solid #eee; 
+.search-form input[type="text"] { 
+    padding: 9px; 
+    background: #111;
     border-radius: 0;
     outline: none;
+    border: none;
     width: 100%;
-    font-size: 15px;
-   color: #777!important;
+    font-size: 15px; 
     opacity: 1;
+   color: #fff!important;
 }
 
 .search-form input[type="text"] ::-webkit-input-placeholder {
-   color: #777!important;
+   color: #fff!important;
 }
 
 .search-form input[type="text"] :-moz-placeholder { /* Firefox 18- */
-   color: #777!important;  
+   color: #fff!important;  
 }
 
 .search-form input[type="text"] ::-moz-placeholder {  /* Firefox 19+ */
-   color: #777!important;  
+   color: #fff!important;  
 }
 
 .search-form input[type="text"] :-ms-input-placeholder {  
-   color: #777!important;  
+   color: #fff!important;  
 }
 
 
@@ -626,6 +706,7 @@ h2.widget-title:after {
     display: inline-block;
     padding: 0 14px 0 30px;
     font-size: 20px;
+    color: #4db2ec;
 } 
 
 .widget-title > span:before {
@@ -832,12 +913,13 @@ h2.widget-title:after {
 
 h2.widget-title {
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .widget li {
     padding: 8px 0; 
     font-size: 15px;
+    line-height: 20px;
 }
 
 .calendar_wrap {
@@ -877,11 +959,11 @@ h2.widget-title {
 } 
 
 #today {
-	background: blue; 
+	background: #4db2ec; 
 }
 
 #today:hover {
-	background: blue; 
+	background: #4db2ec; 
 }
 
 /*New Widgets*/

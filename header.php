@@ -30,16 +30,7 @@
 				<?php wp_nav_menu( array( 'theme_location' => 'Top Menu', 'menu' => 'Top Menu', 'menu_id' => 'top-menu' ) ); ?>
 			</div>
 			<div class="nnc-social">
-				<ul>
-					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-					<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-					<li><a href="#"><i class="fa fa-youtube"></i></a></li>
-					<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-					<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-					<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-					<li><a href="#"><i class="fa fa-tumblr"></i></a></li>
-				</ul>
+				<?php wp_nav_menu( array( 'theme_location' => 'social', 'container' => 'ul', 'menu_class' => 'nnc-social-icon' ) ); ?>
 			</div>
 			<div class="nnc-search">
 			</div>
