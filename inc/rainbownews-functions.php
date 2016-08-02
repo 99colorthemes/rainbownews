@@ -1,8 +1,4 @@
-<?php 
-register_nav_menus( array(
-        'primary' => esc_html__( 'Primary', 'rainbownews' ),
-        'top-header' => esc_html__( 'Top Header', 'rainbownews' ),
-    ) ); 
+<?php  
 
 /**
  * Register widget area.
