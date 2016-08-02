@@ -36,33 +36,30 @@ get_header();
     <!-- trending-end -->
 
 
-
 <?php
 global $cat;
 
 /*$layout = rainbownews_category_layout($cat);*/
 
 
-
-
-$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+$paged = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
 $args = array(
     'post_type' => 'post',
-    'cat'=> $cat,
+    'cat' => $cat,
 
     //'posts_per_page'=>2,
-    'post_status'=>'publish',
-    'order'=>'DESC',
-    'paged'=> $paged
+    'post_status' => 'publish',
+    'order' => 'DESC',
+    'paged' => $paged
 );
 
-$query = new WP_Query( $args );
+$query = new WP_Query($args);
 
 /*echo "<pre>";
        print_r($query);
         echo "</pre>";*/
 
-if($query->have_posts()) :
+if ($query->have_posts()) :
     global $cat;
     global $pm_category_post_count;
     $category_post_cnt = get_category($cat);
@@ -82,43 +79,51 @@ if($query->have_posts()) :
                 <main id="main" class="site-main">
                     <div class="nnc-category-highlight-block">
                         <?php $i = 1; ?>
-                        <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
-                                  <?php  if($i == 2){ echo '<div class="nnc-category-small-block nnc-clearblock">';}?>
-                                    <div class="nnc-hightlight-large">
+                        <?php while ($query->have_posts()) : $query->the_post(); ?>
+                            <?php if ($i == 2) {
+                                echo '<div class="nnc-category-small-block nnc-clearblock">';
+                            } ?>
+                            <div class="nnc-hightlight-large">
                                 <div class="nnc-highlight-single">
-                                    <?php if ($i == 1 ) { ?>
-                            <?php if (has_post_thumbnail()) : ?>
-                                <figure class="nnc-img">
-                                    <?php the_post_thumbnail('large'); ?>
-                                </figure>
-                            <?php endif; ?>
-                        <?php } else { ?>
-                            <figure class="nnc-img">
-                                <?php the_post_thumbnail('small'); ?>
-                            </figure>
-                        <?php } ?>
+                                    <?php if ($i == 1) { ?>
+                                        <?php if (has_post_thumbnail()) : ?>
+                                            <figure class="nnc-slide-img">
+                                                <?php the_post_thumbnail('large'); ?>
+                                            </figure>
+                                        <?php endif; ?>
+                                    <?php } else { ?>
+                                        <figure class="nnc-slide-img">
+                                            <?php the_post_thumbnail('small'); ?>
+                                        </figure>
+                                    <?php } ?>
                                     <div class="nnc-dtl">
 
-                                            <div class="nnc-entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php  the_title(); ?></a></div>
+                                        <div class="nnc-entry-title"><a href="<?php the_permalink(); ?>"
+                                                                        title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+                                        </div>
                                         <div class="nnc-entry-meta">
-                                                <span class="posted-on">
-                                                   <a href="<?php the_permalink(); ?>"
-                                                      title="<?php echo get_the_time(); ?>" rel="bookmark">
-                                                       <time class="entry-date" datetime="">
-                                                           <i class="fa fa-calendar"></i> <?php echo get_the_date(); ?>
-                                                       </time>
-                                                   </a>
+                                               <span class="posted-on">
+                                                    <a href="<?php the_permalink(); ?>"
+                                                       title="<?php echo get_the_time(); ?>" rel="bookmark">
+                                                        <time class="entry-date" datetime="">
+                                                            <?php esc_attr(the_time("M d")); ?>
+                                                        </time>
+                                                        <br>
+                                                        <time><?php esc_attr(the_time("Y")); ?></time>
+                                                    </a>
                                                 </span>
-                                            <span class="author"><i class="fa fa-user" aria-hidden="true"></i> <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" title="<?php the_author(); ?>"><?php echo esc_html(get_the_author()); ?></a></span>
+                                            <span class="author"><i class="fa fa-user" aria-hidden="true"></i> <a
+                                                    href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"
+                                                    title="<?php the_author(); ?>"><?php echo esc_html(get_the_author()); ?></a></span>
                                            <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> <a
                                                    href="<?php the_permalink(); ?>"
                                                    title="No Comments"><?php comments_popup_link('No Comment', '1', '%'); ?></a></span>
                                         </div>
                                         <div class="nnc-category-list">
-                                           <?php if(rainbownews_colored_category() > 0){
+                                            <?php if (rainbownews_colored_category() > 0) {
                                                 rainbownews_colored_category();
-                                           }
-                                           ?>
+                                            }
+                                            ?>
 
                                         </div>
                                     </div>
@@ -127,25 +132,27 @@ if($query->have_posts()) :
                                     <a class="nnc-readmore" href="#">Read More</a>
                                 </div>
                             </div>
-                                  <?php if($i == $pm_category_post_count){ echo '</div>'; } ?>
+                            <?php if ($i == $pm_category_post_count) {
+                                echo '</div>';
+                            } ?>
 
-                        <?php $i++; endwhile;  ?>
+                            <?php $i++; endwhile; ?>
                     </div>
 
-                        <div class="nnc-pagination">
-                            <ul>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#"><i class="fa fa-angle-right"></i>
-                        </div>
+                    <div class="nnc-pagination">
+                        <ul>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>
+                    </div>
 
                 </main>
             </div>
 
 
-              <?php   get_sidebar(); ?>
+            <?php get_sidebar(); ?>
 
         </div>
     </div>
@@ -153,7 +160,7 @@ if($query->have_posts()) :
     <?php
 else :
 
-    get_template_part( 'template-parts/content', 'none' );
+    get_template_part('template-parts/content', 'none');
 endif;
 ?>
 
