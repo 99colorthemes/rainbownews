@@ -233,16 +233,27 @@ img {
 .nnc-trending-single { 
 	float: left;
 	width: 70%;
-	max-height: 40px;
-	border: 1px solid #eee;
+	max-height: 40px; 
+	background: #333;
 } 
 
 .nnc-trend-title {
 	font-size: 14px;
 	background: #4db2ec;
 	float: left;
-	padding: 12px;
+	padding: 13px;
 	color: #fff;
+	position: relative;
+} 
+
+.nnc-trend-title:after { 
+    position: absolute;
+    top: 6px;
+    right: -14px;
+    content: ''; 
+    border-left: 28px solid transparent;
+    border-bottom: 28px solid #4db2ec;
+    transform: rotate(-45deg);
 } 
 
 .newsticker {
@@ -253,12 +264,12 @@ img {
 }
 
 .newsticker li {
-	padding: 11px; 
+	padding: 12px 12px 12px 36px; 
 }
 
 .newsticker li a {
 	text-decoration: none;
-	color: #666;
+	color: #fff; 
 	font-size: 14px;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -297,8 +308,8 @@ img {
 
 .search-icon i {
     padding: 12px;
-    border-left: 1px solid #eee;
-    color: #ccc;
+    border-left: 1px solid #333;
+    color: #fff;
 }
 
 .search-icon i:hover {
@@ -310,35 +321,32 @@ img {
 	width: 100%;
 }
 
-.search-form input[type="text"] {
-    background: none; 
-    padding: 8px;
-    border-top: 1px solid #eee; 
-    border-right: 1px solid #eee; 
-    border-left: 1px solid #fff; 
-    border-bottom: 1px solid #eee; 
+.search-form input[type="text"] { 
+    padding: 9px; 
+    background: #111;
     border-radius: 0;
     outline: none;
+    border: none;
     width: 100%;
-    font-size: 15px;
-   color: #777!important;
+    font-size: 15px; 
     opacity: 1;
+   color: #fff!important;
 }
 
 .search-form input[type="text"] ::-webkit-input-placeholder {
-   color: #777!important;
+   color: #fff!important;
 }
 
 .search-form input[type="text"] :-moz-placeholder { /* Firefox 18- */
-   color: #777!important;  
+   color: #fff!important;  
 }
 
 .search-form input[type="text"] ::-moz-placeholder {  /* Firefox 19+ */
-   color: #777!important;  
+   color: #fff!important;  
 }
 
 .search-form input[type="text"] :-ms-input-placeholder {  
-   color: #777!important;  
+   color: #fff!important;  
 }
 
 
@@ -626,6 +634,7 @@ h2.widget-title:after {
     display: inline-block;
     padding: 0 14px 0 30px;
     font-size: 20px;
+    color: #4db2ec;
 } 
 
 .widget-title > span:before {
@@ -838,6 +847,7 @@ h2.widget-title {
 .widget li {
     padding: 8px 0; 
     font-size: 15px;
+    line-height: 20px;
 }
 
 .calendar_wrap {
@@ -877,11 +887,11 @@ h2.widget-title {
 } 
 
 #today {
-	background: blue; 
+	background: #4db2ec; 
 }
 
 #today:hover {
-	background: blue; 
+	background: #4db2ec; 
 }
 
 /*New Widgets*/
@@ -1213,11 +1223,7 @@ h2.widget-title {
 
 /*=========================================
 =            Category layout 1            =
-=========================================*/
-/*----------  Breadcrumbs  ----------*/
-.nnc-trending-single {
-	background: #333;
-}
+=========================================*/ 
 
 .nnc-category-small-block .nnc-hightlight-large {
 	width: 50%;
