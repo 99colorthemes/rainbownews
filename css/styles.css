@@ -882,7 +882,8 @@ h2.widget-title:after {
 =============================================*/
 #primary {
 	width: 70%;
-	float:left; 
+	float:left;
+	padding-top: 30px;
 }
 
 #secondary {
