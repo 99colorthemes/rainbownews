@@ -169,6 +169,78 @@ img {
 	font-family: 'Droid Sans', sans-serif;
 }
 
+/*--------------------------------------------------------------
+   Social Link css
+--------------------------------------------------------------*/
+ 
+  
+
+.nnc-social li a {
+    height: 20px;
+    line-height: 20px;
+    width: 20px;
+    display: block;
+}
+
+.nnc-social li a::before {
+    display: block;
+    padding: 0 10px;
+    font-family: FontAwesome;
+    font-size: 14px;
+    vertical-align: top;
+    content: "\f005";
+    color: #ffffff;
+    text-align: center;
+}
+.nnc-social li a[href*="facebook.com"],
+.nnc-social li a[href*="instagram.com"],
+.nnc-social li a[href*="twitter.com"],
+.nnc-social li a[href*="plus.google.com"],
+.nnc-social li a[href*="youtube.com"],
+.nnc-social li a[href*="pinterest.com"] {
+    font: 0/0 a;
+    color: transparent;
+}
+
+.nnc-social li a[href*="facebook.com"]::before,
+.nnc-social li a[href*="instagram.com"]::before,
+.nnc-social li a[href*="twitter.com"]::before,
+.nnc-social li a[href*="plus.google.com"]::before,
+.nnc-social li a[href*="youtube.com"]::before,
+.nnc-social li a[href*="pinterest.com"]::before {
+    content: '\f09a';
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0;
+    color: #ffffff;
+    color: #444;
+}
+
+.nnc-social li a[href*="twitter.com"]::before {
+    content: '\f099';
+    color: #444;
+}
+
+.nnc-social li a[href*="plus.google.com"]::before {
+    content: '\f0d5';
+    color: #444;
+}
+
+.nnc-social li a[href*="youtube.com"]::before {
+    content: '\f167';
+    color: #444;
+}
+
+.nnc-social li a[href*="pinterest.com"]::before {
+    content: '\f0d2';
+    color: #444;
+}
+
+.nnc-social li a[href*="instagram.com"]::before {
+    content: '\f16d';
+    color: #444;
+}
+
 .nnc-logo-bar {
 	padding: 10px 0;
 }
@@ -841,7 +913,7 @@ h2.widget-title:after {
 
 h2.widget-title {
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .widget li {
