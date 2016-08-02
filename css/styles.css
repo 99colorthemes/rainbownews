@@ -1210,13 +1210,36 @@ h2.widget-title {
 
 /*=====  End of Category Post Layout  ======*/
 
-
 /*=========================================
 =            Category layout 1            =
 =========================================*/
 /*----------  Breadcrumbs  ----------*/
 .nnc-trending-single {
 	background: #333;
+}
+.nnc-trending-single ul {
+	padding: 11px;
+}
+
+.nnc-trending-single ul li {
+	display: inline-block;
+	font-size: 14px;
+}
+
+.nnc-trending-single ul li a {
+	color: #fff;
+}
+
+.nnc-trending-single ul li a:hover {
+	color: #4db2ec;
+}
+
+.nnc-trending-single ul li.active {
+	background: none;
+}
+
+.nnc-trending-single ul li.active a {
+	color: #4db2ec;
 }
 
 .nnc-category-small-block .nnc-hightlight-large {
@@ -1281,19 +1304,77 @@ a.nnc-readmore:hover {
 	background: #4db2ec;
 }
 
-.nnc-category-highlight-block .nnc-dtl {
+
+
+
+.nnc-category2-highlight-block .nnc-dtl {
 	background: none;
 	position: static;
-	padding: 18px 18px 0 18px;
-	background: red;
+	padding: 18px 0 0;
 }
 
-.nnc-category-highlight-block .nnc-entry-title a {
+.nnc-category2-highlight-block .nnc-entry-title a {
 	color: #000;
 }
 
-.nnc-category-highlight-block .nnc-entry-title a:hover {
+.nnc-category2-highlight-block .nnc-entry-title a:hover {
 	color: #4db2ec;
+}
+
+
+
+.nnc-category2-highlight-block .nnc-entry-meta span.posted-on i {
+	color: #000;
+}
+
+.nnc-category2-highlight-block .nnc-entry-meta span.posted-on a {
+	padding: 0;
+	background: none;
+	display: inherit;
+	line-height: inherit;
+	float: none;
+}
+
+.nnc-category2-highlight-block .nnc-entry-meta span.posted-on a time {
+	font-size: 13px;
+	text-align: center;
+	color: #000;
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	-ms-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+}
+
+.nnc-category2-highlight-block .nnc-entry-meta span.posted-on a time:hover {
+	color: #4db2ec;
+}
+
+.nnc-category2-highlight-block .nnc-entry-meta span.author i {
+	color: #000;
+}
+
+.nnc-category2-highlight-block .nnc-entry-meta span.author a {
+	color: #000;
+}
+
+.nnc-category2-highlight-block .nnc-entry-meta span.author a:hover {
+	color: #4db2ec;
+}
+
+.nnc-category2-highlight-block .nnc-entry-meta span.comments-link i {
+	color: #000;
+}
+
+.nnc-category2-highlight-block .nnc-entry-meta span.comments-link a {
+	color: #000;
+}
+
+.nnc-category2-highlight-block .nnc-entry-meta span.comments-link a:hover {
+	color: #4db2ec;
+}
+
+.nnc-category2-highlight-block .nnc-category-list {
+	padding: 12px 0 0 0;
 }
 
 /*=====  End of Category layout 1  ======*/
