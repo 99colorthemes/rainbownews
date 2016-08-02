@@ -27,7 +27,7 @@
 	<div class="nnc-top-header">
 		<div class="nnc-container">
 			<div class="nnc-top-menu">
-				<?php wp_nav_menu( array( 'theme_location' => 'Top Menu', 'menu' => 'Top Menu', 'menu_id' => 'top-menu' ) ); ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'top-menu', 'menu' => 'Top Menu', 'menu_id' => 'top-menu' ) ); ?>
 			</div>
 			<div class="nnc-social">
 				<?php wp_nav_menu( array( 'theme_location' => 'social', 'container' => 'ul', 'menu_class' => 'nnc-social-icon' ) ); ?>
