@@ -150,46 +150,34 @@ img {
 	color: #4db2ec;
 }
 
+
+/*--------------------------------------------------------------
+   Social Link css
+--------------------------------------------------------------*/
 .nnc-social {
 	float: left;
 	text-align: center;
 	width: 33.33%;
+	line-height: 10px;
 }
 
 .nnc-social ul li {
 	display: inline-block;
 	margin: 0 8px;
-}
+} 
 
-.nnc-social ul li a {
-	text-decoration: none;
-	color: #888;
-	font-size: 13px;
+.nnc-social li a {  
+    display: inline-block;
+	text-decoration: none; 
 	font-weight: normal;
 	font-family: 'Droid Sans', sans-serif;
-}
-
-/*--------------------------------------------------------------
-   Social Link css
---------------------------------------------------------------*/
-
-
-
-.nnc-social li a {
-    height: 20px;
-    line-height: 20px;
-    width: 20px;
-    display: block;
 }
 
 .nnc-social li a::before {
     display: block;
     padding: 0 10px;
-    font-family: FontAwesome;
-    font-size: 14px;
-    vertical-align: top;
-    content: "\f005";
-    color: #ffffff;
+    font-family: FontAwesome; 
+    content: "\f005"; 
     text-align: center;
 }
 .nnc-social li a[href*="facebook.com"],
@@ -197,7 +185,9 @@ img {
 .nnc-social li a[href*="twitter.com"],
 .nnc-social li a[href*="plus.google.com"],
 .nnc-social li a[href*="youtube.com"],
-.nnc-social li a[href*="pinterest.com"] {
+.nnc-social li a[href*="pinterest.com"],
+.nnc-social li a[href*="linkedin.com"],
+.nnc-social li a[href*="tumblr.com"] {
     font: 0/0 a;
     color: transparent;
 }
@@ -207,38 +197,49 @@ img {
 .nnc-social li a[href*="twitter.com"]::before,
 .nnc-social li a[href*="plus.google.com"]::before,
 .nnc-social li a[href*="youtube.com"]::before,
-.nnc-social li a[href*="pinterest.com"]::before {
+.nnc-social li a[href*="pinterest.com"]::before,
+.nnc-social li a[href*="linkedin.com"]::before,
+.nnc-social li a[href*="tumblr.com"]::before {
     content: '\f09a';
-    font-size: 14px;
-    line-height: 20px;
-    padding: 0;
-    color: #ffffff;
-    color: #444;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 0; 
+    color: #888;
 }
 
 .nnc-social li a[href*="twitter.com"]::before {
     content: '\f099';
-    color: #444;
+    color: #888;
 }
 
 .nnc-social li a[href*="plus.google.com"]::before {
     content: '\f0d5';
-    color: #444;
+    color: #888;
 }
 
 .nnc-social li a[href*="youtube.com"]::before {
     content: '\f167';
-    color: #444;
+    color: #888;
 }
 
 .nnc-social li a[href*="pinterest.com"]::before {
     content: '\f0d2';
-    color: #444;
+    color: #888;
 }
 
 .nnc-social li a[href*="instagram.com"]::before {
     content: '\f16d';
-    color: #444;
+    color: #888;
+}
+
+.nnc-social li a[href*="linkedin.com"]::before {
+    content: '\f0e1';
+    color: #888;
+}
+
+.nnc-social li a[href*="tumblr.com"]::before {
+    content: '\f173';
+    color: #888;
 }
 
 .nnc-logo-bar {
