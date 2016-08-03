@@ -199,3 +199,21 @@ $rainbownews_count++;
 
 return $rainbownews_count;
 }
+
+
+// rainbownews Category Layouts
+
+if ( ! function_exists( 'rainbownews_category_layout' ) ) :
+    function rainbownews_category_layout( $wp_category_id ) {
+
+        $args = array(
+            'orderby' => 'id',
+            'hide_empty' => 0
+        );
+        $category = get_categories( $args );
+        foreach ($category as $category_list ) {
+            $layout = get_theme_mod('rainbownews_category_layout_'.$wp_category_id, 'layout-1');
+            return $layout;
+        }
+    }
+endif;

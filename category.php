@@ -39,7 +39,7 @@ get_header();
 <?php
 global $cat;
 
-/*$layout = rainbownews_category_layout($cat);*/
+$layout = rainbownews_category_layout($cat);
 
 
 $paged = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
@@ -47,7 +47,7 @@ $args = array(
     'post_type' => 'post',
     'cat' => $cat,
 
-    //'posts_per_page'=>2,
+    'posts_per_page'=>2,
     'post_status' => 'publish',
     'order' => 'DESC',
     'paged' => $paged
@@ -77,7 +77,9 @@ if ($query->have_posts()) :
         <div class="nnc-container">
             <div id="primary">
                 <main id="main" class="site-main">
-                    <div class="nnc-category-highlight-block">
+    <?php
+    if ($query->have_posts()) { ?>
+                    <div class="nnc-category-highlight-block <?php echo $layout == 'layout-1' ? '' : 'nnc-category2-highlight-block'; ?>">
                         <?php $i = 1; ?>
                         <?php while ($query->have_posts()) : $query->the_post(); ?>
                             <?php if ($i == 2) {
@@ -103,14 +105,23 @@ if ($query->have_posts()) :
                                         </div>
                                         <div class="nnc-entry-meta">
                                                <span class="posted-on">
-                                                    <a href="<?php the_permalink(); ?>"
-                                                       title="<?php echo get_the_time(); ?>" rel="bookmark">
-                                                        <time class="entry-date" datetime="">
-                                                            <?php esc_attr(the_time("M d")); ?>
-                                                        </time>
-                                                        <br>
-                                                        <time><?php esc_attr(the_time("Y")); ?></time>
-                                                    </a>
+                                            <?php if ($layout != 'layout-1') { ?>
+                                                <a href="<?php the_permalink(); ?>"
+                                                   title="<?php echo get_the_time(); ?>" rel="bookmark">
+                                                    <time class="entry-date" datetime="">
+                                                        <i class="fa fa-calendar"></i> <?php echo get_the_date(); ?>
+                                                    </time>
+                                                </a>
+                                            <?php } else { ?>
+                                                <a href="<?php the_permalink(); ?>"
+                                                   title="<?php echo get_the_time(); ?>" rel="bookmark">
+                                                    <time class="entry-date" datetime="">
+                                                        <?php esc_attr(the_time("M d")); ?>
+                                                    </time>
+                                                    <br>
+                                                    <time><?php esc_attr(the_time("Y")); ?></time>
+                                                </a>
+                                            <?php } ?>
                                                 </span>
                                             <span class="author"><i class="fa fa-user" aria-hidden="true"></i> <a
                                                     href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"
@@ -140,6 +151,16 @@ if ($query->have_posts()) :
                     </div>
 
                     <div class="nnc-pagination">
+                        <?php
+                        $big = 999999999; // need an unlikely integer
+
+                        echo paginate_links(array(
+                            'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+                            'format' => '?paged=%#%',
+                            'current' => max(1, get_query_var('paged')),
+                            'total' => $query->max_num_pages
+                        ));
+                        ?>
                         <ul>
                             <li class="active"><a href="#">1</a></li>
                             <li><a href="#">2</a></li>
@@ -147,6 +168,11 @@ if ($query->have_posts()) :
                             <li><a href="#">4</a></li>
                             <li><a href="#"><i class="fa fa-angle-right"></i>
                     </div>
+        <?php } else {
+        echo 'No More Post Available';
+    }
+        ?>
+
 
                 </main>
             </div>
