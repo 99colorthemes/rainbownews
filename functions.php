@@ -223,5 +223,20 @@ function rainbownews_category_color( $wp_category_id ) {
 }
 endif;
 
+function limit_posts_per_page() {
+	if ( is_category() )
+	{
+		global $cat;
+		$layout = rainbownews_category_layout($cat);
+		if($layout == 'layout-1')
+			return 9;
+		else
+			return 9;
+	}
+	else
+		return 9; // default: 5 posts per page
+}
+add_filter('pre_option_posts_per_page', 'limit_posts_per_page');
+
 
 
