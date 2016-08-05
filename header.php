@@ -32,7 +32,8 @@
 			<div class="nnc-social">
 				<?php wp_nav_menu( array( 'theme_location' => 'social', 'container' => 'ul', 'menu_class' => 'nnc-social-icon' ) ); ?>
 			</div>
-			<div class="nnc-search">
+			<div class="nnc-time">
+				<i class="fa fa-calendar-o"></i> 4 Aug, 2016
 			</div>
 		</div>
 	</div>
@@ -76,3 +77,4 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
+		<div class="nnc-container">

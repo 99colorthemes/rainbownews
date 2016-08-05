@@ -10,6 +10,8 @@
  */
 
 ?>
+
+</div>
 </div><!-- #content -->
 
 <div class="nnc-footer">
