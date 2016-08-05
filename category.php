@@ -103,7 +103,7 @@ if ($query->have_posts()) :
                                 </div>
                                 <div class="nnc-content">
                                     <p><?php echo rainbownews_excerpt(get_the_content(), 200); ?></p></div>
-                                <a class="nnc-readmore" href="#">Read More</a>
+                                <a class="nnc-readmore" href="<?php the_permalink(); ?>">Read More</a>
                             </div>
                         </div>
                             <?php if ($i == $rn_category_post_count) {
