@@ -223,7 +223,7 @@ img {
     transform: scale(1.5);
 }
 
-
+ 
 
 .nnc-social li a[href*="twitter.com"]::before {
     content: '\f099';
