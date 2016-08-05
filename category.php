@@ -10,33 +10,10 @@
 get_header();
 
 ?>
-    <!-- trending-start -->
-    <div class="nnc-trending-news">
-        <div class="nnc-container">
-            <div class="nnc-trending-single">
-
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">|</a></li>
-                    <li class="active"><a href="#">Business</a></li>
-                </ul>
-
-            </div>
-            <div class="nnc-search nnc-clearblock">
-                <form class="s-form" action="" method="POST" role="form">
-                    <div class="search-form">
-                        <input type="text" id="" placeholder="Search Here...">
-                    </div>
-                    <div class="search-icon"><i class="fa fa-search"></i></div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- trending-end -->
+    
 <?php
 
     global $cat;
-
 
     $layout = rainbownews_category_layout($cat);
 
@@ -66,9 +43,7 @@ if ($query->have_posts()) :
     $i = 1;
 
     ?>
-
-    <div id="content" class="content nnc-clearblock">
-        <div class="nnc-container">
+ 
             <div id="primary">
                 <main id="main" class="site-main">
                     <div class="nnc-category-highlight-block <?php echo $layout == 'layout-1' ? '' : 'nnc-category2-highlight-block'; ?>">
@@ -161,9 +136,7 @@ if ($query->have_posts()) :
 
 
             <?php get_sidebar(); ?>
-
-        </div>
-    </div>
+ 
 
 
     <?php
