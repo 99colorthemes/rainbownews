@@ -77,4 +77,24 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
-		<div class="nnc-container">
+		<div class="nnc-container"> 
+			<!-- trending-start -->
+		    <div class="nnc-trending-news nnc-clearblock"> 
+		        <?php
+		        //rainbownews_trending_news();
+		        ?>
+
+		        <div class="nnc-breadcrumbs nnc-trending-single">
+		        <ul>
+		        	<li class="nnc-trend-title">Home</li> 
+		        	<li class="nnc-trend-title">About Us</li> 
+		        </ul> 
+			    </div> 
+
+		        <div class="nnc-search nnc-clearblock">
+		            <?php get_search_form(); ?>
+		        </div> 
+		    </div>
+		    <!-- trending-end -->
+
+		    
