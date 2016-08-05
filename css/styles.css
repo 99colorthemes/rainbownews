@@ -355,8 +355,9 @@ ul#primary-menu li.current-menu-item a {
 .nnc-trend-title:after {
     position: absolute;
     top: 6px;
-    right: -14px;
+    right: -13px;
     content: '';
+    z-index: 1;
     border-left: 28px solid transparent;
     border-bottom: 28px solid #4db2ec;
     transform: rotate(-45deg);
@@ -386,6 +387,23 @@ ul#primary-menu li.current-menu-item a {
 
 .newsticker li a:hover {
 	color: #4db2ec;
+} 
+
+.nnc-breadcrumbs ul li.nnc-trend-title {
+	font-size: 14px;
+	background: #4db2ec;
+	float: left;
+	padding: 13px 13px 13px 30px;
+	color: #fff;
+	position: relative;
+}
+
+.nnc-breadcrumbs ul li:nth-child(1) {
+	background: #333;
+} 
+
+.nnc-breadcrumbs ul li:nth-child(1).nnc-trend-title:after {  
+    border-bottom: 28px solid #333; 
 }
 
 /*=====  End of News Ticker  ======*/
@@ -920,13 +938,13 @@ h2.widget-title:after {
 #primary {
 	width: 70%;
 	float:left;
-	padding-top: 30px;
+	padding-top: 10px;
 }
 
 #secondary {
 	width: 27%;
 	float: right;
-	padding-top: 30px;
+	padding-top: 10px;
 }
 
 /*----

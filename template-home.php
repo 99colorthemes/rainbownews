@@ -6,19 +6,7 @@
  */
 ?>
 
-<?php get_header(); ?>
-
-    <!-- trending-start -->
-    <div class="nnc-trending-news nnc-clearblock"> 
-        <?php
-        rainbownews_trending_news();
-        ?>
-
-        <div class="nnc-search nnc-clearblock">
-            <?php get_search_form(); ?>
-        </div> 
-    </div>
-    <!-- trending-end -->
+<?php get_header(); ?> 
 
     <!-- banner-start -->
     <div class="nnc-highlight-banner nnc-clearblock"> 

@@ -57,7 +57,7 @@ if ($query->have_posts()) :
                                 <?php if ($i == 1) {
                                     if (has_post_thumbnail()) : ?>
                                         <figure class="nnc-slide-img">
-                                            <?php the_post_thumbnail('large'); ?>
+                                            <?php the_post_thumbnail('full'); ?>
                                         </figure>
                                 <?php endif;  } else { ?>
                                         <figure class="nnc-slide-img">
