@@ -79,17 +79,22 @@
 	<div id="content" class="site-content">
 		<div class="nnc-container"> 
 			<!-- trending-start -->
-		    <div class="nnc-trending-news nnc-clearblock"> 
-		        <?php
-		        //rainbownews_trending_news();
-		        ?>
+		    <div class="nnc-trending-news nnc-clearblock">
 
+
+		        <?php
+								if (is_home() || is_front_page()) {
+					rainbownews_trending_news();
+					}else{
+					?>
 		        <div class="nnc-breadcrumbs nnc-trending-single">
-		        <ul>
+					<?php rainbownews_breadcrumbs(); ?>
+				<!--	<ul>
 		        	<li class="nnc-trend-title">Home</li> 
 		        	<li class="nnc-trend-title">About Us</li> 
-		        </ul> 
-			    </div> 
+		        </ul> -->
+			    </div>
+				<?php } ?>
 
 		        <div class="nnc-search nnc-clearblock">
 		            <?php get_search_form(); ?>
