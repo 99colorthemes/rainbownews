@@ -166,6 +166,10 @@ a.post-edit-link:before {
 /*=============================================
 =                 Single Post                 =
 =============================================*/
+.single-post .nnc-img {
+	margin-bottom: 20px;
+}
+
 .entry-meta {
     margin-top: 18px;
 }
@@ -176,7 +180,7 @@ a.post-edit-link:before {
 }
 
 .nav-previous a, .nav-next a {
-    display: inline-block; 
+    display: block; 
     color: #666; 
     font-size: 14px;
     line-height: 22px;
@@ -191,7 +195,8 @@ a.post-edit-link:before {
 .nav-previous a:before {
 	content: '\f100';
 	font-family: 'FontAwesome'; 
-	color: #666;
+	color: #444;
+	font-weight: 600;
 	font-size: 14px;
 	padding-right: 4px;
 	display: block;
@@ -199,10 +204,11 @@ a.post-edit-link:before {
 
 .nav-previous a:after {
 	content: 'Previous Article'; 
-	color: #666;
+	color: #444;
 	font-size: 14px;
 	padding-right: 4px;
 	display: block;
+	font-weight: 600;
 	position: absolute;
     top: 14px;
     left: 30px;
@@ -211,7 +217,8 @@ a.post-edit-link:before {
 .nav-next a:before {
 	content: '\f101'; 
 	font-family: 'FontAwesome'; 
-	color: #666;
+	color: #444;
+	font-weight: 600;
 	font-size: 14px;
 	padding-right: 4px;
 	display: block;
@@ -219,8 +226,9 @@ a.post-edit-link:before {
 
 .nav-next a:after {
 	content: 'Next Article'; 
-	color: #666;
+	color: #444;
 	font-size: 14px;
+	font-weight: 600;
 	padding-right: 4px;
 	display: block;
 	position: absolute;
@@ -252,13 +260,15 @@ a.post-edit-link:before {
 =============================================*/
 h2.comments-title {
     margin-bottom: 14px;
-	font-size: 24px;
+	font-size: 16px;
 }
 
-article.comment-body {
-    background: #f2f2f2;
-    margin-bottom: 8px;
-	padding: 12px;
+article.comment-body { 
+    margin-bottom: 8px; 
+	font-size: 13px;
+	border-bottom: 1px solid #eee; 
+	padding-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 footer.comment-meta:after {
@@ -638,16 +648,18 @@ ul#primary-menu li.current-menu-item a {
 	color: #4db2ec;
 }  
 
-.pm-container {
-    padding: 10px;
-}
+.nnc-top-breadcrumbs {
+    padding: 12px;
+	font-size: 13px; 
+	color: #666;
+} 
 
-.pm-container span.current {
+.nnc-top-breadcrumbs span.current {
 	font-size: 13px; 
 	color: #666;
 }
 
-.pm-container a {
+.nnc-top-breadcrumbs a {
 	font-size: 13px; 
 }
 
@@ -1506,8 +1518,7 @@ h2.widget-title {
 }
 
 .nnc-category-single .nnc-category-dtl {
-    float: right;
-    width: 66%;
+    float: right; 
 }
 
 .nnc-category-single .nnc-entry-title a {
@@ -1727,7 +1738,24 @@ a.nnc-readmore:hover {
 
 /*=====  End of Category layout 1  ======*/
 
+/* Pagination */
+.nnc-pagination span.page-numbers.current {
+    background: #4db2ec;
+    color: #fff;
+    padding: 7px 12px;
+    font-size: 14px;
+}
 
+.nnc-pagination a.page-numbers {
+    background: #333;
+    color: #fff;
+    padding: 7px 12px;
+    font-size: 14px;
+}
+
+.nnc-pagination a.page-numbers:hover {
+    background: #4db2ec; 
+}
 
 
 

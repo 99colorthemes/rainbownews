@@ -261,9 +261,9 @@ if ( ! function_exists( 'rainbownews_breadcrumbs' ) ) :
             $homeLink = esc_url( home_url() );
 
             if (is_home() || is_front_page()) {
-                if ($showOnHome == 1) echo '<div id="rainbownews--breadcrumbs"><div class="pm-container"><a href="' . $homeLink . '" class="breadcrumb_home_text">' . $home . '</a></div></div>';
+                if ($showOnHome == 1) echo '<div id="rainbownews--breadcrumbs"><div class="nnc-top-breadcrumbs"><a href="' . $homeLink . '" class="breadcrumb_home_text">' . $home . '</a></div></div>';
             } else {
-                echo '<div id="rainbownews--breadcrumbs"><div class="pm-container"><a href="' . $homeLink . '" class="breadcrumb_home_text">' . $home . '</a>' . $delimiter . ' ';
+                echo '<div id="rainbownews--breadcrumbs"><div class="nnc-top-breadcrumbs"><a href="' . $homeLink . '" class="breadcrumb_home_text">' . $home . '</a>' . $delimiter . ' ';
 
                 if ( is_category() ) {
                     $thisCat = get_category(get_query_var('cat'), false);
