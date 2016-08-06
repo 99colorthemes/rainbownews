@@ -7,8 +7,7 @@ Description: A WordPress News Theme
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: rainbownews
-Tags:
+Text Domain: rainbownews 
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -874,46 +873,64 @@ object {
 ## Galleries
 --------------------------------------------------------------*/
 .gallery {
-	margin-bottom: 1.5em;
+	margin-left: -0.5em;
+	margin-right: -0.5em;
+}
+
+.gallery:after {
+	display: table;
+	content: "";
+	clear: both;
 }
 
 .gallery-item {
-	display: inline-block;
-	text-align: center;
-	vertical-align: top;
+	margin: 0;
+	float: left;
+	padding: 0.5em;
+}
+
+.gallery-item img {
 	width: 100%;
 }
 
+.gallery-columns-1 .gallery-item {
+    width: 100%;
+    float: none;
+}
 .gallery-columns-2 .gallery-item {
-	max-width: 50%;
+    width: 50%
 }
-
 .gallery-columns-3 .gallery-item {
-	max-width: 33.33%;
+    width: 33.3333%
 }
-
 .gallery-columns-4 .gallery-item {
-	max-width: 25%;
+    width: 25%
 }
-
 .gallery-columns-5 .gallery-item {
-	max-width: 20%;
+    width: 20%
 }
-
 .gallery-columns-6 .gallery-item {
-	max-width: 16.66%;
+    width: 16.6667%
 }
-
 .gallery-columns-7 .gallery-item {
-	max-width: 14.28%;
+    width: 14.2857%
 }
-
 .gallery-columns-8 .gallery-item {
-	max-width: 12.5%;
+    width: 12.5%
+}
+.gallery-columns-9 .gallery-item {
+    width: 11.1111%
 }
 
-.gallery-columns-9 .gallery-item {
-	max-width: 11.11%;
+.gallery-columns-2 .gallery-item:nth-child(2n+1),
+.gallery-columns-3 .gallery-item:nth-child(3n+1),
+.gallery-columns-4 .gallery-item:nth-child(4n+1),
+.gallery-columns-5 .gallery-item:nth-child(5n+1),
+.gallery-columns-6 .gallery-item:nth-child(6n+1),
+.gallery-columns-7 .gallery-item:nth-child(7n+1),
+.gallery-columns-8 .gallery-item:nth-child(8n+1),
+.gallery-columns-9 .gallery-item:nth-child(9n+1) {
+	clear: left;
 }
 
 .gallery-caption {

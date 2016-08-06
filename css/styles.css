@@ -120,6 +120,250 @@ img {
 
 /*=====  End of Add size Css  ======*/
 
+/*===================================
+=            Default Css            =
+===================================*/
+/*=============================================
+=                 Single Page                 =
+=============================================*/
+.entry-header h1 {
+    font-size: 20px;
+}
+
+.entry-content p {
+	line-height: 24px;
+	font-size: 14px;
+}
+
+footer.entry-footer {
+    padding-top: 18px;
+}
+
+a.post-edit-link {
+    background: #666;
+    color: #fff;
+    padding: 8px 14px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+} 
+
+a.post-edit-link:hover {
+    background: #4db2ec; 
+}
+
+a.post-edit-link:before {
+	content: '\f013';
+	font-family: 'FontAwesome';
+	color: #fff;
+	padding-right: 4px;
+}
+
+/*=====  End of Single Page  ======*/
+
+
+
+/*=============================================
+=                 Single Post                 =
+=============================================*/
+.entry-meta {
+    margin-top: 18px;
+}
+
+.navigation.post-navigation {
+	border-top: 1px solid #eee;
+	box-shadow: 0 0 3px 1px #eee;  
+}
+
+.nav-previous a, .nav-next a {
+    display: inline-block; 
+    color: #666; 
+    font-size: 14px;
+    line-height: 22px;
+    position: relative;
+    padding: 14px;
+}
+
+.nav-previous a:hover, .nav-next a:hover{ 
+    color: #4db2ec; 
+}
+
+.nav-previous a:before {
+	content: '\f100';
+	font-family: 'FontAwesome'; 
+	color: #666;
+	font-size: 14px;
+	padding-right: 4px;
+	display: block;
+}
+
+.nav-previous a:after {
+	content: 'Previous Article'; 
+	color: #666;
+	font-size: 14px;
+	padding-right: 4px;
+	display: block;
+	position: absolute;
+    top: 14px;
+    left: 30px;
+}
+
+.nav-next a:before {
+	content: '\f101'; 
+	font-family: 'FontAwesome'; 
+	color: #666;
+	font-size: 14px;
+	padding-right: 4px;
+	display: block;
+} 
+
+.nav-next a:after {
+	content: 'Next Article'; 
+	color: #666;
+	font-size: 14px;
+	padding-right: 4px;
+	display: block;
+	position: absolute;
+    top: 14px;
+    right: 30px;
+}
+
+/*=====Author Detail========*/
+.author_wrapper {
+	background: #eee;
+	padding: 14px;
+	margin-bottom: 20px;
+}
+
+.pm_author_info_wrap {
+	float: right;
+	width: 84%;
+}
+
+.single_author_inner:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+/*=============================================
+=                 Default Comments                 =
+=============================================*/
+h2.comments-title {
+    margin-bottom: 14px;
+	font-size: 24px;
+}
+
+article.comment-body {
+    background: #f2f2f2;
+    margin-bottom: 8px;
+	padding: 12px;
+}
+
+footer.comment-meta:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.comment-author.vcard img {
+    float: left;
+	width: 60px;
+	margin-right: 12px;
+}
+
+.comment-metadata {
+    padding: 6px 0;
+}
+
+.comment-content {
+    padding: 14px;
+    margin: 14px 0;
+	background: #f9f9f9;
+}
+
+a.comment-edit-link {  
+	color: #666;
+	border-left: 1px solid #ccc;
+	padding-left: 14px;
+	margin-left: 14px;
+}
+
+a.comment-edit-link:before {
+	content: '\f013';
+	font-family: 'FontAwesome'; 
+	padding-right: 4px;
+} 
+
+.reply a:before {
+	content: '\f112';
+	font-family: 'FontAwesome'; 
+	padding-right: 4px;
+}
+
+h3#reply-title {
+    background: #666;
+    color: #fff;
+    padding: 14px;
+    font-size: 24px;
+}
+
+p.logged-in-as {
+    padding: 14px;
+}
+
+p.comment-form-comment label {
+	padding-bottom: 10px;
+	display: inline-block;
+}
+
+input.submit {
+	background: #333;
+	box-shadow: none;
+	text-shadow: none;
+	color: #fff;
+	border: 0;
+	margin: 14px 0; 
+	padding: 14px;
+}
+
+input.submit:hover {
+	background: #4db2ec;
+	box-shadow: none;  
+}
+
+/*=====  End of Default Comments  ======*/
+
+/*=====  End of Single Post  ======*/
+.wpcf7-form p {
+	padding: 8px 0;
+}
+
+input.wpcf7-form-control {
+	width: 100%;
+	padding: 6px 8px;
+	font-size: 14px;
+}
+
+input.wpcf7-submit {
+	background: #666;
+	box-shadow: none;
+	text-shadow: none;
+	color: #fff;
+	border: 0;
+	padding: 12px;
+} 
+
+input.wpcf7-submit:hover {
+	background: #4db2ec;
+	box-shadow: none; 
+}
+
+
+/*=====  End of Default Css  ======*/
+
+
 
 /*==============================
 =            Header            =
@@ -148,6 +392,10 @@ img {
 
 .nnc-top-menu ul li a:hover {
 	color: #4db2ec;
+}
+
+ul#top-menu li.current_page_item a {
+    color: #4db2ec; 
 }
 
 
