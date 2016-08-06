@@ -281,7 +281,7 @@ img {
 
 .main-navigation a {
 	padding: 12px 14px;
-	font-size: 14px;
+	font-size: 13px;
 	color: #666;
 	text-transform: uppercase;
 	border-right: 1px solid #eee;
@@ -305,7 +305,7 @@ img {
 	box-shadow: none;
 	border: 1px solid #eee;
 	border: 0;
-	background: #eee;
+	background: #666;
 }
 
 .main-navigation ul ul ul {
@@ -339,15 +339,16 @@ ul#primary-menu li.current-menu-item a {
 .nnc-trending-single {
 	float: left;
 	width: 70%;
-	max-height: 40px;
-	background: #333;
+	max-height: 38px;
+	background: #fff;
+	border: 1px solid #eee;
 }
 
 .nnc-trend-title {
-	font-size: 14px;
+	font-size: 13px;
 	background: #4db2ec;
 	float: left;
-	padding: 13px;
+	padding: 12px;
 	color: #fff;
 	position: relative;
 }
@@ -358,8 +359,8 @@ ul#primary-menu li.current-menu-item a {
     right: -13px;
     content: '';
     z-index: 1;
-    border-left: 28px solid transparent;
-    border-bottom: 28px solid #4db2ec;
+    border-left: 26px solid transparent;
+    border-bottom: 26px solid #4db2ec;
     transform: rotate(-45deg);
 }
 
@@ -371,13 +372,13 @@ ul#primary-menu li.current-menu-item a {
 }
 
 .newsticker li {
-	padding: 12px 12px 12px 36px;
+	padding: 10px 12px 11px 36px;
 }
 
 .newsticker li a {
 	text-decoration: none;
-	color: #fff;
-	font-size: 14px;
+	color: #666;
+	font-size: 13px;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
@@ -387,23 +388,25 @@ ul#primary-menu li.current-menu-item a {
 
 .newsticker li a:hover {
 	color: #4db2ec;
-} 
+}  
 
-.nnc-breadcrumbs ul li.nnc-trend-title {
-	font-size: 14px;
-	background: #4db2ec;
-	float: left;
-	padding: 13px 13px 13px 30px;
-	color: #fff;
-	position: relative;
+.pm-container {
+    padding: 10px;
 }
 
-.nnc-breadcrumbs ul li:nth-child(1) {
-	background: #333;
-} 
+.pm-container span.current {
+	font-size: 13px; 
+	color: #666;
+}
 
-.nnc-breadcrumbs ul li:nth-child(1).nnc-trend-title:after {  
-    border-bottom: 28px solid #333; 
+.pm-container a {
+	font-size: 13px; 
+}
+
+span.breadcrumb_separator {
+	font-size: 13px;
+	color: #999;
+	padding: 0 2px;
 }
 
 /*=====  End of News Ticker  ======*/
@@ -431,9 +434,9 @@ ul#primary-menu li.current-menu-item a {
 }
 
 .search-icon i {
-    padding: 12px;
-    border-left: 1px solid #333;
-    color: #fff;
+    padding: 11px;
+    border-left: 1px solid #eee;
+    color: #666;
 }
 
 .search-icon i:hover {
@@ -443,37 +446,67 @@ ul#primary-menu li.current-menu-item a {
 .search-form {
 	float: left;
 	width: 100%;
+	position: relative;
 }
 
 .search-form input[type="text"] {
-    padding: 9px;
-    background: #111;
+    padding: 7px; 
+    border-left: 0; 
+    border: 1px solid #eee;
     border-radius: 0;
-    outline: none;
-    border: none;
+    outline: none; 
     width: 100%;
     font-size: 15px;
     opacity: 1;
-   color: #fff!important;
+    color: #666!important;
+    margin-left: -1px;
+	position: relative;
 }
 
 .search-form input[type="text"] ::-webkit-input-placeholder {
-   color: #fff!important;
+   color: #666!important;
 }
 
 .search-form input[type="text"] :-moz-placeholder { /* Firefox 18- */
-   color: #fff!important;
+   color: #666!important;
 }
 
 .search-form input[type="text"] ::-moz-placeholder {  /* Firefox 19+ */
-   color: #fff!important;
+   color: #666!important;
 }
 
 .search-form input[type="text"] :-ms-input-placeholder {
-   color: #fff!important;
+   color: #666!important;
 }
 
+/*search-submit:before {
+    content: "\f002";
+    font-family: 'FontAwesome';
+    font-size: 14px;   
+    position: absolute;
+    top: 0;
+    right: 0;
+}*/
 
+button.search-submit { 
+    bottom: 0; 
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 0;
+    outline: none;
+    outline-color: 0;
+}
+
+button.search-submit i {
+    padding: 13px;
+    background: #4db2ec; 
+    border: 0;
+    box-shadow: none;
+    color: #fff;
+    text-shadow: none; 
+}
 
 /*=====  End of Trending News  ======*/
 
@@ -938,13 +971,13 @@ h2.widget-title:after {
 #primary {
 	width: 70%;
 	float:left;
-	padding-top: 10px;
+	padding-top: 30px;
 }
 
 #secondary {
 	width: 27%;
 	float: right;
-	padding-top: 10px;
+	padding-top: 30px;
 }
 
 /*----

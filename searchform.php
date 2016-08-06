@@ -10,6 +10,6 @@
 <form class="s-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" role="form">
     <div class="search-form">
         <input type="text" placeholder="<?php echo esc_attr_x( 'Search Here...', 'placeholder', 'rainbownews' ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>" name="s">
-    </div>
-    <div class="search-icon"><i class="fa fa-search"></i></div>
+    </div> 
+    <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
 </form>

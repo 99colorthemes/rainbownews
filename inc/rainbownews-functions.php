@@ -245,13 +245,13 @@ if ( ! function_exists( 'rainbownews_breadcrumbs' ) ) :
             if(isset($rainbownews_et_to['breadcrumb_separator'])){
                 $delimiter = '<span class="breadcrumb_separator">'.$rainbownews_et_to['breadcrumb_separator'].'</span>';
             }else{
-                $delimiter = '<span class="breadcrumb_separator">&raquo;</span>'; // delimiter between crumbs
+                $delimiter = '<span class="breadcrumb_separator"> <i class="fa fa-angle-right"></i> </span>'; // delimiter between crumbs
             }
 
             if(isset($rainbownews_et_to['breadcrumb_home_text'])){
                 $home = $rainbownews_et_to['breadcrumb_home_text'];
             }else{
-                $home = 'Home'; // text for the 'Home' link
+                $home = '<i class="fa fa-home"></i>'; // text for the 'Home' link
             }
 
             $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
