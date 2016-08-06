@@ -10,6 +10,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php if (has_post_thumbnail()) { ?>
+		<figure class="nnc-slide-img">
+			<?php the_post_thumbnail('full'); ?>
+		</figure>
+	<?php }  ?>
 	<header class="entry-header">
 		<?php
 			if ( is_single() ) {
@@ -19,11 +24,7 @@
 			}
 
 		if ( 'post' === get_post_type() ) : ?>
-			<?php if (has_post_thumbnail()) { ?>
-				<figure class="nnc-slide-img">
-					<?php the_post_thumbnail('full'); ?>
-				</figure>
-			<?php }  ?>
+
 		<div class="entry-meta">
 			<?php rainbownews_posted_on(); ?>
 		</div><!-- .entry-meta -->

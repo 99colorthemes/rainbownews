@@ -125,6 +125,7 @@ add_action( 'wp_enqueue_scripts', 'rainbownews_scripts' );
 define( 'RAINBOWNEWS_MAIN_URL', get_template_directory_uri() );
 
 define( 'RAINBOWNEWS_INCLUDES_URL', RAINBOWNEWS_MAIN_URL. '/inc' );
+define( 'RAINBOWNEWS_IMAGES_ADMIN_URL', RAINBOWNEWS_MAIN_URL. '/images/admin' );
 /*define( 'RAINBOWNEWS_CSS_URL', RAINBOWNEWS_MAIN_URL . '/css' );
 define( 'RAINBOWNEWS_JS_URL', RAINBOWNEWS_MAIN_URL . '/js' );
 define( 'RAINBOWNEWS_LANGUAGES_URL', RAINBOWNEWS_MAIN_URL . '/languages' );

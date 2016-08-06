@@ -123,8 +123,8 @@ function rainbownews_customize_register($wp_customize) {
       'section' => 'rainbownews_menu_section',
       'settings' => 'rainbownews_latest_news_layout_style_setting',
       'choices' => array(
-         'menu-1' =>  RAINBOWNEWS_ADMIN_IMAGES_URL . '/latest_news_layout1.png',
-         'menu-2' =>  RAINBOWNEWS_ADMIN_IMAGES_URL . '/latest_news_layout2.png', 
+         'menu-1' =>  RAINBOWNEWS_IMAGES_ADMIN_URL . '/latest_news_layout1.png',
+         'menu-2' =>  RAINBOWNEWS_IMAGES_ADMIN_URL . '/latest_news_layout2.png',
       )
    )));
     
@@ -283,7 +283,7 @@ $wp_customize->add_setting(
 );
 
 $wp_customize->add_control(
-    new PageLine_Image_Radio_Control(
+    new RAINBOWNEWS_Image_Radio_Control(
         $wp_customize,
         'rainbownews_global_layout',
         array(
@@ -292,10 +292,10 @@ $wp_customize->add_control(
             'label'              => esc_html__('Select default layout. This layout will be reflected in whole site archives, categories, search page etc. The layout for a single post and page can be controlled from below options.', 'rainbownews'),
             'section'            => 'rainbownews_global_layout_section',
             'choices'            => array(
-                'right_sidebar'               => ANCHOR_ADMIN_IMAGES_URL . '/right-sidebar.png',
-                'left_sidebar'                => ANCHOR_ADMIN_IMAGES_URL . '/left-sidebar.png',
-                'no_sidebar_full_width'       => ANCHOR_ADMIN_IMAGES_URL . '/no-sidebar-full-width-layout.png',
-                'no_sidebar_content_centered' => ANCHOR_ADMIN_IMAGES_URL . '/no-sidebar-content-centered-layout.png'
+                'right_sidebar'               => RAINBOWNEWS_IMAGES_ADMIN_URL . '/right-sidebar.png',
+                'left_sidebar'                => RAINBOWNEWS_IMAGES_ADMIN_URL . '/left-sidebar.png',
+                'no_sidebar_full_width'       => RAINBOWNEWS_IMAGES_ADMIN_URL . '/no-sidebar-full-width-layout.png',
+                'no_sidebar_content_centered' => RAINBOWNEWS_IMAGES_ADMIN_URL . '/no-sidebar-content-centered-layout.png'
             )
         )
     )
@@ -321,7 +321,7 @@ $wp_customize->add_setting(
 );
 
 $wp_customize->add_control(
-    new PageLine_Image_Radio_Control(
+    new RAINBOWNEWS_Image_Radio_Control(
         $wp_customize,
         'rainbownews_default_page_layout',
         array(
@@ -330,10 +330,10 @@ $wp_customize->add_control(
             'label'              => esc_html__('Select default layout for pages. This layout will be reflected in all pages unless unique layout is set for specific page.', 'rainbownews'),
             'section'            => 'rainbownews_default_page_layout_section',
             'choices'            => array(
-                'right_sidebar'               => ANCHOR_ADMIN_IMAGES_URL . '/right-sidebar.png',
-                'left_sidebar'                => ANCHOR_ADMIN_IMAGES_URL . '/left-sidebar.png',
-                'no_sidebar_full_width'       => ANCHOR_ADMIN_IMAGES_URL . '/no-sidebar-full-width-layout.png',
-                'no_sidebar_content_centered' => ANCHOR_ADMIN_IMAGES_URL . '/no-sidebar-content-centered-layout.png'
+                'right_sidebar'               => RAINBOWNEWS_IMAGES_ADMIN_URL . '/right-sidebar.png',
+                'left_sidebar'                => RAINBOWNEWS_IMAGES_ADMIN_URL . '/left-sidebar.png',
+                'no_sidebar_full_width'       => RAINBOWNEWS_IMAGES_ADMIN_URL . '/no-sidebar-full-width-layout.png',
+                'no_sidebar_content_centered' => RAINBOWNEWS_IMAGES_ADMIN_URL . '/no-sidebar-content-centered-layout.png'
             )
         )
     )
@@ -359,7 +359,7 @@ $wp_customize->add_setting(
 );
 
 $wp_customize->add_control(
-    new PageLine_Image_Radio_Control(
+    new RAINBOWNEWS_Image_Radio_Control(
         $wp_customize,
         'rainbownews_default_single_post_layout',
         array(
@@ -368,10 +368,10 @@ $wp_customize->add_control(
             'label'              => esc_html__('Select default layout for single posts. This layout will be reflected in all single posts unless unique layout is set for specific post.', 'rainbownews'),
             'section'            => 'rainbownews_default_single_post_layout_section',
             'choices'            => array(
-                'right_sidebar'               => ANCHOR_ADMIN_IMAGES_URL . '/right-sidebar.png',
-                'left_sidebar'                => ANCHOR_ADMIN_IMAGES_URL . '/left-sidebar.png',
-                'no_sidebar_full_width'       => ANCHOR_ADMIN_IMAGES_URL . '/no-sidebar-full-width-layout.png',
-                'no_sidebar_content_centered' => ANCHOR_ADMIN_IMAGES_URL . '/no-sidebar-content-centered-layout.png'
+                'right_sidebar'               => RAINBOWNEWS_IMAGES_ADMIN_URL . '/right-sidebar.png',
+                'left_sidebar'                => RAINBOWNEWS_IMAGES_ADMIN_URL . '/left-sidebar.png',
+                'no_sidebar_full_width'       => RAINBOWNEWS_IMAGES_ADMIN_URL . '/no-sidebar-full-width-layout.png',
+                'no_sidebar_content_centered' => RAINBOWNEWS_IMAGES_ADMIN_URL . '/no-sidebar-content-centered-layout.png'
             )
         )
     )
