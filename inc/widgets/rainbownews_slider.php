@@ -112,7 +112,7 @@ class rainbownews_slider extends WP_Widget
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <?php while( $get_featured_posts->have_posts() ):$get_featured_posts->the_post(); ?>
-                <div class="swiper-slide">
+                <div class="swiper-slide <?php echo has_post_thumbnail()?'':'nnc-no-image'; ?>">
                     <?php if (has_post_thumbnail()) : ?>
                     <figure class="nnc-slide-img">
                             <?php the_post_thumbnail('large'); ?>

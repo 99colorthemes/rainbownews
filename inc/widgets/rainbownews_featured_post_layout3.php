@@ -145,7 +145,7 @@ class rainbownews_featured_post_layout3 extends WP_Widget
                 <?php
                 while ($get_featured_posts->have_posts()):$get_featured_posts->the_post();
                     ?>
-                    <div class="nnc-category-single">
+                    <div class="nnc-category-single <?php echo has_post_thumbnail()?'':'nnc-no-image'; ?>">
                         <?php if (has_post_thumbnail()) : ?>
                             <figure class="nnc-img">
                                 <?php the_post_thumbnail('small'); ?>

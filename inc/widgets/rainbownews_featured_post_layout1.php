@@ -150,7 +150,7 @@ class rainbownews_featured_post_layout1 extends WP_Widget
                     } ?>
 
 
-                    <div class="nnc-category-single">
+                    <div class="nnc-category-single <?php echo has_post_thumbnail()?'':'nnc-no-image'; ?>">
                         <?php if ($i == 1 || $i == 2) { ?>
                             <?php if (has_post_thumbnail()) : ?>
                                 <figure class="nnc-img">

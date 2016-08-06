@@ -151,7 +151,7 @@ class rainbownews_latest_post extends WP_Widget
                 <?php
                 while ($get_featured_posts->have_posts()):$get_featured_posts->the_post();
                     ?>
-                    <div class="nnc-latest-single">
+                    <div class="nnc-latest-single <?php echo has_post_thumbnail()?'':'nnc-no-image'; ?>">
                         <?php if (has_post_thumbnail()) : ?>
                             <figure class="nnc-img">
                                 <?php the_post_thumbnail('large'); ?>
