@@ -18,8 +18,8 @@ function rainbownews_widgets_init() {
     ) );
 
     register_sidebar( array(
-        'name'          => esc_html__( 'Top Advertisement', 'rainbownews' ),
-        'id'            => 'rainbownews_top_advertisement',
+        'name'          => esc_html__( 'Advertisement', 'rainbownews' ),
+        'id'            => 'rainbownews_advertisement',
         'description'   => esc_html__( 'Add widgets here.', 'rainbownews' ),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
         'after_widget'  => '</section>',

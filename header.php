@@ -59,8 +59,8 @@
 
 				<!-- widget advertisement -->
 				<?php
-				     if( is_active_sidebar( 'rainbownews_top_advertisement' ) ) {
-				        if ( !dynamic_sidebar( 'rainbownews_top_advertisement' ) ):
+				     if( is_active_sidebar( 'rainbownews_advertisement' ) ) {
+				        if ( !dynamic_sidebar( 'rainbownews_advertisement' ) ):
 				        endif;
 				     }
 			     ?>

@@ -7,7 +7,7 @@
  * @package rainbowNews
  */
 
-require get_template_directory() . '/inc/widgets/rainbownews_top_advertisement.php';
+require get_template_directory() . '/inc/widgets/rainbownews_advertisement.php';
 
 require get_template_directory() . '/inc/widgets/rainbownews_slider.php';
 
