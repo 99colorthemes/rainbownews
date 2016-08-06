@@ -163,7 +163,7 @@ class rainbownews_featured_post_layout1 extends WP_Widget
                             </figure>
                         <?php } ?>
 
-                        <div class="nnc-dtl1">
+                        <div class="nnc-category-dtl">
                             <div class="nnc-entry-title"><a href="<?php the_permalink(); ?>"
                                                             title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
                             </div>
