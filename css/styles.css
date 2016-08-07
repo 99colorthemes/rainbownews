@@ -313,14 +313,15 @@ a.comment-edit-link:before {
 }
 
 h3#reply-title {
-    background: #666;
+    background: #333;
     color: #fff;
-    padding: 14px;
-    font-size: 24px;
+    padding: 12px;
+    font-size: 15px;
 }
 
 p.logged-in-as {
     padding: 14px;
+    font-size: 14px;
 }
 
 p.comment-form-comment label {
@@ -334,13 +335,39 @@ input.submit {
 	text-shadow: none;
 	color: #fff;
 	border: 0;
+	border-radius: 0;
 	margin: 14px 0; 
-	padding: 14px;
+	padding: 10px;
+	font-size: 14px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 input.submit:hover {
 	background: #4db2ec;
 	box-shadow: none;  
+}
+
+textarea#comment {
+	border-radius: 0;
+	border: 1px solid #eee;
+}
+
+a#cancel-comment-reply-link {
+    font-size: 14px;
+    font-style: italic;
+    color: #4db2ec;
+    padding-left: 6px;
+}
+  
+a#cancel-comment-reply-link:before {
+	content:  '\f00d';
+	font-family: 'FontAwesome';
+	padding-right: 3px;
+	font-size: 12px; 
 }
 
 /*=====  End of Default Comments  ======*/
@@ -463,11 +490,11 @@ ul#top-menu li.current_page_item a {
     line-height: 16px;
     padding: 0; 
     color: #3b5998; 
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .nnc-social li a:hover[href*="facebook.com"]::before,
@@ -641,11 +668,11 @@ ul#primary-menu li.current-menu-item a {
 	text-decoration: none;
 	color: #666;
 	font-size: 13px;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .newsticker li a:hover {
