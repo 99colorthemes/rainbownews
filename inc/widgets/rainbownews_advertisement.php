@@ -105,7 +105,7 @@ class rainbownews_advertisement extends WP_Widget {
         $image_url = isset( $instance[ $image_url ] ) ? $instance[ $image_url ] : '';
         $style = isset($instance['style']) ? $instance['style'] : 'style1';
 
-        echo $before_widget; ?>
+ ?>
 
 
         <div class="<?php if($style == 'style2'){ echo 'nnc-middle-ads'; }elseif($style == 'style3') { echo 'nnc-footer-ads';} else {echo 'nnc-top-ads';} ?>">
@@ -116,7 +116,6 @@ class rainbownews_advertisement extends WP_Widget {
             <?php }
             $output = '';
             if ( !empty( $image_url ) ) {
-                $output .= '<div class="advertisement-content">';
                 if ( !empty( $image_link ) ) {
                     $output .= '<a href="'.$image_link.'" class="single_ad_728x90" target="_blank" rel="nofollow">
                                     <img src="'.$image_url.'" width="728" height="90">
@@ -124,7 +123,6 @@ class rainbownews_advertisement extends WP_Widget {
                 } else {
                     $output .= '<img src="'.$image_url.'" width="728" height="90">';
                 }
-                $output .= '</div>';
                 echo $output;
             } ?>
         </div>
@@ -132,7 +130,6 @@ class rainbownews_advertisement extends WP_Widget {
 
 
         <?php
-        echo $after_widget;
     }
 }
 
