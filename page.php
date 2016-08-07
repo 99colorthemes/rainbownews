@@ -34,5 +34,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+rainbownews_sidebar_select();
 get_footer();

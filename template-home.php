@@ -86,7 +86,7 @@
 
             </main>
         </div>
-        <?php get_sidebar(); ?>  
+        <?php  rainbownews_sidebar_select(); ?>
     </div>
 
 <?php get_footer(); ?>

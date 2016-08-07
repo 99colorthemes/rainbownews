@@ -7,6 +7,30 @@
  */
 
 function rainbownews_widgets_init() {
+    // Registering main right sidebar
+    register_sidebar( array(
+        'name'            => __( 'Right Sidebar', 'rainbownews' ),
+        'id'              => 'rainbownews_right_sidebar',
+        'description'     => __( 'Shows widgets at Right side.', 'rainbownews' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title"><span>',
+        'after_title'   => '</span></h2>'
+    ) );
+
+    // Registering main left sidebar
+    register_sidebar( array(
+        'name'            => __( 'Left Sidebar', 'rainbownews' ),
+        'id'              => 'rainbownews_left_sidebar',
+        'description'     => __( 'Shows widgets at Left side.', 'rainbownews' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title"><span>',
+        'after_title'   => '</span></h2>'
+    ) );
+
+
+
     register_sidebar( array(
         'name'          => esc_html__( 'Sidebar', 'rainbownews' ),
         'id'            => 'sidebar-1',
@@ -342,7 +366,7 @@ if ( ! function_exists( 'rainbownews_breadcrumbs' ) ) :
 
                 if ( get_query_var('paged') ) {
                     if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-                    echo __('Page' , 'power-mag') . ' ' . get_query_var('paged');
+                    echo __('Page' , 'rainbownews') . ' ' . get_query_var('paged');
                     if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
                 }
 
@@ -352,6 +376,70 @@ if ( ! function_exists( 'rainbownews_breadcrumbs' ) ) :
         endif;
     } // end rainbownews_breadcrumbs()
 endif;
+
+
+/********************************** SIDEBAR LAYOUT SELECTION *******************/
+if ( ! function_exists( 'rainbownews_layout_class' ) ) :
+    /**
+     * Generate layout class for sidebar based on customizer and post meta settings.
+     */
+    function rainbownews_layout_class() {
+        global $post;
+
+        $layout = get_theme_mod( 'rainbownews_global_layout', 'right_sidebar' );
+
+        // Front page displays in Reading Settings
+        $page_for_posts = get_option('page_for_posts');
+
+        // Get Layout meta
+        if($post) {
+            $layout_meta = get_post_meta( $post->ID, 'rainbownews_page_specific_layout', true );
+        }
+        // Home page if Posts page is assigned
+        if( is_home() && !( is_front_page() ) ) {
+            $queried_id = get_option( 'page_for_posts' );
+            $layout_meta = get_post_meta( $queried_id, 'rainbownews_page_specific_layout', true );
+
+            if( $layout_meta != 'default_layout' && $layout_meta != '' ) {
+                $layout = get_post_meta( $queried_id, 'rainbownews_page_specific_layout', true );
+            }
+        }
+        elseif( is_page() ) {
+            $layout = get_theme_mod( 'rainbownews_default_page_layout', 'right_sidebar' );
+            if( $layout_meta != 'default_layout' && $layout_meta != '' ) {
+                $layout = get_post_meta( $post->ID, 'rainbownews_page_specific_layout', true );
+            }
+        }
+        elseif( is_single() ) {
+            $layout = get_theme_mod( 'rainbownews_default_single_post_layout', 'right_sidebar' );
+            if( $layout_meta != 'default_layout' && $layout_meta != '' ) {
+                $layout = get_post_meta( $post->ID, 'rainbownews_page_specific_layout', true );
+            }
+        }
+        return $layout;
+    }
+
+endif;
+
+
+if ( ! function_exists( 'rainbownews_sidebar_select' ) ) :
+    /**
+     * Select and show sidebar based on post meta and customizer default settings
+     */
+    function rainbownews_sidebar_select() {
+        $layout = rainbownews_layout_class();
+
+        if( $layout != "no_sidebar_full_width" &&  $layout != "no_sidebar_content_centered" ) {
+            if ( $layout == "right_sidebar" ) {
+                get_sidebar();
+            } else {
+                get_sidebar('left');
+            }
+        }
+    }
+endif;
+
+/******************************** POST-NAVIGATION *****************************************/
 
 
 

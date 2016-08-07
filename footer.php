@@ -13,6 +13,7 @@
 
 </div>
 </div><!-- #content -->
+<?php do_action( 'rainbownews_after_body_content' ); ?>
 
 <div class="nnc-footer">
     <div class="nnc-container">

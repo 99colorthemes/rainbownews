@@ -7,11 +7,18 @@
  * @package RainbowNews
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! is_active_sidebar( 'rainbownews_right_sidebar' ) ) {
 	return;
 }
 ?>
 
 <aside id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+
+	<?php
+	if (is_active_sidebar('rainbownews_right_sidebar')) {
+		if (!dynamic_sidebar('rainbownews_right_sidebar')):
+		endif;
+	}
+	?>
+
 </aside><!-- #secondary -->

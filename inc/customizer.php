@@ -15,27 +15,16 @@ function rainbownews_customize_register($wp_customize) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
-   /* class RainbowNews_Mag_Label_Highlight extends WP_Customize_Control {
-        public $type = 'label_highlight';
-        public $label = '';
-        public function render_content() {
-            */?><!--
-            <div style="width:100%; border:1px solid;padding:2px;color:#58719E;text-transform:uppercase;"><?php /*echo esc_html( $this->label ); */?></div>
-            --><?php
-/*        }
-    }*/
-
-
 
     class RAINBOWNEWS_Image_Radio_Control extends WP_Customize_Control {
-    
+
          public function render_content() {
-    
+
             if ( empty( $this->choices ) )
                return;
-    
+
             $name = '_customize-radio-' . $this->id;
-    
+
             ?>
             <style>
                #<?php echo $this->id; ?> .rainbownews-radio-img-img {
@@ -74,7 +63,7 @@ function rainbownews_customize_register($wp_customize) {
             ?>
             </ul>
             <script type="text/javascript">
-    
+
                jQuery(document).ready(function($) {
                   $('.controls#<?php echo $this->id; ?> li img').click(function(){
                      $('.controls#<?php echo $this->id; ?> li').each(function(){
@@ -83,63 +72,11 @@ function rainbownews_customize_register($wp_customize) {
                      $(this).addClass ('rainbownews-radio-img-selected') ;
                   });
                });
-    
+
             </script>
             <?php
          }
       }
-
-
-   // Latest  News layout Options
-    $wp_customize->add_panel('rainbownews_theme_options', array(
-       'capabitity' => 'edit_theme_options',
-       'description' => __('Theme options settings here', 'rainbownews'),
-       'priority' => 3,
-       'title' => __('Theme Options', 'rainbownews')
-    ));
-    
-    //Theme Menu option
-     $wp_customize->add_section('rainbownews_menu_section', array(
-      'priority' => 1,
-      'title' => __('Menu Settings', 'rainbownews'),
-         'panel' => 'rainbownews_theme_options'
-   ));
-
-   $wp_customize->add_setting('rainbownews_latest_news_layout_type_setting', array(
-      'default' => 1,
-         'capability' => 'edit_theme_options',
-      'sanitize_callback' => 'menu_type_coumbobox_sanitize'
-   ));
-
-   $wp_customize->add_setting('rainbownews_latest_news_layout_style_setting', array(
-      'default' => 'menu-1',
-         'capability' => 'edit_theme_options',
-      'sanitize_callback' => 'sanitize_text_field'
-   ));
-
-  $wp_customize->add_control(new  RAINBOWNEWS_Image_Radio_Control($wp_customize, 'rainbownews_latest_news_layout_style_setting', array(
-      'type' => 'radio',
-      'label' => __('Latest News Styles', 'rainbownews'),
-      'section' => 'rainbownews_menu_section',
-      'settings' => 'rainbownews_latest_news_layout_style_setting',
-      'choices' => array(
-         'menu-1' =>  RAINBOWNEWS_IMAGES_ADMIN_URL . '/latest_news_layout1.png',
-         'menu-2' =>  RAINBOWNEWS_IMAGES_ADMIN_URL . '/latest_news_layout2.png',
-      )
-   )));
-    
-  //Menu Style sanitization
-  function menu_style_coumbobox_sanitize( $input ) {
-      $valid = array(
-                      '1' => __( 'Style 1' , 'rainbownews' ),
-                      '2' => __( 'Style 2' , 'rainbownews' ), 
-                      );
-      if( array_key_exists( $input, $valid ) ) {
-          return $input;
-      } else {
-          return '';
-      }
-  }
 
     // Category Color Options
     $wp_customize->add_panel('rainbownews_category_panel', array(
@@ -377,23 +314,19 @@ $wp_customize->add_control(
     )
 );
 
+/************************************** THEME-OPTIONS *******************************************************/
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// radio sanitization
+function rainbownews_sanitize_radio( $input, $setting ) {
+    // Ensuring that the input is a slug.
+    $input = sanitize_key( $input );
+    // Get the list of choices from the control associated with the setting.
+    $choices = $setting->manager->get_control( $setting->id )->choices;
+    // If the input is a valid key, return it, else, return the default.
+    return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+}
 
 // color sanitization
    function rainbownews_color_option_hex_sanitize($color) {

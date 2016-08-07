@@ -23,7 +23,28 @@ function rainbownews_body_classes( $classes ) {
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
+	// Add class site layout style.
+	if ( get_theme_mod ( 'rainbownews_site_layout', 'wide' ) == 'wide' ) {
+		$classes[] = 'wide';
+	} else {
+		$classes[] = 'box';
+	}
+
+	// Add class site layout style.
+	$layout = get_theme_mod( 'rainbownews_global_layout', 'right_sidebar');
+	if ( $layout == 'right_sidebar' ) {
+		$classes[] = 'right_sidebar';
+	} elseif ( $layout == 'left_sidebar' ) {
+		$classes[] = 'left_sidebar';
+	}
+	elseif ( $layout == 'no_sidebar_full_width' ){
+		$classes[] = 'no_sidebar_full_width';
+	}else{
+		$classes[] = 'no_sidebar_content_centered';
+	}
 
 	return $classes;
 }
 add_filter( 'body_class', 'rainbownews_body_classes' );
+
+
