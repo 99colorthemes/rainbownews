@@ -527,6 +527,10 @@ ul#top-menu li.current_page_item a {
 	padding-top: 30px;
 }
 
+.widget.widget_advertisement {
+	margin: 0;
+}
+
 .nnc-top-ads {
 	float: right;
 	line-height: 0;
@@ -1735,6 +1739,14 @@ a.nnc-readmore:hover {
 .nnc-category2-highlight-block .nnc-category-list {
 	padding: 12px 0 0 0;
 }
+
+/* For No Image in category */
+.nnc-category-single.nnc-no-image .nnc-category-dtl {
+	float: none;	
+	width: 100%;
+}
+
+
 
 /*=====  End of Category layout 1  ======*/
 
