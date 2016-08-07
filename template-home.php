@@ -51,15 +51,15 @@
                     endif;
                 }
                 ?>
-                <div class="nnc-middle-ads">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/wide-ads2.png" alt="advertisement">
+               <!-- <div class="nnc-middle-ads">
+                    <img src="<?php /*echo get_template_directory_uri(); */?>/images/wide-ads2.png" alt="advertisement">
                 </div>
 
 
                 <div class="nnc-middle-ads">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/wide-ads3.png" alt="advertisement">
+                    <img src="<?php /*echo get_template_directory_uri(); */?>/images/wide-ads3.png" alt="advertisement">
                 </div>
-
+-->
                 <div class="nnc-category nnc-category-layout-3 nnc-left">
                     <?php
                     if (is_active_sidebar('rainbownews_front_page_middle_left_content_area')) {
