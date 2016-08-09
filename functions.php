@@ -101,6 +101,8 @@ function rainbownews_scripts() {
 	//Register swiper
 	wp_enqueue_style( 'swiper', get_template_directory_uri() . '/css/swiper.css', false, '1.0.0' );
 
+
+
 	//Register jquery
 	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery-2.2.3.js', array( 'jquery' ), '2.2.3', true );
 
@@ -119,6 +121,24 @@ function rainbownews_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'rainbownews_scripts' );
+
+
+/**
+ * Add admin scripts and styles.
+ */
+
+function pageline_admin_scripts( $hook ) {
+	global $post_type;
+	if( $hook == 'widgets.php') {
+		//For color
+		wp_enqueue_style( 'wp-color-picker' );
+		wp_enqueue_script( 'wp-color-picker' );
+
+		wp_enqueue_style( 'rainbownews-admin-css', get_template_directory_uri() . '/css/admin/rainbownews-admin.css', false, '1.0.0' );
+	}
+}
+add_action('admin_enqueue_scripts', 'pageline_admin_scripts');
+
 
 
 
