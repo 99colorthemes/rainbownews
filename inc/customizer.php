@@ -16,67 +16,6 @@ function rainbownews_customize_register($wp_customize) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 
-    class RAINBOWNEWS_Image_Radio_Control extends WP_Customize_Control {
-
-         public function render_content() {
-
-            if ( empty( $this->choices ) )
-               return;
-
-            $name = '_customize-radio-' . $this->id;
-
-            ?>
-            <style>
-               #<?php echo $this->id; ?> .rainbownews-radio-img-img {
-                  border: 3px solid #DEDEDE;
-                  margin: 0 5px 5px 0;
-                  cursor: pointer;
-                  border-radius: 3px;
-                  -moz-border-radius: 3px;
-                  -webkit-border-radius: 3px;
-               }
-               #<?php echo $this->id; ?> .rainbownews-radio-img-selected {
-                  border: 3px solid #AAA;
-                  border-radius: 3px;
-                  -moz-border-radius: 3px;
-                  -webkit-border-radius: 3px;
-               }
-               input[type=checkbox]:before {
-                  content: '';
-                  margin: -3px 0 0 -4px;
-               }
-            </style>
-            <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-            <ul class="controls" id='<?php echo $this->id; ?>'>
-            <?php
-               foreach ( $this->choices as $value => $label ) :
-                  $class = ($this->value() == $value)?'rainbownews-radio-img-selected rainbownews-radio-img-img':'rainbownews-radio-img-img';
-                  ?>
-                  <li style="display: inline;">
-                  <label>
-                     <input <?php $this->link(); ?>style = 'display:none' type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?> />
-                     <img src = '<?php echo esc_html( $label ); ?>' class = '<?php echo $class; ?>' />
-                  </label>
-                  </li>
-                  <?php
-               endforeach;
-            ?>
-            </ul>
-            <script type="text/javascript">
-
-               jQuery(document).ready(function($) {
-                  $('.controls#<?php echo $this->id; ?> li img').click(function(){
-                     $('.controls#<?php echo $this->id; ?> li').each(function(){
-                        $(this).find('img').removeClass ('rainbownews-radio-img-selected') ;
-                     });
-                     $(this).addClass ('rainbownews-radio-img-selected') ;
-                  });
-               });
-
-            </script>
-            <?php
-         }
-      }
 
     // Category Color Options
     $wp_customize->add_panel('rainbownews_category_panel', array(
@@ -155,164 +94,127 @@ function rainbownews_customize_register($wp_customize) {
     }
 
 
-
-
 /************************************** THEME-OPTIONS *******************************************************/
-$wp_customize->add_panel(
-    'rainbownews_design_options',
-    array(
-        'capabitity'            => 'edit_theme_options',
-        'priority'              => 220,
-        'title'                 => esc_html__('Theme Options', 'rainbownews')
-    )
-);
+    class Rainbownews_Image_Radio_Control extends WP_Customize_Control {
 
-// site layout setting
-$wp_customize->add_section(
-    'rainbownews_site_layout_section',
-    array(
-        'priority'              => 15,
-        'title'                 => esc_html__( 'Site Layout', 'rainbownews' ),
-        'panel'                 => 'rainbownews_design_options'
-    )
-);
+        public function render_content() {
 
-$wp_customize->add_setting(
-    'rainbownews_site_layout',
-    array(
-        'default'               => 'wide',
-        'capability'            => 'edit_theme_options',
-        'sanitize_callback'     => 'rainbownews_sanitize_radio'
-    )
-);
+            if ( empty( $this->choices ) )
+                return;
 
-$wp_customize->add_control(
-    'rainbownews_site_layout',
-    array(
-        'type'               => 'radio',
-        'priority'           => 10,
-        'label'              => esc_html__('Choose your site layout. The change is reflected in whole site.', 'rainbownews'),
-        'section'            => 'rainbownews_site_layout_section',
-        'choices'            => array(
-            'box'            => esc_html__('Boxed layout', 'rainbownews'),
-            'wide'           => esc_html__('Wide layout', 'rainbownews')
+            $name = '_customize-radio-' . $this->id;
+
+            ?>
+            <style>
+                #<?php echo $this->id; ?> .powermag-radio-img-img {
+                    border: 3px solid #DEDEDE;
+                    margin: 0 5px 5px 0;
+                    cursor: pointer;
+                    border-radius: 3px;
+                    -moz-border-radius: 3px;
+                    -webkit-border-radius: 3px;
+                }
+                #<?php echo $this->id; ?> .powermag-radio-img-selected {
+                                              border: 3px solid #AAA;
+                                              border-radius: 3px;
+                                              -moz-border-radius: 3px;
+                                              -webkit-border-radius: 3px;
+                                          }
+                input[type=checkbox]:before {
+                    content: '';
+                    margin: -3px 0 0 -4px;
+                }
+            </style>
+            <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+            <ul class="controls" id='<?php echo $this->id; ?>'>
+                <?php
+                foreach ( $this->choices as $value => $label ) :
+                    $class = ($this->value() == $value)?'powermag-radio-img-selected powermag-radio-img-img':'powermag-radio-img-img';
+                    ?>
+                    <li style="display: inline;">
+                        <label>
+                            <input <?php $this->link(); ?>style = 'display:none' type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?> />
+                            <img src = '<?php echo esc_html( $label ); ?>' class = '<?php echo $class; ?>' />
+                        </label>
+                    </li>
+                    <?php
+                endforeach;
+                ?>
+            </ul>
+            <script type="text/javascript">
+
+                jQuery(document).ready(function($) {
+                    $('.controls#<?php echo $this->id; ?> li img').click(function(){
+                        $('.controls#<?php echo $this->id; ?> li').each(function(){
+                            $(this).find('img').removeClass ('powermag-radio-img-selected') ;
+                        });
+                        $(this).addClass ('powermag-radio-img-selected') ;
+                    });
+                });
+
+            </script>
+            <?php
+        }
+    }
+
+    // Theme Options panel
+    $wp_customize->add_panel('rainbownews_theme_options', array(
+        'capabitity' => 'edit_theme_options',
+        'description' => __('Theme options settings here', 'rainbownews'),
+        'priority' => 500,
+        'title' => __('Theme Options', 'rainbownews')
+    ));
+    // layout options
+    $wp_customize->add_section('rainbownews_sidebar_section', array(
+        'priority' => 1,
+        'title' => __('Sidebar Settings', 'rainbownews'),
+        'panel' => 'rainbownews_theme_options'
+    ));
+
+    $wp_customize->add_setting('rainbownews_category_sidebar_setting', array(
+        'default' => __('right-sidebar', 'rainbownews'),
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control(new Rainbownews_Image_Radio_Control($wp_customize, 'rainbownews_category_sidebar_setting', array(
+        'type' => 'radio',
+        'label' => __('Category Layout', 'rainbownews'),
+        'section' => 'rainbownews_sidebar_section',
+        'settings' => 'rainbownews_category_sidebar_setting',
+        'choices' => array(
+            'right-sidebar' => RAINBOWNEWS_IMAGES_ADMIN_URL . '/right-sidebar.png',
+            'left-sidebar' => RAINBOWNEWS_IMAGES_ADMIN_URL . '/left-sidebar.png',
+            'no-sidebar'	=> RAINBOWNEWS_IMAGES_ADMIN_URL . '/no-sidebar-full-width-layout.png',
+            'no_sidebar_content_centered'	=> RAINBOWNEWS_IMAGES_ADMIN_URL . '/no-sidebar-content-centered-layout.png'
         )
-    )
-);
+    )));
 
-// Default Layout
-$wp_customize->add_section(
-    'rainbownews_global_layout_section',
-    array(
-        'priority'              => 30,
-        'title'                 => esc_html__( 'Default Layout', 'rainbownews' ),
-        'panel'                 => 'rainbownews_design_options'
-    )
-);
+    $wp_customize->add_section('rainbownews_default_sidebar_section', array(
+        'priority' => 2,
+        'title' => __('Default Sidebar Settings', 'rainbownews'),
+        'panel' => 'rainbownews_theme_options'
+    ));
 
-$wp_customize->add_setting(
-    'rainbownews_global_layout',
-    array(
-        'default'               => 'right_sidebar',
-        'capability'            => 'edit_theme_options',
-        'sanitize_callback'     => 'rainbownews_sanitize_radio'
-    )
-);
+    $wp_customize->add_setting('rainbownews_default_sidebar_setting', array(
+        'default' => __('right-sidebar', 'rainbownews'),
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field'
+    ));
 
-$wp_customize->add_control(
-    new RAINBOWNEWS_Image_Radio_Control(
-        $wp_customize,
-        'rainbownews_global_layout',
-        array(
-            'type'               => 'radio',
-            'priority'           => 10,
-            'label'              => esc_html__('Select default layout. This layout will be reflected in whole site archives, categories, search page etc. The layout for a single post and page can be controlled from below options.', 'rainbownews'),
-            'section'            => 'rainbownews_global_layout_section',
-            'choices'            => array(
-                'right_sidebar'               => RAINBOWNEWS_IMAGES_ADMIN_URL . '/right-sidebar.png',
-                'left_sidebar'                => RAINBOWNEWS_IMAGES_ADMIN_URL . '/left-sidebar.png',
-                'no_sidebar_full_width'       => RAINBOWNEWS_IMAGES_ADMIN_URL . '/no-sidebar-full-width-layout.png',
-                'no_sidebar_content_centered' => RAINBOWNEWS_IMAGES_ADMIN_URL . '/no-sidebar-content-centered-layout.png'
-            )
+    $wp_customize->add_control(new Rainbownews_Image_Radio_Control($wp_customize, 'rainbownews_default_sidebar_setting', array(
+        'type' => 'radio',
+        'label' => __('Default Layout', 'rainbownews'),
+        'section' => 'rainbownews_default_sidebar_section',
+        'settings' => 'rainbownews_default_sidebar_setting',
+        'choices' => array(
+            'right-sidebar' => RAINBOWNEWS_IMAGES_ADMIN_URL . '/right-sidebar.png',
+            'left-sidebar' => RAINBOWNEWS_IMAGES_ADMIN_URL . '/left-sidebar.png',
+            'no-sidebar'	=> RAINBOWNEWS_IMAGES_ADMIN_URL . '/no-sidebar-full-width-layout.png',
+            'no-sidebar-content-centered'	=> RAINBOWNEWS_IMAGES_ADMIN_URL . '/no-sidebar-content-centered-layout.png'
         )
-    )
-);
+    )));
 
-// Default Pages Layout
-$wp_customize->add_section(
-    'rainbownews_default_page_layout_section',
-    array(
-        'priority'              => 45,
-        'title'                 => esc_html__( 'Default Page Layout', 'rainbownews' ),
-        'panel'                 => 'rainbownews_design_options'
-    )
-);
-
-$wp_customize->add_setting(
-    'rainbownews_default_page_layout',
-    array(
-        'default'               => 'right_sidebar',
-        'capability'            => 'edit_theme_options',
-        'sanitize_callback'     => 'rainbownews_sanitize_radio'
-    )
-);
-
-$wp_customize->add_control(
-    new RAINBOWNEWS_Image_Radio_Control(
-        $wp_customize,
-        'rainbownews_default_page_layout',
-        array(
-            'type'               => 'radio',
-            'priority'           => 10,
-            'label'              => esc_html__('Select default layout for pages. This layout will be reflected in all pages unless unique layout is set for specific page.', 'rainbownews'),
-            'section'            => 'rainbownews_default_page_layout_section',
-            'choices'            => array(
-                'right_sidebar'               => RAINBOWNEWS_IMAGES_ADMIN_URL . '/right-sidebar.png',
-                'left_sidebar'                => RAINBOWNEWS_IMAGES_ADMIN_URL . '/left-sidebar.png',
-                'no_sidebar_full_width'       => RAINBOWNEWS_IMAGES_ADMIN_URL . '/no-sidebar-full-width-layout.png',
-                'no_sidebar_content_centered' => RAINBOWNEWS_IMAGES_ADMIN_URL . '/no-sidebar-content-centered-layout.png'
-            )
-        )
-    )
-);
-
-// Default Single Post Layout
-$wp_customize->add_section(
-    'rainbownews_default_single_post_layout_section',
-    array(
-        'priority'              => 60,
-        'title'                 => esc_html__( 'Default Single Post Layout', 'rainbownews' ),
-        'panel'                 => 'rainbownews_design_options'
-    )
-);
-
-$wp_customize->add_setting(
-    'rainbownews_default_single_post_layout',
-    array(
-        'default'               => 'right_sidebar',
-        'capability'            => 'edit_theme_options',
-        'sanitize_callback'     => 'rainbownews_sanitize_radio'
-    )
-);
-
-$wp_customize->add_control(
-    new RAINBOWNEWS_Image_Radio_Control(
-        $wp_customize,
-        'rainbownews_default_single_post_layout',
-        array(
-            'type'               => 'radio',
-            'priority'           => 10,
-            'label'              => esc_html__('Select default layout for single posts. This layout will be reflected in all single posts unless unique layout is set for specific post.', 'rainbownews'),
-            'section'            => 'rainbownews_default_single_post_layout_section',
-            'choices'            => array(
-                'right_sidebar'               => RAINBOWNEWS_IMAGES_ADMIN_URL . '/right-sidebar.png',
-                'left_sidebar'                => RAINBOWNEWS_IMAGES_ADMIN_URL . '/left-sidebar.png',
-                'no_sidebar_full_width'       => RAINBOWNEWS_IMAGES_ADMIN_URL . '/no-sidebar-full-width-layout.png',
-                'no_sidebar_content_centered' => RAINBOWNEWS_IMAGES_ADMIN_URL . '/no-sidebar-content-centered-layout.png'
-            )
-        )
-    )
-);
 
 /************************************** THEME-OPTIONS *******************************************************/
 

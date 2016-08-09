@@ -8,14 +8,15 @@
 
 function rainbownews_widgets_init() {
     // Registering main right sidebar
+
     register_sidebar( array(
-        'name'            => __( 'Right Sidebar', 'rainbownews' ),
-        'id'              => 'rainbownews_right_sidebar',
-        'description'     => __( 'Shows widgets at Right side.', 'rainbownews' ),
+        'name'          => esc_html__( 'Right Sidebar', 'rainbownews' ),
+        'id'            => 'sidebar-1',
+        'description'   => esc_html__( 'Add widgets here.', 'rainbownews' ),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h2 class="widget-title"><span>',
-        'after_title'   => '</span></h2>'
+        'after_title'   => '</span></h2>',
     ) );
 
     // Registering main left sidebar
@@ -440,7 +441,3 @@ if ( ! function_exists( 'rainbownews_sidebar_select' ) ) :
 endif;
 
 /******************************** POST-NAVIGATION *****************************************/
-
-
-
-

@@ -6,7 +6,14 @@
  */
 ?>
 
-<?php get_header(); ?> 
+<?php get_header();
+
+$page_sidebar_layout = get_post_meta(get_the_ID(),'rainbownews_sidebar_layout', true);
+
+
+
+
+?>
 
     <!-- banner-start -->
     <div class="nnc-highlight-banner nnc-clearblock"> 
@@ -40,6 +47,14 @@
         ?> 
     </div>
     <!-- latest-end -->
+<?php if($page_sidebar_layout == 'left-sidebar'):
+    ?>
+    <aside id="secondary" class="widget-area" role="complementary">
+        <?php dynamic_sidebar('left-sidebar'); ?>
+    </aside><!-- #secondary -->
+    <?php
+endif;
+?>
 
     <div id="content" class="content nnc-clearblock"> 
         <div id="primary">
@@ -86,7 +101,11 @@
 
             </main>
         </div>
-        <?php  rainbownews_sidebar_select(); ?>
+
+        <?php
+        if($page_sidebar_layout == 'right-sidebar'):
+            get_sidebar();
+        endif; ?>
     </div>
 
 <?php get_footer(); ?>

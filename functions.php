@@ -177,6 +177,12 @@ require get_template_directory() . '/inc/rainbownews-functions.php';
 
 require get_template_directory() . '/inc/rainbownews-widget.php';
 
+/**
+ * Custome metabox.
+ */
+require get_template_directory() . '/inc/admin/meta-boxes.php';
+
+
 
 /**************************************************************************************/
 
