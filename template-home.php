@@ -8,7 +8,8 @@
 
 <?php get_header();
 
-$page_sidebar_layout = get_post_meta(get_the_ID(),'rainbownews_sidebar_layout', true);
+$layout_meta = get_post_meta( $post->ID, 'rainbownews_page_specific_layout', true );
+
 
 
 
@@ -46,15 +47,7 @@ $page_sidebar_layout = get_post_meta(get_the_ID(),'rainbownews_sidebar_layout', 
         }
         ?> 
     </div>
-    <!-- latest-end -->
-<?php if($page_sidebar_layout == 'left-sidebar'):
-    ?>
-    <aside id="secondary" class="widget-area" role="complementary">
-        <?php dynamic_sidebar('left-sidebar'); ?>
-    </aside><!-- #secondary -->
-    <?php
-endif;
-?>
+
 
     <div id="content" class="content nnc-clearblock"> 
         <div id="primary">
@@ -102,10 +95,16 @@ endif;
             </main>
         </div>
 
-        <?php
-        if($page_sidebar_layout == 'right-sidebar'):
-            get_sidebar();
-        endif; ?>
+
+            <aside id="secondary" class="widget-area" role="complementary">
+                <?php
+                if (is_active_sidebar('rainbownews_front_page_sidebar')) {
+                    if (!dynamic_sidebar('rainbownews_front_page_sidebar')):
+                    endif;
+                }
+                ?>
+            </aside>
+
     </div>
 
 <?php get_footer(); ?>

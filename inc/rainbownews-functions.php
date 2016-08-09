@@ -21,25 +21,23 @@ function rainbownews_widgets_init() {
 
     // Registering main left sidebar
     register_sidebar( array(
-        'name'            => __( 'Left Sidebar', 'rainbownews' ),
+        'name'            => esc_html__( 'Left Sidebar', 'rainbownews' ),
         'id'              => 'rainbownews_left_sidebar',
-        'description'     => __( 'Shows widgets at Left side.', 'rainbownews' ),
+        'description'     => esc_html__( 'Shows widgets at Left side.', 'rainbownews' ),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h2 class="widget-title"><span>',
         'after_title'   => '</span></h2>'
     ) );
 
-
-
     register_sidebar( array(
-        'name'          => esc_html__( 'Sidebar', 'rainbownews' ),
-        'id'            => 'sidebar-1',
-        'description'   => esc_html__( 'Add widgets here.', 'rainbownews' ),
+        'name'            => esc_html__( 'Front Page: Sidebar', 'rainbownews' ),
+        'id'              => 'rainbownews_front_page_sidebar',
+        'description'     => esc_html__( 'Add Widget here for front page side bar.', 'rainbownews' ),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h2 class="widget-title"><span>',
-        'after_title'   => '</span></h2>',
+        'after_title'   => '</span></h2>'
     ) );
 
     register_sidebar( array(

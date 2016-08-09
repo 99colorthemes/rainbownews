@@ -76,9 +76,8 @@
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-	<?php do_action( 'rainbownews_before_body_content' );
-	$rainbownews_layout = rainbownews_layout_class(); ?>
-	<div id="content" class="site-content <?php echo esc_attr( $rainbownews_layout ); ?>">
+
+	<div id="content" class="site-content">
 		<div class="nnc-container"> 
 			<!-- trending-start -->
 		    <div class="nnc-trending-news nnc-clearblock"> 
