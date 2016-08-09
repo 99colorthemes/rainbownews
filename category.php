@@ -8,10 +8,7 @@
  */
 
 get_header();
-
-?>
-    
-<?php
+$cat_sidebar_layout = get_theme_mod('rainbownews_category_sidebar_setting', 'right-sidebar');
 
     global $cat;
 
@@ -41,6 +38,19 @@ if ($query->have_posts()) :
     $rn_cat_color = rainbownews_category_color($category_post_cnt->cat_ID);
 
     $i = 1;
+
+    ?>
+
+    <?php
+
+//left sidebar
+    if ($cat_sidebar_layout == 'left-sidebar'):
+        ?>
+        <aside id="secondary" class="widget-area" role="complementary">
+            <?php dynamic_sidebar('rainbownews_left_sidebar'); ?>
+        </aside><!-- #secondary -->
+        <?php
+    endif;
 
     ?>
  
@@ -135,17 +145,13 @@ if ($query->have_posts()) :
             </div>
 
 
-            <?php get_sidebar(); ?>
- 
-
-
     <?php
-else :
+    if ($cat_sidebar_layout == 'right-sidebar'):
+        get_sidebar();
+    endif;
 
+else :
     get_template_part('template-parts/content', 'none');
 endif;
-?>
-
-<?php
 
 get_footer();

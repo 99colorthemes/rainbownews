@@ -12,7 +12,18 @@
  * @package RainbowNews
  */
 
-get_header(); ?>
+get_header();
+$layout_meta = get_post_meta( $post->ID, 'rainbownews_page_specific_layout', true );
+
+?>
+<?php if($layout_meta == 'left-sidebar'):
+	?>
+	<aside id="secondary" class="widget-area" role="complementary">
+		<?php dynamic_sidebar('rainbownews_left_sidebar'); ?>
+	</aside><!-- #secondary -->
+	<?php
+endif;
+?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -34,5 +45,9 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-rainbownews_sidebar_select();
+
+//rainbownews_sidebar_select();
+if($layout_meta == 'right-sidebar'):
+	get_sidebar();
+endif;
 get_footer();
