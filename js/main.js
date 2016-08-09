@@ -75,7 +75,7 @@ jQuery(document).ready(function(){
 
     // News Ticker   
     $('.newsticker').newsTicker({
-        row_height: 38,
+        row_height: 35,
         max_rows: 1,
         speed: 1000,
         direction: 'down',

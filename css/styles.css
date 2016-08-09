@@ -373,6 +373,7 @@ a#cancel-comment-reply-link:before {
 /*=====  End of Default Comments  ======*/
 
 /*=====  End of Single Post  ======*/
+
 .wpcf7-form p {
 	padding: 8px 0;
 }
@@ -381,6 +382,14 @@ input.wpcf7-form-control {
 	width: 100%;
 	padding: 6px 8px;
 	font-size: 14px;
+	border-radius: 0;
+}
+
+textarea.wpcf7-form-control {
+	width: 100%;
+	padding: 6px 8px;
+	font-size: 14px;
+	border-radius: 0;
 }
 
 input.wpcf7-submit {
@@ -390,6 +399,12 @@ input.wpcf7-submit {
 	color: #fff;
 	border: 0;
 	padding: 12px;
+	border-radius: 0;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 } 
 
 input.wpcf7-submit:hover {
@@ -628,7 +643,7 @@ ul#primary-menu li.current-menu-item a {
 .nnc-trending-single {
 	float: left;
 	width: 70%;
-	max-height: 38px;
+	max-height: 37px;
 	background: #fff;
 	border: 1px solid #eee;
 }
@@ -637,7 +652,7 @@ ul#primary-menu li.current-menu-item a {
 	font-size: 13px;
 	background: #4db2ec;
 	float: left;
-	padding: 12px;
+	padding: 11px;
 	color: #fff;
 	position: relative;
 }
@@ -645,11 +660,11 @@ ul#primary-menu li.current-menu-item a {
 .nnc-trend-title:after {
     position: absolute;
     top: 6px;
-    right: -13px;
+    right: -12px;
     content: '';
     z-index: 1;
-    border-left: 26px solid transparent;
-    border-bottom: 26px solid #4db2ec;
+    border-left: 24px solid transparent;
+    border-bottom: 24px solid #4db2ec;
     transform: rotate(-45deg);
 }
 
@@ -741,13 +756,13 @@ span.breadcrumb_separator {
 }
 
 .search-form input[type="text"] {
-    padding: 7px; 
+    padding: 8px; 
     border-left: 0; 
     border: 1px solid #eee;
     border-radius: 0;
     outline: none; 
     width: 100%;
-    font-size: 15px;
+    font-size: 13px;
     opacity: 1;
     color: #666!important;
     margin-left: -1px;
@@ -791,7 +806,7 @@ button.search-submit {
 }
 
 button.search-submit i {
-    padding: 13px;
+    padding: 12px;
     background: #4db2ec; 
     border: 0;
     box-shadow: none;
@@ -1340,6 +1355,7 @@ h2.widget-title {
 
 #today {
 	background: #4db2ec;
+	color: #fff;
 }
 
 #today:hover {
