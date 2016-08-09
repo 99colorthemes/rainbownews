@@ -1286,6 +1286,14 @@ h2.widget-title:after {
 	padding-top: 30px;
 }
 
+body.left-sidebar #secondary {
+	float: left;
+}
+
+body.left-sidebar #primary {
+	float: right;
+}
+
 /*----
 .both-sidebar #secondary {
     float: left;
