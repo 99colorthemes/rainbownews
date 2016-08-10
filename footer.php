@@ -13,7 +13,20 @@
 
 </div>
 </div><!-- #content -->
+ 
+
 <?php do_action( 'rainbownews_after_body_content' ); ?>
+
+<!-- Gallery-start -->
+<div class="nnc-f-gallery nnc-top-latest"> 
+    <?php
+    if (is_active_sidebar('rainbownews_front_page_gallery_area')) {
+        if (!dynamic_sidebar('rainbownews_front_page_gallery_area')):
+        endif;
+    }
+    ?> 
+</div>
+<!-- Gallery-end -->
 
 <div class="nnc-footer">
     <div class="nnc-container">

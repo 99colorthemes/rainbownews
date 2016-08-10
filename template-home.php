@@ -100,22 +100,7 @@ $layout_meta = get_post_meta( $post->ID, 'rainbownews_page_specific_layout', tru
                 ?>rainbownews_front_page_gallery_area
             </aside>
 
-    </div>
-
-    <!-- Gallery-start -->
-    <div class="nnc-f-gallery nnc-top-latest">
-        <div class="nnc-container">
-            <?php
-            if (is_active_sidebar('rainbownews_front_page_gallery_area')) {
-                if (!dynamic_sidebar('rainbownews_front_page_gallery_area')):
-                endif;
-            }
-            ?>
-        </div>
-    </div>
-    <!-- Gallery-end -->
-
-
+    </div> 
 
 
 <?php get_footer(); ?>

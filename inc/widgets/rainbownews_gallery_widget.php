@@ -99,11 +99,13 @@ class rainbownews_gallery_widget extends WP_Widget {
 
         <?php echo $before_widget; ?>
            <div class="nnc-latest">
-                <div class="nnc-title nnc-clearblock">
-                <?php if ( !empty( $title ) || !empty( $text ) ) :?>
-                    <h2 class="widget-title"><span style="color:#8224e3;"><?php echo esc_attr( $title ); ?></span></h2>
-                <?php  endif; ?>
-                    <div class="nnc-viewmore"><i class="fa fa-th-large"></i></div>
+                <div class="nnc-container">
+                    <div class="nnc-title nnc-clearblock">
+                    <?php if ( !empty( $title ) || !empty( $text ) ) :?>
+                        <h2 class="widget-title"><span style="color:#8224e3;"><?php echo esc_attr( $title ); ?></span></h2>
+                    <?php  endif; ?>
+                        <div class="nnc-viewmore"><i class="fa fa-th-large"></i></div>
+                    </div>
                 </div>
                 <div class="nnc-gallery-block nnc-latest-block nnc-clearblock">
 
