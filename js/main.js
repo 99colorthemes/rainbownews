@@ -1,21 +1,21 @@
 
-//Stickybar
-// if(jQuery('.site-header').length){
-//  var stickyNavTop = jQuery('.site-header').offset().top;
-//  var stickyNav = function(){
-//  var scrollTop = jQuery(window).scrollTop();
-//   if (scrollTop > stickyNavTop) {
-//          jQuery('.site-header').addClass('tm-sticky');
-//           } else {
-//               jQuery('.site-header').removeClass('tm-sticky');
-//           }
-//       };
-//       stickyNav(); 
-//       jQuery(window).scroll(function() {
-//           stickyNav();
-//       });
-//   }
-  
+if($('.main-navigation').length){ 
+ var stickyNavTop = $('.main-navigation').offset().top;
+ var stickyNav = function(){
+ var scrollTop = $(window).scrollTop();
+  if (scrollTop > stickyNavTop) {
+         $('.main-navigation').addClass('nnc-sticky');
+          } else {
+              $('.main-navigation').removeClass('nnc-sticky');
+          }
+      };
+      stickyNav(); 
+      $(window).scroll(function() {
+          stickyNav();
+      });
+  }
+ 
+ 
 
 //Responsive Menu
 // jQuery(function() {
@@ -85,3 +85,4 @@ jQuery(document).ready(function(){
     }); 
 
 });
+

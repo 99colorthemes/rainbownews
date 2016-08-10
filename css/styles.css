@@ -1900,7 +1900,7 @@ a.nnc-readmore:hover {
 
 .nnc-scroll-top:hover {
 	opacity: 1 !important;
-	background: #16A085;
+	background: #4db2ec;
 	color: #fff;
 }
 
@@ -1913,4 +1913,22 @@ a.nnc-readmore:hover {
 .nnc-scroll-top i.fa {
 	line-height: inherit;
 	font-size: 20px;
+}
+
+
+
+ 
+
+/*sticky*/
+.nnc-sticky {
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    max-width: 100%;
+    background: #fff;
+    box-shadow: 0 0 3px 0 #ccc; 
+} 
+
+.admin-bar .nnc-sticky {
+	margin-top: 32px;
 }
