@@ -241,12 +241,6 @@ if ( ! function_exists( 'rainbownews_category_layout' ) ) :
     }
 endif;
 
-
-
-
-
-
-
 /****************************** BREADCRUMBS ******************************************/
 if ( ! function_exists( 'rainbownews_breadcrumbs' ) ) :
     /**
@@ -439,3 +433,18 @@ if ( ! function_exists( 'rainbownews_sidebar_select' ) ) :
 endif;
 
 /******************************** POST-NAVIGATION *****************************************/
+
+/*************************** HEADER LOGO **********************************/
+if ( ! function_exists( 'rainbownews_the_custom_logo' ) ) :
+    /**
+     * Displays the optional custom logo Introduced in WordPress 4.5 .
+     *
+     * Does nothing if the custom logo is not available.
+     *
+     */
+    function rainbownews_the_custom_logo() {
+        if ( function_exists( 'the_custom_logo' ) ) {
+            the_custom_logo();
+        }
+    }
+endif;

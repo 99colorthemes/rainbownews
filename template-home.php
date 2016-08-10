@@ -10,10 +10,6 @@
 
 $layout_meta = get_post_meta( $post->ID, 'rainbownews_page_specific_layout', true );
 
-
-
-
-
 ?>
 
     <!-- banner-start -->

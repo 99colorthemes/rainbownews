@@ -45,8 +45,7 @@ function rainbownews_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'rainbownews' ),
-		'top-menu' => esc_html__( 'Top Menu', 'rainbownews' ),
-		'social' => esc_html__( 'Social Icon', 'rainbownews' )
+
 	) );
 
 	/*
@@ -61,11 +60,27 @@ function rainbownews_setup() {
 		'caption',
 	) );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'rainbownews_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
+	/*
+	 * Enable support for Post Formats.
+	 * See https://developer.wordpress.org/themes/functionality/post-formats/
+	 */
+	add_theme_support( 'post-formats', array(
+			'aside',
+			'image',
+			'video',
+			'quote',
+			'link',
+	) );
+
+	// Adds Support for Custom Logo Introduced in WordPress 4.5
+	add_theme_support( 'custom-logo',
+			array(
+					'flex-width' => true,
+					'flex-height' => true,
+			)
+	);
+	// Adding excerpt option box for pages as well
+	add_post_type_support( 'page', 'excerpt' );
 }
 endif;
 add_action( 'after_setup_theme', 'rainbownews_setup' );

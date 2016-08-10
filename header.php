@@ -42,9 +42,11 @@
 		<div class="nnc-logo-bar">
 			<div class="nnc-container">
 				<div class="site-branding">
+					<?php if( ( get_theme_mod( 'rainbownews_header_logo_placement', 'header_text_only' ) == 'show_both' || get_theme_mod( 'rainbownews_header_logo_placement', 'header_text_only' ) == 'header_logo_only' ) && has_custom_logo() ) : ?>
 					<div class="nnc-logo-img">
-						<img src="<?php echo get_template_directory_uri(); ?>/images/r-logo.png">
+						<?php rainbownews_the_custom_logo(); ?>
 					</div>
+					<?php endif; ?>
 					<div class="nnc-logo"> 
 						<?php
 						if ( is_front_page() && is_home() ) : ?>
