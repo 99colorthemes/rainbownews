@@ -22,3 +22,5 @@ require get_template_directory() . '/inc/widgets/rainbownews_featured_post_layou
 require get_template_directory() . '/inc/widgets/rainbownews_post_tab_widget.php';
 
 require get_template_directory() . '/inc/widgets/rainbownews_latest_post.php';
+
+require get_template_directory() . '/inc/widgets/rainbownews_gallery_widget.php';

@@ -22,8 +22,14 @@ class rainbownews_latest_post extends WP_Widget
 
     function __construct()
     {
-        $widget_ops = array('classname' => 'widget_latest_post', 'description' => __('Display latest posts or posts of specific category.', 'rainbownews'));
-        $control_ops = array('width' => 200, 'height' => 250);
+        $widget_ops = array(
+            'classname' => 'widget_latest_post',
+            'description' => __('Display latest posts or posts of specific category.', 'rainbownews')
+        );
+        $control_ops = array(
+            'width' => 200,
+            'height' => 250
+        );
         parent::__construct(false, $name = __(' NNC: Latest Post ', 'rainbownews'), $widget_ops);
     }
 
@@ -128,37 +134,42 @@ class rainbownews_latest_post extends WP_Widget
         echo $before_widget;
         ?>
         <div class="nnc-latest">
-            <div class="nnc-title nnc-clearblock">
-                <?php
-                if ($type != 'latest') {
-                    $border_color = 'style="border-bottom-color:' . rainbownews_category_color($category) . ';"';
-                    $title_color = 'style="color:' . rainbownews_category_color($category) . ';"';
-                } else {
-                    $border_color = '';
-                    $title_color = 'style="color:#4db2ec;"';
-                }
-                if (!empty($title)) {
-                    echo '<h2 class="widget-title" ' . $border_color . '><span ' . $title_color . '>' . esc_html($title) . '</span></h2>';
-                }
-                if($category != '')
-                    $cat_slug = get_category( $category );
+        <div class="nnc-title nnc-clearblock">
+            <?php
+            if ($type != 'latest') {
+                $border_color = 'style="border-bottom-color:' . rainbownews_category_color($category) . ';"';
+                $title_color = 'style="color:' . rainbownews_category_color($category) . ';"';
+            } else {
+                $border_color = '';
+                $title_color = 'style="color:#4db2ec;"';
+            }
+            if (!empty($title)) {
+                echo '<h2 class="widget-title" ' . $border_color . '><span ' . $title_color . '>' . esc_html($title) . '</span></h2>';
+            }
+            if ($category != '')
+                $cat_slug = get_category($category);
 
-                ?>
-                <div class="nnc-viewmore"><a <?php if(!empty($cat_slug->slug)) { ?> href="<?php echo site_url(). __('/category/', 'rainbownews') . $cat_slug->slug; ?>" <?php } ?>><i class="fa fa-th-large" title="View All"></i></a>
+            ?>
+            <div class="nnc-viewmore">
+                <a <?php if (!empty($cat_slug->slug)) { ?> href="<?php echo site_url() . __('/category/', 'rainbownews') . $cat_slug->slug; ?>" <?php } ?>><i
+                        class="fa fa-th-large" title="View All"></i></a>
             </div>
             <!-- use (nnc-latest-layout-2) class for Layout2 -->
-            <div class="nnc-latest-block nnc-clearblock <?php echo $style == 'style1'?'':'nnc-latest-layout-2'; ?> ">
+            <div
+                class="nnc-latest-block nnc-clearblock <?php echo $style == 'style1' ? '' : 'nnc-latest-layout-2'; ?> ">
                 <?php
                 while ($get_featured_posts->have_posts()):$get_featured_posts->the_post();
                     ?>
-                    <div class="nnc-latest-single <?php echo has_post_thumbnail()?'':'nnc-no-image'; ?>">
+                    <div class="nnc-latest-single <?php echo has_post_thumbnail() ? '' : 'nnc-no-image'; ?>">
                         <?php if (has_post_thumbnail()) : ?>
                             <figure class="nnc-img">
                                 <?php the_post_thumbnail('large'); ?>
                             </figure>
                         <?php endif; ?>
                         <div class="nnc-dtl">
-                            <div class="nnc-entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></div>
+                            <div class="nnc-entry-title"><a href="<?php the_permalink(); ?>"
+                                                            title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+                            </div>
                             <div class="nnc-entry-meta">
 									<span class="posted-on">
                                          <a href="<?php the_permalink(); ?>" title="<?php echo get_the_time(); ?>"
@@ -169,10 +180,11 @@ class rainbownews_latest_post extends WP_Widget
                                          </a>
 									</span>
                                 <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> <a
-                                        href="<?php the_permalink(); ?>" title="No Comments"><?php comments_popup_link('No Comment', '1', '%'); ?></a></span>
+                                        href="<?php the_permalink(); ?>"
+                                        title="No Comments"><?php comments_popup_link('No Comment', '1', '%'); ?></a></span>
                             </div>
                             <div class="nnc-category-list">
-                                <?php  rainbownews_colored_category(); ?>
+                                <?php rainbownews_colored_category(); ?>
                             </div>
                         </div>
                     </div>
