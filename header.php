@@ -41,20 +41,25 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="nnc-logo-bar">
 			<div class="nnc-container">
-				<div class="site-branding nnc-logo">
-					<?php
-					if ( is_front_page() && is_home() ) : ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php else : ?>
-						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					<?php
-					endif;
+				<div class="site-branding">
+					<div class="nnc-logo-img">
+						<img src="<?php echo get_template_directory_uri(); ?>/images/r-logo.png">
+					</div>
+					<div class="nnc-logo"> 
+						<?php
+						if ( is_front_page() && is_home() ) : ?>
+							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+						<?php else : ?>
+							<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+						<?php
+						endif;
 
-					$description = get_bloginfo( 'description', 'display' );
-					if ( $description || is_customize_preview() ) : ?>
-						<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-					<?php
-					endif; ?>
+						$description = get_bloginfo( 'description', 'display' );
+						if ( $description || is_customize_preview() ) : ?>
+							<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+						<?php
+						endif; ?>
+					</div>
 				</div><!-- .site-branding -->
 
 				<!-- widget advertisement -->

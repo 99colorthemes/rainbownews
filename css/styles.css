@@ -113,8 +113,8 @@ img {
 /*====================================
 =            Add size Css            =
 ====================================*/
-.nnc-middle-ads {
-	margin-bottom: 30px;
+.nnc-middle-ads, .nnc-footer-ads {
+	margin-bottom: 18px;
 }
 
 
@@ -558,6 +558,14 @@ ul#top-menu li.current_page_item a {
 .nnc-social li a[href*="tumblr.com"]::before {
     content: '\f173';
     color: #32506d;
+}
+
+
+
+.nnc-logo-img {
+	float: left;
+	width: 120px;
+	margin-right: 14px;
 }
 
 .nnc-logo-bar {
