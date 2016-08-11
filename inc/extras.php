@@ -89,14 +89,8 @@ function rainbownews_page_post_layout($rainbownews_classes){
 			$rainbownews_classes[]= $rainbownews_default_sidebar_layout;
 		}
 	}
-	elseif(is_404()){
-		if(empty($rainbownews_default_sidebar_layout)){
-			$rainbownews_classes[] = 'right-sidebar';
-		}
-
-		else{
-			$rainbownews_classes[]= $rainbownews_default_sidebar_layout;
-		}
+	elseif(is_404()){  
+		$rainbownews_classes[]= ''; 
 	}
 
 	else{

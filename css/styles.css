@@ -1730,6 +1730,9 @@ a.nnc-readmore:hover {
 	background: #4db2ec;
 }
 
+.nnc-pagination {
+	margin-bottom: 40px;
+}
 
 
 
@@ -1971,3 +1974,57 @@ a.nnc-readmore:hover {
 .admin-bar .nnc-sticky {
 	margin-top: 32px;
 }
+
+/*================================
+=            404 Page            =
+================================*/
+body.error404 #primary {
+	float: none;
+	width: 60%;
+	margin: 0 auto;
+	text-align: center;
+	padding: 50px 0; 
+}
+
+.error-404 h2 {
+	font-size: 140px;
+	color: #333;
+}
+
+.error-404 h1.page-title {
+	font-size: 13px;
+}
+
+/*=====  End of 404 Page  ======*/
+
+
+/*===================================
+=            Search Page            =
+===================================*/
+body.search h1.page-title {
+	padding-bottom: 20px;
+}
+
+body.search .nnc-img {
+	padding-bottom: 20px;
+}
+
+body.search h2.entry-title {
+	padding-bottom: 14px;
+}
+
+body.search .entry-summary {
+    font-size: 14px;
+    line-height: 24px;
+    font-family: 'lato';
+    margin: 0;
+    color: #555;
+}
+
+body.search article.post {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #333;
+}
+
+/*=====  End of Search Page  ======*/
