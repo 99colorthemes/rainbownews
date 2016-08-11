@@ -458,3 +458,22 @@ if ( ! function_exists( 'rainbownews_the_custom_logo' ) ) :
         }
     }
 endif;
+
+/******************************** FOOTER COPYRIGHT ***************************/
+/**
+ * function to show the footer info, copyright information
+ */
+
+function rainbownews_footer_copyright_info() {
+    $site_link = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" >' . get_bloginfo( 'name', 'display' ) . '</a>';
+
+    $wp_link = '<a href="'.esc_url( 'http://wordpress.org' ).'" target="_blank" title="' . esc_attr__( 'WordPress', 'rainbownews' ) . '"><span>' . esc_html__( 'WordPress', 'rainbownews' ) . '</span></a>';
+
+    $tm_link =  '<a href="'. 'http://99colorthemes.com/' .'" target="_blank" title="'.esc_attr__( '99colorthemes', 'rainbownews' ).'" rel="designer"><span>'.esc_html__( '99colorthemes', 'rainbownews') .'</span></a>';
+
+    $default_footer_value = '<p class="nnc-left">'.sprintf( esc_html__( ' &copy; %1$s %2$s. All Right Reserved. ', 'rainbownews' ), $site_link, date( 'Y' )) .sprintf( esc_html__( '| Powered by %s.', 'rainbownews' ), $wp_link ). '</p><p class="nnc-right">' . sprintf( esc_html__( 'Built by %s.', 'rainbownews' ), $tm_link ).'</p>';
+
+    $rainbownews_footer_copyright = '<div class="nnc-footer-bottom"><div class="nnc-container">'.$default_footer_value.'</div></div>';
+    echo $rainbownews_footer_copyright;
+}
+add_action( 'rainbownews_footer_copyright', 'rainbownews_footer_copyright_info', 10 );

@@ -75,9 +75,9 @@
 
 <div class="nnc-bottom-footer">
     <div class="nnc-container">
-        <p class="nnc-left">&copy RainbowNews 2016, All Rights Reserved. | Powered By WordPress.</p>
+    <?php rainbownews_footer_copyright_info(); ?>
 
-        <p class="nnc-right">Built By 99colorthemes.</p>
+
     </div>
 </div>
 
@@ -85,14 +85,6 @@
     <span class="nnc-scroll-top-inner"><i class="fa fa-long-arrow-up"></i></span>
 </div>
 
-
-<footer id="colophon" class="site-footer" role="contentinfo">
-    <div class="site-info">
-        <a href="<?php echo esc_url(__('https://wordpress.org/', 'rainbownews')); ?>"><?php printf(esc_html__('Proudly powered by %s', 'rainbownews'), 'WordPress'); ?></a>
-        <span class="sep"> | </span>
-        <?php printf(esc_html__('Theme: %1$s by %2$s.', 'rainbownews'), 'rainbownews', '<a href="http://99colorthemes.com" rel="designer">99colorthemes</a>'); ?>
-    </div><!-- .site-info -->
-</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
