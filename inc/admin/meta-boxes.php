@@ -22,11 +22,6 @@ function rainbownews_add_custom_box() {
 
 global $rainbownews_page_specific_layout;
 $rainbownews_page_specific_layout = array(
-							'default-layout' 	=> array(
-														'id'			=> 'rainbownews_page_specific_layout',
-														'value' 		=> 'default-layout',
-														'label' 		=> esc_html__( 'Default Layout', 'rainbownews' )
-														),
 							'right-sidebar' 	=> array(
 														'id'			=> 'rainbownews_page_specific_layout',
 														'value' 		=> 'right-sidebar',
@@ -71,7 +66,7 @@ function rainbownews_meta_form( $rainbownews_metabox_field ) {
 
 			// Layout
 			case 'rainbownews_page_specific_layout':
-				if( empty( $layout_meta ) ) { $layout_meta = 'default-layout'; } ?>
+				if( empty( $layout_meta ) ) { $layout_meta = 'right-sidebar'; } ?>
 
 				<input class="post-format" type="radio" name="<?php echo esc_attr($field['id']); ?>" value="<?php echo esc_attr($field['value']); ?>" <?php checked( $field['value'], $layout_meta ); ?>/>
 				<label class="post-format-icon"><?php echo esc_html( $field['label'] ); ?></label><br/>

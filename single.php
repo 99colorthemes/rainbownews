@@ -8,10 +8,10 @@
  */
 
 get_header();
-$cat_sidebar_layout = get_theme_mod('rainbownews_category_sidebar_setting', 'right-sidebar');
+$sidebar_layout = get_post_meta( $post->ID, 'rainbownews_page_specific_layout', true );
 
 ?>
-<?php if($layout_meta == 'left-sidebar'):
+<?php if($sidebar_layout == 'left-sidebar'):
 	?>
 	<aside id="secondary" class="widget-area" role="complementary">
 		<?php dynamic_sidebar('rainbownews_left_sidebar'); ?>
@@ -22,7 +22,6 @@ endif;
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
 
 		<?php
 		while ( have_posts() ) : the_post();
@@ -43,7 +42,7 @@ endif;
 	</div><!-- #primary -->
 
 <?php
-if($layout_meta == 'right-sidebar'):
+if($sidebar_layout == 'right-sidebar'):
 	get_sidebar();
 endif;
 get_footer();
