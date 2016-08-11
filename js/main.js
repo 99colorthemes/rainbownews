@@ -82,7 +82,25 @@ jQuery(document).ready(function(){
         duration: 4000,
         autostart: 1,
         pauseOnHover: 1
-    }); 
+    });
+
+
+    var tabs = function() {
+        $('.tabs').each(function() {
+            var el = $(this);
+            el.find('.content').hide();
+            el.find('.menu-tab > li').on('click', function(e) {
+                var liActive = $(this).index();
+                var contentActive = $(this).parents('.tabs').find('.content').eq(liActive);
+
+                $(this).addClass('active').siblings().removeClass('active');
+                contentActive.fadeIn().siblings().hide();
+
+                e.preventDefault();
+            }).filter('.active').trigger('click');
+        });
+    };
+
 
 });
 

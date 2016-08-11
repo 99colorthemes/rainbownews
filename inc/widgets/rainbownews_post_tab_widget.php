@@ -10,3 +10,6 @@
 /* 
 Rainbownews Slider Widget Section
 */
+
+?>
+
