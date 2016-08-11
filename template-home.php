@@ -97,7 +97,7 @@ $layout_meta = get_post_meta( $post->ID, 'rainbownews_page_specific_layout', tru
                     if (!dynamic_sidebar('rainbownews_front_page_sidebar')):
                     endif;
                 }
-                ?>rainbownews_front_page_gallery_area
+                ?> 
             </aside>
 
     </div> 

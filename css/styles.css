@@ -577,6 +577,10 @@ ul#top-menu li.current_page_item a {
 	padding-top: 30px;
 }
 
+p.site-description {
+    font-size: 12px;
+}
+
 .widget.widget_advertisement {
 	margin: 0;
 }
@@ -1917,11 +1921,7 @@ a.nnc-readmore:hover {
 
 .nnc-f-gallery-block {
 	background: #1A1A1A;
-} 
-
-.nnc-f-gallery { 	
-	margin: 40px 0 0; 
-}
+}  
 
 .nnc-f-gallery .nnc-gallery-single {
 	width: 12.5%;

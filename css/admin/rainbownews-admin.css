@@ -5,7 +5,7 @@ li#accordion-section-rainbownews_important_links h3.accordion-section-title, li#
 li#accordion-section-rainbownews_important_links h3.accordion-section-title:hover { background-color: #142d46 !important; color: #fff !important; }
 li#accordion-section-rainbownews_important_links h3.accordion-section-title:after { color: #fff !important; }
 /* Upsell button CSS */
-.themegrill-pro-info,
+.rainbownews-pro-info,
 .customize-control-rainbownews-important-links a {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8fc800+0,8fc800+100;Green+Flat+%232 */
   background: #142d46;
@@ -21,7 +21,7 @@ li#accordion-section-rainbownews_important_links h3.accordion-section-title:afte
   padding: 8px 0;
 }
 
-.themegrill-pro-info:hover,
+.rainbownews-pro-info:hover,
 .customize-control-rainbownews-important-links a:hover {
   color: #ffffff;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#006e2e+0,006e2e+100;Green+Flat+%233 */
@@ -49,9 +49,9 @@ input[type=checkbox]:before {
 	content: '';
 	margin: -3px 0 0 -4px;
 }
-.tg-social-wrap {
+.nnc-social-wrap {
 	display: none;
 }
-.tg-social-show {
+.nnc-social-show {
 	display: block;
 }
