@@ -5,11 +5,10 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package RainbowNews
+ *
+ * Rainbownews Advertisement Widget Section
  */
 
-/* 
-Rainbownews Top Advertisement Widget Section
-*/ 
 add_action( 'widgets_init', 'register_rainbownews_advertisement' );
 
 function register_rainbownews_advertisement()
@@ -126,9 +125,6 @@ class rainbownews_advertisement extends WP_Widget {
                 echo $output;
             } ?>
         </div>
-
-
-
         <?php
     }
 }

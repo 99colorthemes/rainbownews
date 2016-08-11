@@ -142,7 +142,7 @@ add_action( 'wp_enqueue_scripts', 'rainbownews_scripts' );
  * Add admin scripts and styles.
  */
 
-function pageline_admin_scripts( $hook ) {
+function rainbownews_admin_scripts( $hook ) {
 	global $post_type;
 	if( $hook == 'widgets.php') {
 		//For color
@@ -152,7 +152,7 @@ function pageline_admin_scripts( $hook ) {
 		wp_enqueue_style( 'rainbownews-admin-css', get_template_directory_uri() . '/css/admin/rainbownews-admin.css', false, '1.0.0' );
 	}
 }
-add_action('admin_enqueue_scripts', 'pageline_admin_scripts');
+add_action('admin_enqueue_scripts', 'rainbownews_admin_scripts');
 
 
 

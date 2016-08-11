@@ -5,11 +5,10 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package RainbowNews
+ *
+ * Rainbownews Featured Post Layout3 Widget Section
  */
 
-/* 
-Rainbownews Slider Widget Section
-*/
 add_action('widgets_init', 'register_rainbownews_featured_post_layout3');
 
 function register_rainbownews_featured_post_layout3()

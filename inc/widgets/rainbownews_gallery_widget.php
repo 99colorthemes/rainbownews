@@ -1,7 +1,13 @@
 <?php
 /**
-* Gallery Widget.
-*/
+ * RainbowNews functions and definitions.
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package RainbowNews
+ *
+ * Rainbownews Gallery Widget Section
+ */
 
 add_action('widgets_init', 'register_rainbownews_gallery_widget');
 
@@ -65,7 +71,7 @@ class rainbownews_gallery_widget extends WP_Widget {
         <?php endfor; ?>
     <p>
         <strong><?php esc_html_e( 'Note:', 'rainbownews'); ?></strong><br/>
-        <?php esc_html_e( '1. Recommanded Image size 320 × 320 Pixels.', 'rainbownews' ); ?><br/>
+        <?php esc_html_e( '1. Recommanded Image size 320 x 320 Pixels.', 'rainbownews' ); ?><br/>
     </p>
 
     <?php }// end of form function.

@@ -5,11 +5,10 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package RainbowNews
+ *
+ * Rainbownews Latest Post Widget Section
  */
 
-/* 
-Rainbownews Slider Widget Section
-*/
 add_action('widgets_init', 'register_rainbownews_latest_post');
 
 function register_rainbownews_latest_post()

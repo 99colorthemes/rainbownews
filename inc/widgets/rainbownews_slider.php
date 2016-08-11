@@ -5,11 +5,10 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package RainbowNews
+ *
+ * Rainbownews Slider Widget Section
  */
 
-/* 
-Rainbownews Slider Widget Section
-*/
 add_action('widgets_init', 'register_rainbownews_slider');
 
 function register_rainbownews_slider()
@@ -124,10 +123,10 @@ class rainbownews_slider extends WP_Widget
                                                 <span class="posted-on">
                                                     <a href="<?php the_permalink(); ?>" title="<?php echo get_the_time(); ?>" rel="bookmark">
                                                         <time class="entry-date" datetime="">
-                                                            <?php esc_attr( the_time("M d") ); ?>
+                                                            <?php echo get_the_date( 'M d' ); ?>
                                                         </time>
                                                         <br>
-                                                        <time><?php esc_attr( the_time("Y") ); ?></time>
+                                                        <time> <?php echo get_the_date( 'Y' ); ?></time>
                                                     </a>
                                                 </span>
                             <span class="author">

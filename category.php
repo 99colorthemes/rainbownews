@@ -94,10 +94,10 @@ if ($query->have_posts()) :
                                             <a href="<?php the_permalink(); ?>"
                                                title="<?php echo get_the_time(); ?>" rel="bookmark">
                                                 <time class="entry-date" datetime="">
-                                                    <?php esc_attr(the_time("M d")); ?>
+                                                    <?php echo get_the_date( 'M d' ); ?>
                                                 </time>
                                                 <br>
-                                                <time><?php esc_attr(the_time("Y")); ?></time>
+                                                <time><?php echo get_the_date( 'Y' ); ?></time>
                                             </a>
                                         <?php } ?>
                                             </span>
