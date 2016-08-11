@@ -126,8 +126,9 @@ img {
 /*=============================================
 =                 Single Page                 =
 =============================================*/
-.entry-header h1 {
+body.page .entry-header h1 {
     font-size: 20px;
+    padding-bottom: 12px;
 }
 
 .entry-content p {
@@ -166,6 +167,16 @@ a.post-edit-link:before {
 /*=============================================
 =                 Single Post                 =
 =============================================*/
+
+body.single h1.entry-title {
+    font-size: 20px;
+    padding-bottom: 12px;
+}
+
+body.single .entry-content {
+	margin: 0;
+}
+
 .single-post .nnc-img {
 	margin-bottom: 20px;
 }
@@ -174,7 +185,7 @@ a.post-edit-link:before {
     margin-top: 18px;
 }
 
-.navigation.post-navigation {
+.navigation.post-navigation,nav.navigation.posts-navigation {
 	border-top: 1px solid #eee;
 	box-shadow: 0 0 3px 1px #eee;  
 }
