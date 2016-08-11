@@ -8,7 +8,7 @@
  */
 
 get_header();
-$layout_meta = get_post_meta( $post->ID, 'rainbownews_page_specific_layout', true );
+$cat_sidebar_layout = get_theme_mod('rainbownews_category_sidebar_setting', 'right-sidebar');
 
 ?>
 <?php if($layout_meta == 'left-sidebar'):
@@ -22,6 +22,7 @@ endif;
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+
 
 		<?php
 		while ( have_posts() ) : the_post();
