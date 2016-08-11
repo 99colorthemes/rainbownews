@@ -113,7 +113,7 @@ class rainbownews_gallery_widget extends WP_Widget {
             foreach ( $images as $key => $image ) {
                 if ( $image !='' ){ ?>
                     <div class="nnc-gallery-single nnc-latest-single">
-                        <figure class="nnc-img">
+                        <figure class="nnc-g-img">
                             <a href="#"><img src="<?php echo esc_url( $image ); ?>"></a>
                         </figure>
                         <div class="nnc-ico-dtl"><a href="#"><i class="fa fa-search-plus"></i></a></div>
