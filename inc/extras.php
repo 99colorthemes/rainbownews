@@ -43,7 +43,6 @@ function rainbownews_page_post_layout($rainbownews_classes){
 		$rainbownews_classes[]= '';
 
 	}
-
 	elseif(is_singular()){
 
 		$rainbownews_post_class = get_post_meta( $post -> ID, 'rainbownews_page_specific_layout', true );
