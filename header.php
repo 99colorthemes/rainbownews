@@ -104,7 +104,6 @@
                     }
 
                 } else {
-
                     ?>
                     <div class="nnc-breadcrumbs nnc-trending-single">
                         <?php rainbownews_breadcrumbs(); ?>
