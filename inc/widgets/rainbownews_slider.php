@@ -110,36 +110,41 @@ class rainbownews_slider extends WP_Widget
 
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <?php while( $get_featured_posts->have_posts() ):$get_featured_posts->the_post(); ?>
-                <div class="swiper-slide <?php echo has_post_thumbnail()?'':'nnc-no-image'; ?>">
-                    <?php if (has_post_thumbnail()) : ?>
-                    <figure class="nnc-slide-img">
-                            <?php the_post_thumbnail('large'); ?>
-                    </figure>
-                    <?php endif; ?>
-                    <div class="nnc-dtl">
-                        <div class="nnc-entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_title(); ?></a></div>
-                        <div class="nnc-entry-meta">
+                <?php while ($get_featured_posts->have_posts()):$get_featured_posts->the_post(); ?>
+                    <div class="swiper-slide <?php echo has_post_thumbnail() ? '' : 'nnc-no-image'; ?>">
+                        <?php if (has_post_thumbnail()) : ?>
+                            <figure class="nnc-slide-img">
+                                <?php the_post_thumbnail('large'); ?>
+                            </figure>
+                        <?php endif; ?>
+                        <div class="nnc-dtl">
+                            <div class="nnc-entry-title"><a href="<?php the_permalink(); ?>"
+                                                            title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+                            </div>
+                            <div class="nnc-entry-meta">
                                                 <span class="posted-on">
-                                                    <a href="<?php the_permalink(); ?>" title="<?php echo get_the_time(); ?>" rel="bookmark">
+                                                    <a href="<?php the_permalink(); ?>"
+                                                       title="<?php echo get_the_time(); ?>" rel="bookmark">
                                                         <time class="entry-date" datetime="">
-                                                            <?php echo get_the_date( 'M d' ); ?>
+                                                            <?php echo get_the_date('M d'); ?>
                                                         </time>
                                                         <br>
-                                                        <time> <?php echo get_the_date( 'Y' ); ?></time>
+                                                        <time> <?php echo get_the_date('Y'); ?></time>
                                                     </a>
                                                 </span>
                             <span class="author">
                                 <i class="fa fa-user" aria-hidden="true"></i>
-                                <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo get_the_author(); ?>"><?php echo esc_html(get_the_author() ); ?></a>
+                                <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"
+                                   title="<?php echo get_the_author(); ?>"><?php echo esc_html(get_the_author()); ?></a>
                             </span>
-                            <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> <a href="#"><?php comments_popup_link( 'No Comment', '1', '%' );?></a></span>
-                        </div>
-                        <div class="nnc-category-list">
-                            <?php rainbownews_colored_category(); ?>
+                                <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> <a
+                                        href="#"><?php comments_popup_link('No Comment', '1', '%'); ?></a></span>
+                            </div>
+                            <div class="nnc-category-list">
+                                <?php rainbownews_colored_category(); ?>
+                            </div>
                         </div>
                     </div>
-                </div>
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
 

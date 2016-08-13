@@ -242,7 +242,7 @@ function rainbownews_latest_news()
         ?>
 
         <div class="nnc-trending-single">
-            <div class="nnc-trend-title"><?php echo $title ; ?></div>
+            <div class="nnc-trend-title"><?php echo $title; ?></div>
             <ul class="newsticker">
                 <?php
                 while ($p->have_posts()) {
@@ -559,40 +559,38 @@ function wpb_set_post_views($postID)
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
 
-
-
-function rainbownews_comments_posted_on_cb($comment_id){
+function rainbownews_comments_posted_on_cb($comment_id)
+{
 
 
     $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-    if( get_comment_date('Ymd', $comment_id) == date('Ymd')):
+    if (get_comment_date('Ymd', $comment_id) == date('Ymd')):
         //if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-        $time_string_human = human_time_diff(get_comment_date( 'His', $comment_id ),current_time('His')).' '.__('ago','power-mag');
-        $time_string = '<time class="entry-date published" datetime="%1$s">'.$time_string_human.'</time><time class="updated" datetime="%3$s">%4$s</time>';
+        $time_string_human = human_time_diff(get_comment_date('His', $comment_id), current_time('His')) . ' ' . __('ago', 'rainbownews');
+        $time_string = '<time class="entry-date published" datetime="%1$s">' . $time_string_human . '</time><time class="updated" datetime="%3$s">%4$s</time>';
         //}
     endif;
 
-    $time_string = sprintf( $time_string,
-        esc_attr( get_comment_date( 'c',  $comment_id ) ),
-        esc_html( get_comment_date('M d, Y' , $comment_id) ),
-        esc_attr( get_the_modified_date( 'c' , $comment_id ) ),
-        esc_html( get_the_modified_date('M d, Y', $comment_id) )
+    $time_string = sprintf($time_string,
+        esc_attr(get_comment_date('c', $comment_id)),
+        esc_html(get_comment_date('M d, Y', $comment_id)),
+        esc_attr(get_the_modified_date('c', $comment_id)),
+        esc_html(get_the_modified_date('M d, Y', $comment_id))
     );
 
     $posted_on = sprintf(
-        _x( '%s', 'post date', 'power-mag' ),
-        '<a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( get_the_time() ) . '" rel="bookmark">' . $time_string . '</a>'
+        _x('%s', 'post date', 'rainbownews'),
+        '<a href="' . esc_url(get_permalink()) . '" title="' . esc_attr(get_the_time()) . '" rel="bookmark">' . $time_string . '</a>'
     );
 
     //$posted_on = sprintf(
-//    _x( '%s', 'post date', 'power-mag' ), $time_string );
+//    _x( '%s', 'post date', 'rainbownews' ), $time_string );
 
     echo '<span class="posted-on"><i class="fa fa-calendar-o"></i>' . $posted_on . '</span>';
 
 }
-add_action( 'rainbownews_comment_posted_on', 'rainbownews_comments_posted_on_cb', 11 );
 
-
+add_action('rainbownews_comment_posted_on', 'rainbownews_comments_posted_on_cb', 11);
 
 
 /******************************** FOOTER COPYRIGHT ***************************/

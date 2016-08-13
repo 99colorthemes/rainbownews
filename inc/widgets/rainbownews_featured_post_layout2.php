@@ -117,83 +117,93 @@ class rainbownews_featured_post_layout2 extends WP_Widget
         ?>
 
         <div class="nnc-category nnc-category-layout-2">
-            <div class="nnc-title nnc-clearblock">
-                <?php
-                if ($type != 'latest') {
-                    $border_color = 'style="border-bottom-color:' . rainbownews_category_color($category) . ';"';
-                    $title_color = 'style="color:' . rainbownews_category_color($category) . ';"';
-                } else {
-                    $border_color = '';
-                    $title_color = 'style="color:#4db2ec;"';
-                }
-                if (!empty($title)) {
-                    echo '<h2 class="widget-title" ' . $border_color . '><span ' . $title_color . '>' . esc_html($title) . '</span></h2>';
-                }
-                if($category != '')
-                $cat_slug = get_category( $category );
+        <div class="nnc-title nnc-clearblock">
+            <?php
+            if ($type != 'latest') {
+                $border_color = 'style="border-bottom-color:' . rainbownews_category_color($category) . ';"';
+                $title_color = 'style="color:' . rainbownews_category_color($category) . ';"';
+            } else {
+                $border_color = '';
+                $title_color = 'style="color:#4db2ec;"';
+            }
+            if (!empty($title)) {
+                echo '<h2 class="widget-title" ' . $border_color . '><span ' . $title_color . '>' . esc_html($title) . '</span></h2>';
+            }
+            if ($category != '')
+                $cat_slug = get_category($category);
 
-                ?>
-                <div class="nnc-viewmore"><a <?php if(!empty($cat_slug->slug)){ ?> href="<?php echo site_url(). __('/category/', 'rainbownews') . $cat_slug->slug; ?>" <?php }?>><i class="fa fa-th-large" title="View All"></i></a>
+            ?>
+            <div class="nnc-viewmore">
+                <a <?php if (!empty($cat_slug->slug)) { ?> href="<?php echo site_url() . __('/category/', 'rainbownews') . $cat_slug->slug; ?>" <?php } ?>><i
+                        class="fa fa-th-large" title="View All"></i></a>
             </div>
             <div class="nnc-category-block nnc-clearblock">
-        <?php
-        $i = 1;
-        while ($get_featured_posts->have_posts()):$get_featured_posts->the_post();
-            ?>
+                <?php
+                $i = 1;
+                while ($get_featured_posts->have_posts()):$get_featured_posts->the_post();
+                    ?>
 
-            <?php if ($i == 1) {
-                echo '<div class="nnc-category-large">';
-            } elseif ($i == 2) {
-                echo '<div class="nnc-category-small">';
-            } ?>
-                    <div class="nnc-category-single <?php echo has_post_thumbnail()?'':'nnc-no-image'; ?>">
-                        <?php if($i == 1 || $i == 2) { ?>
+                    <?php if ($i == 1) {
+                        echo '<div class="nnc-category-large">';
+                    } elseif ($i == 2) {
+                        echo '<div class="nnc-category-small">';
+                    } ?>
+                    <div class="nnc-category-single <?php echo has_post_thumbnail() ? '' : 'nnc-no-image'; ?>">
+                        <?php if ($i == 1 || $i == 2) { ?>
                             <?php if (has_post_thumbnail()) : ?>
                                 <figure class="nnc-img">
                                     <?php the_post_thumbnail('large'); ?>
                                 </figure>
                             <?php endif; ?>
-                        <?php }else{ ?>
+                        <?php } else { ?>
                             <figure class="nnc-img">
                                 <?php the_post_thumbnail('thumbnail'); ?>
                             </figure>
                         <?php } ?>
                         <div class="nnc-category-dtl">
-                            <div class="nnc-entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_title(); ?></a></div>
+                            <div class="nnc-entry-title"><a href="<?php the_permalink(); ?>"
+                                                            title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+                            </div>
                             <div class="nnc-entry-meta">
-                                <?php if($i == 1){ ?>
-                                <span class="author">By <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"  title="<?php the_author(); ?>"><?php echo esc_html(get_the_author() ); ?></a></span>
+                                <?php if ($i == 1) { ?>
+                                    <span class="author">By <a
+                                            href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"
+                                            title="<?php the_author(); ?>"><?php echo esc_html(get_the_author()); ?></a></span>
                                 <?php } ?>
-												<span class="posted-on">
-													<a href="<?php the_permalink(); ?>" title="<?php echo get_the_time(); ?>" rel="bookmark">
+                                <span class="posted-on">
+													<a href="<?php the_permalink(); ?>"
+                                                       title="<?php echo get_the_time(); ?>" rel="bookmark">
                                                         <time class="entry-date" datetime="">
                                                             <i class="fa fa-calendar"></i> <?php echo get_the_date(); ?>
                                                         </time>
                                                     </a>
 												</span>
-                                <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i>  <a href="<?php the_permalink(); ?>" title="No Comments"><?php comments_popup_link( 'No Comment', '1', '%' );?></a></span>
+                                <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i>  <a
+                                        href="<?php the_permalink(); ?>"
+                                        title="No Comments"><?php comments_popup_link('No Comment', '1', '%'); ?></a></span>
                             </div>
                             <div class="nnc-category-list">
-                                <?php if($i == 1)
+                                <?php if ($i == 1)
                                     rainbownews_colored_category();
                                 ?>
                             </div>
 
-                            <?php if($i == 1) : ?><p> <?php echo rainbownews_excerpt(get_the_content(), 200); ?></p><?php endif; ?>
+                            <?php if ($i == 1) : ?>
+                                <p> <?php echo rainbownews_excerpt(get_the_content(), 200); ?></p><?php endif; ?>
                         </div>
                     </div>
-            <?php if ($i == 1) {
-                echo '</div>';
-            }
-            $i++;
-        endwhile;
-        if ($i == 2) {
-            echo '</div>';
-        }
+                    <?php if ($i == 1) {
+                        echo '</div>';
+                    }
+                    $i++;
+                endwhile;
+                if ($i == 2) {
+                    echo '</div>';
+                }
 
-        // Reset Post Data
-        wp_reset_query();
-        ?>
+                // Reset Post Data
+                wp_reset_query();
+                ?>
             </div>
         </div>
 
