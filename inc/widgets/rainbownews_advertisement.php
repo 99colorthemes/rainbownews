@@ -65,12 +65,12 @@ class rainbownews_advertisement extends WP_Widget {
             <input type="button" class="button button-primary custom_media_button" id="custom_media_button" name="<?php echo $this->get_field_name( $image_url ); ?>" value="<?php _e( 'Upload Image', 'rainbownews' ); ?>" style="margin-top:5px; margin-right: 30px;" onclick="imageWidget.uploader( '<?php echo $this->get_field_id( $image_url ); ?>' ); return false;"/>
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('category'); ?>"><?php _e('Select category', 'rainbownews'); ?>
+            <label for="<?php echo $this->get_field_id('category'); ?>"><?php _e('Select Sizes', 'rainbownews'); ?>
                 :</label>
             <select name="<?php echo $this->get_field_name('style'); ?>">
-                <option  value="style1"  <?php if ( $style == 'style1' ) echo 'selected="selected"'; ?> id="<?php echo $this->get_field_id('style'); ?>"  name="<?php echo $this->get_field_name('style'); ?>"><?php _e('Style 1', 'rainbownews'); ?></option>
-                <option  value="style2"  <?php if ( $style == 'style2' ) echo 'selected="selected"'; ?> id="<?php echo $this->get_field_id('style'); ?>"  name="<?php echo $this->get_field_name('style'); ?>"><?php _e('Style 2', 'rainbownews'); ?></option>
-                <option  value="style3"  <?php if ( $style == 'style3' ) echo 'selected="selected"'; ?> id="<?php echo $this->get_field_id('style'); ?>"  name="<?php echo $this->get_field_name('style'); ?>"><?php _e('Style 3', 'rainbownews'); ?></option>
+                <option  value="style1"  <?php if ( $style == 'style1' ) echo 'selected="selected"'; ?> id="<?php echo $this->get_field_id('style'); ?>"  name="<?php echo $this->get_field_name('style'); ?>"><?php _e('728X90', 'rainbownews'); ?></option>
+                <option  value="style2"  <?php if ( $style == 'style2' ) echo 'selected="selected"'; ?> id="<?php echo $this->get_field_id('style'); ?>"  name="<?php echo $this->get_field_name('style'); ?>"><?php _e('970X250', 'rainbownews'); ?></option>
+                <option  value="style3"  <?php if ( $style == 'style3' ) echo 'selected="selected"'; ?> id="<?php echo $this->get_field_id('style'); ?>"  name="<?php echo $this->get_field_name('style'); ?>"><?php _e('970X90', 'rainbownews'); ?></option>
             </select>
         </p>
 
@@ -107,7 +107,7 @@ class rainbownews_advertisement extends WP_Widget {
  ?>
 
 
-        <div class="<?php if($style == 'style2'){ echo 'nnc-middle-ads'; }elseif($style == 'style3') { echo 'nnc-footer-ads';} else {echo 'nnc-top-ads';} ?>">
+        <div class="<?php if($style == 'style2'){ echo 'nnc-970X250-ads'; }elseif($style == 'style3') { echo 'nnc-970X90-ads';} else {echo 'nnc-728X90-ads';} ?>">
             <?php if ( !empty( $title ) ) { ?>
                <!-- <div class="nnc-advertisement-title">
                     <?php /*echo $before_title. esc_html( $title ) . $after_title; */?>
