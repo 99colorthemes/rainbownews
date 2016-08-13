@@ -116,11 +116,11 @@ class rainbownews_advertisement extends WP_Widget {
             $output = '';
             if ( !empty( $image_url ) ) {
                 if ( !empty( $image_link ) ) {
-                    $output .= '<a href="'.$image_link.'" class="single_ad_728x90" target="_blank" rel="nofollow">
-                                    <img src="'.$image_url.'" width="728" height="90">
+                    $output .= '<a href="'.$image_link.'" target="_blank" rel="nofollow">
+                                    <img src="'.$image_url.'">
                            </a>';
                 } else {
-                    $output .= '<img src="'.$image_url.'" width="728" height="90">';
+                    $output .= '<img src="'.$image_url.'" >';
                 }
                 echo $output;
             } ?>

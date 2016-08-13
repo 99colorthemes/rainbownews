@@ -39,22 +39,12 @@ class rainbownews_featured_post extends WP_Widget
 
     function form($instance)
     {
-        $defaults['number'] = 3;
         $defaults['type'] = 'latest';
         $defaults['category'] = '';
         $instance = wp_parse_args((array)$instance, $defaults);
-        $number = $instance['number'];
         $type = $instance['type'];
         $category = $instance['category'];
         ?>
-        <p>
-            <label
-                for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of posts to display:', 'rainbownews'); ?></label>
-            <input id="<?php echo $this->get_field_id('number'); ?>"
-                   name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo $number; ?>"
-                   size="3"/>
-        </p>
-
         <p><input type="radio" <?php checked($type, 'latest') ?> id="<?php echo $this->get_field_id('type'); ?>"
                   name="<?php echo $this->get_field_name('type'); ?>"
                   value="latest"/><?php _e('Show latest Posts', 'rainbownews'); ?><br/>
@@ -74,7 +64,6 @@ class rainbownews_featured_post extends WP_Widget
     function update($new_instance, $old_instance)
     {
         $instance = $old_instance;
-        $instance['number'] = absint($new_instance['number']);
         $instance['type'] = $new_instance['type'];
         $instance['category'] = $new_instance['category'];
 
@@ -87,19 +76,18 @@ class rainbownews_featured_post extends WP_Widget
         extract($instance);
 
         global $post;
-        $number = empty($instance['number']) ? 4 : $instance['number'];
         $type = isset($instance['type']) ? $instance['type'] : 'latest';
         $category = isset($instance['category']) ? $instance['category'] : '';
 
         if ($type == 'latest') {
             $get_featured_posts = new WP_Query(array(
-                'posts_per_page' => $number,
+                'posts_per_page' => 3,
                 'post_type' => 'post',
                 'ignore_sticky_posts' => true
             ));
         } else {
             $get_featured_posts = new WP_Query(array(
-                'posts_per_page' => $number,
+                'posts_per_page' => 3,
                 'post_type' => 'post',
                 'category__in' => $category
             ));
