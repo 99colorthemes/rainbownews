@@ -16,26 +16,17 @@ function register_rainbownews_featured_post()
     register_widget("rainbownews_featured_post");
 }
 
-class Rainbownews_featured_post extends WP_Widget
+class rainbownews_featured_post extends WP_Widget
 {
     function __construct()
     {
         $widget_ops = array(
-            'classname' => 'widget_featured_post',
-            'description' => esc_html__('Add your  Featured Post', 'rainbownews')
+            'classname'      => 'widget_featured_post',
+            'description'    => esc_html__('Add your  Featured Post', 'rainbownews')
         );
-        $control_ops = array(
-            'width' => 200,
-            'height' => 250
-        );
-        parent::__construct(
-            false,
-            $name = esc_html__('NNC: Main Featured Post ', 'rainbownews'),
-            $widget_ops,
-            $control_ops
-        );
-    }// end of construct.
 
+        parent::__construct('nnc-main-featured-post', '&nbsp;' . __('NNC: Main Featured Post', 'rainbownews'), $widget_ops);
+    }// end of construct.
 
     function form($instance)
     {
@@ -45,12 +36,14 @@ class Rainbownews_featured_post extends WP_Widget
         $type = $instance['type'];
         $category = $instance['category'];
         ?>
-        <p><input type="radio" <?php checked($type, 'latest') ?> id="<?php echo $this->get_field_id('type'); ?>"
+        <p>
+            <input type="radio" <?php checked($type, 'latest') ?> id="<?php echo $this->get_field_id('type'); ?>"
                   name="<?php echo $this->get_field_name('type'); ?>"
                   value="latest"/><?php _e('Show latest Posts', 'rainbownews'); ?><br/>
             <input type="radio" <?php checked($type, 'category') ?> id="<?php echo $this->get_field_id('type'); ?>"
                    name="<?php echo $this->get_field_name('type'); ?>"
-                   value="category"/><?php _e('Show posts from a category', 'rainbownews'); ?><br/></p>
+                   value="category"/><?php _e('Show posts from a category', 'rainbownews'); ?><br/>
+        </p>
 
         <p>
             <label for="<?php echo $this->get_field_id('category'); ?>"><?php _e('Select category', 'rainbownews'); ?>

@@ -23,29 +23,21 @@ class rainbownews_gallery_widget extends WP_Widget {
             'classname'       => 'widget_gallery_block',
             'description'     => esc_html__( 'Display your images as in grid gallery views.', 'rainbownews' )
         );
-        $control_ops        = array(
-            'width'           => 200,
-            'height'          =>250
-        );
-    parent::__construct(
-    false,
-        $name             = esc_html__( 'NNC: Gallery', 'rainbownews' ),
-        $widget_ops,
-        $control_ops
-    );
+
+    parent::__construct('nnc-gallery', '&nbsp;' . __(' NNC: Gallery', 'rainbownews'), $widget_ops);
     }// end of construct.
 
     function form( $instance ) {
-    $defaults = array();
-    $defaults['title'] = '';
-    $defaults['text'] = '';
-    for ($i=0; $i< 8; $i++) {
-    $defaults['image_'.$i] = '';
-    }
+        $defaults = array();
+        $defaults['title'] = '';
+        $defaults['text'] = '';
+        for ($i=0; $i< 8; $i++) {
+            $defaults['image_'.$i] = '';
+        }
 
-    $instance             = wp_parse_args( (array) $instance, $defaults );
-    $title                = $instance['title'];
-    $text                 = $instance['text'];
+        $instance = wp_parse_args( (array) $instance, $defaults );
+        $title    = $instance['title'];
+        $text     = $instance['text'];
     ?>
     <p>
         <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title:', 'rainbownews' ); ?></label>
@@ -82,11 +74,12 @@ class rainbownews_gallery_widget extends WP_Widget {
         for( $i=0; $i<8; $i++ ) {
             $instance['image_'.$i]   = esc_url_raw( $new_instance['image_'.$i] );
         }
+
         if ( current_user_can('unfiltered_html') )
             $instance['text']     =  $new_instance['text'];
         else
             $instance['text']     = stripslashes( wp_filter_post_kses( addslashes( $new_instance['text'] ) ) );
-        // wp_filter_post_kses() expects slashed
+
         return $instance;
     }// end of update function.
 
@@ -115,31 +108,23 @@ class rainbownews_gallery_widget extends WP_Widget {
                 </div>
                 <div class="nnc-gallery-block nnc-latest-block nnc-clearblock">
 
-          <?php if ( !empty( $images ) ) :
-            foreach ( $images as $key => $image ) {
-                if ( $image !='' ){ ?>
-                    <div class="nnc-gallery-single nnc-latest-single">
-                        <figure class="nnc-g-img">
-                            <a href="#"><img src="<?php echo esc_url( $image ); ?>"></a>
-                        </figure>
-                        <div class="nnc-ico-dtl"><a href="#"><i class="fa fa-search-plus"></i></a></div>
-                    </div>
-               <?php
-
-                }
-            }
-        endif; ?>
-
-
+                  <?php if ( !empty( $images ) ) :
+                    foreach ( $images as $key => $image ) {
+                        if ( $image !='' ){ ?>
+                            <div class="nnc-gallery-single nnc-latest-single">
+                                <figure class="nnc-g-img">
+                                    <a href="#"><img src="<?php echo esc_url( $image ); ?>"></a>
+                                </figure>
+                                <div class="nnc-ico-dtl"><a href="#"><i class="fa fa-search-plus"></i></a></div>
+                            </div>
+                       <?php
+                        }
+                    }
+                     endif; ?>
                 </div>
             </div>
-
-
-
-
-
         <!-- Gallery-end -->
         <?php echo $after_widget; ?>
         <?php
-    }// end of widdget function.
+    }// end of widget function.
 }// end of apply for action widget.

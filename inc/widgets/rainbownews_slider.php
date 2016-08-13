@@ -18,23 +18,16 @@ function register_rainbownews_slider()
 
 class rainbownews_slider extends WP_Widget
 {
+
     function __construct()
     {
         $widget_ops = array(
-            'classname' => 'widget_slider',
-            'description' => esc_html__('Add your  slider', 'rainbownews')
+            'classname'      => 'widget_slider',
+            'description'    => __('Add your slider', 'rainbownews')
         );
-        $control_ops = array(
-            'width' => 200,
-            'height' => 250
-        );
-        parent::__construct(
-            false,
-            $name = esc_html__('NNC: Main Slider ', 'rainbownews'),
-            $widget_ops,
-            $control_ops
-        );
-    }// end of construct.
+
+        parent::__construct('nnc-slider', '&nbsp;' . __('NNC: Main Slider ', 'rainbownews'), $widget_ops);
+    }
 
 
     function form($instance)

@@ -22,14 +22,11 @@ class rainbownews_latest_post extends WP_Widget
     function __construct()
     {
         $widget_ops = array(
-            'classname' => 'widget_latest_post',
-            'description' => __('Display latest posts or posts of specific category.', 'rainbownews')
+            'classname'      => 'widget_latest_post',
+            'description'    => __('Display latest posts or posts of specific category.', 'rainbownews')
         );
-        $control_ops = array(
-            'width' => 200,
-            'height' => 250
-        );
-        parent::__construct(false, $name = __(' NNC: Latest Post ', 'rainbownews'), $widget_ops);
+
+        parent::__construct('nnc-latest-post', '&nbsp;' . __(' NNC: Latest Post ', 'rainbownews'), $widget_ops);
     }
 
     function form($instance)
@@ -49,16 +46,21 @@ class rainbownews_latest_post extends WP_Widget
         $category = $instance['category'];
         $style = $instance['style'];
         ?>
+
         <p><?php _e('Layout will be as below:', 'rainbownews') ?></p>
+
         <!--   <div style="text-align: center;"><img src="<?php echo get_template_directory_uri(); ?>/<?php echo get_template_directory_uri() . '/img/style-1.jpg' ?>"></div> -->
+
         <p>
             <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'rainbownews'); ?></label>
             <input id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>"
                    type="text" value="<?php echo $title; ?>"/>
         </p>
+
         <?php _e('Description', 'rainbownews'); ?>
         <textarea class="widefat" rows="5" cols="20" id="<?php echo $this->get_field_id('text'); ?>"
                   name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea>
+
         <p>
             <label
                 for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of posts to display:', 'rainbownews'); ?></label>
@@ -67,19 +69,24 @@ class rainbownews_latest_post extends WP_Widget
                    size="3"/>
         </p>
 
-        <p><input type="radio" <?php checked($type, 'latest') ?> id="<?php echo $this->get_field_id('type'); ?>"
-                  name="<?php echo $this->get_field_name('type'); ?>"
-                  value="latest"/><?php _e('Show latest Posts', 'rainbownews'); ?><br/>
+        <p>
+            <input type="radio" <?php checked($type, 'latest') ?> id="<?php echo $this->get_field_id('type'); ?>"
+                   name="<?php echo $this->get_field_name('type'); ?>"
+                   value="latest"/><?php _e('Show latest Posts', 'rainbownews'); ?><br/>
             <input type="radio" <?php checked($type, 'category') ?> id="<?php echo $this->get_field_id('type'); ?>"
                    name="<?php echo $this->get_field_name('type'); ?>"
-                   value="category"/><?php _e('Show posts from a category', 'rainbownews'); ?><br/></p>
+                   value="category"/><?php _e('Show posts from a category', 'rainbownews'); ?><br/>
+        </p>
 
-        <p><input type="radio" <?php checked($style, 'style1') ?> id="<?php echo $this->get_field_id('style'); ?>"
-                  name="<?php echo $this->get_field_name('style'); ?>"
-                  value="style1"/><?php _e('Style 1', 'rainbownews'); ?><br/>
+        <p>
+            <input type="radio" <?php checked($style, 'style1') ?> id="<?php echo $this->get_field_id('style'); ?>"
+                   name="<?php echo $this->get_field_name('style'); ?>"
+                   value="style1"/><?php _e('Style 1', 'rainbownews'); ?><br/>
             <input type="radio" <?php checked($style, 'style2') ?> id="<?php echo $this->get_field_id('style'); ?>"
                    name="<?php echo $this->get_field_name('style'); ?>"
-                   value="style2"/><?php _e('Style 2', 'rainbownews'); ?><br/></p>
+                   value="style2"/><?php _e('Style 2', 'rainbownews'); ?><br/>
+        </p>
+
         <p>
             <label for="<?php echo $this->get_field_id('category'); ?>"><?php _e('Select category', 'rainbownews'); ?>
                 :</label>

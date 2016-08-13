@@ -19,16 +19,16 @@ function register_rainbownews_post_tab_widget()
 /**
  * Posts Tabs Widget Class
  */
-class Rainbownews_Posts_Tabs extends WP_Widget
+class rainbownews_posts_tabs extends WP_Widget
 {
     function __construct()
     {
         $widget_ops = array(
-            'classname' => 'widget_custom_posts_tabs_entries',
-            'description' => __('Latest, Popular posts & recent comments', 'rainbownews')
+            'classname'      => 'widget_custom_posts_tabs_entries',
+            'description'    => __('Latest, Popular posts & recent comments', 'rainbownews')
         );
 
-        parent::__construct('custom-posts-tabs', '&nbsp;' . __('NNC - Posts Tabs', 'rainbownews'), $widget_ops);
+        parent::__construct('custom-posts-tabs', '&nbsp;' . __('NNC: Posts Tabs', 'rainbownews'), $widget_ops);
     }
 
     function form($instance)
