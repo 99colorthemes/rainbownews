@@ -16,7 +16,7 @@ function register_rainbownews_featured_post()
     register_widget("rainbownews_featured_post");
 }
 
-class rainbownews_featured_post extends WP_Widget
+class Rainbownews_featured_post extends WP_Widget
 {
     function __construct()
     {

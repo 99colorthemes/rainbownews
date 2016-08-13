@@ -39,8 +39,23 @@ if($('.main-navigation').length){
 // })
 
 
-jQuery(document).ready(function(){
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
 
+
+
+jQuery(document).ready(function(){
     jQuery(window).scroll(function() {
         if (jQuery(this).scrollTop() > 1){
             jQuery('.nnc-scroll-top').addClass("show");
@@ -84,22 +99,6 @@ jQuery(document).ready(function(){
         pauseOnHover: 1
     });
 
-
-    var tabs = function() {
-        $('.tabs').each(function() {
-            var el = $(this);
-            el.find('.content').hide();
-            el.find('.menu-tab > li').on('click', function(e) {
-                var liActive = $(this).index();
-                var contentActive = $(this).parents('.tabs').find('.content').eq(liActive);
-
-                $(this).addClass('active').siblings().removeClass('active');
-                contentActive.fadeIn().siblings().hide();
-
-                e.preventDefault();
-            }).filter('.active').trigger('click');
-        });
-    };
 
 
 });

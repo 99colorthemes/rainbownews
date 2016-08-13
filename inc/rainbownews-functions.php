@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 /**
  * Register widget area.
@@ -6,253 +6,330 @@
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 
-function rainbownews_widgets_init() {
+function rainbownews_widgets_init()
+{
     // Registering main right sidebar
 
-    register_sidebar( array(
-        'name'          => esc_html__( 'Right Sidebar', 'rainbownews' ),
-        'id'            => 'sidebar-1',
-        'description'   => esc_html__( 'Add widgets here.', 'rainbownews' ),
+    register_sidebar(array(
+        'name' => esc_html__('Right Sidebar', 'rainbownews'),
+        'id' => 'sidebar-1',
+        'description' => esc_html__('Add widgets here.', 'rainbownews'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title"><span>',
-        'after_title'   => '</span></h2>',
-    ) );
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title"><span>',
+        'after_title' => '</span></h2>',
+    ));
 
     // Registering main left sidebar
-    register_sidebar( array(
-        'name'            => esc_html__( 'Left Sidebar', 'rainbownews' ),
-        'id'              => 'rainbownews_left_sidebar',
-        'description'     => esc_html__( 'Shows widgets at Left side.', 'rainbownews' ),
+    register_sidebar(array(
+        'name' => esc_html__('Left Sidebar', 'rainbownews'),
+        'id' => 'rainbownews_left_sidebar',
+        'description' => esc_html__('Shows widgets at Left side.', 'rainbownews'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title"><span>',
-        'after_title'   => '</span></h2>'
-    ) );
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title"><span>',
+        'after_title' => '</span></h2>'
+    ));
 
-    register_sidebar( array(
-        'name'            => esc_html__( 'Front Page: Sidebar', 'rainbownews' ),
-        'id'              => 'rainbownews_front_page_sidebar',
-        'description'     => esc_html__( 'Add Widget here for front page side bar.', 'rainbownews' ),
+    register_sidebar(array(
+        'name' => esc_html__('Front Page: Sidebar', 'rainbownews'),
+        'id' => 'rainbownews_front_page_sidebar',
+        'description' => esc_html__('Add Widget here for front page side bar.', 'rainbownews'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title"><span>',
-        'after_title'   => '</span></h2>'
-    ) );
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title"><span>',
+        'after_title' => '</span></h2>'
+    ));
 
-    register_sidebar( array(
-        'name'          => esc_html__( 'Top Advertisement', 'rainbownews' ),
-        'id'            => 'rainbownews_advertisement',
-        'description'   => esc_html__( 'Add widgets here.', 'rainbownews' ),
+    register_sidebar(array(
+        'name' => esc_html__('Top Advertisement', 'rainbownews'),
+        'id' => 'rainbownews_advertisement',
+        'description' => esc_html__('Add widgets here.', 'rainbownews'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ) );
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
 
-    register_sidebar( array(
-        'name'          => esc_html__( 'Front Page: Left Area', 'rainbownews' ),
-        'id'            => 'rainbownews_front_page_left_area',
-        'description'   => esc_html__( 'Add widgets here.', 'rainbownews' ),
+    register_sidebar(array(
+        'name' => esc_html__('Front Page: Left Area', 'rainbownews'),
+        'id' => 'rainbownews_front_page_left_area',
+        'description' => esc_html__('Add widgets here.', 'rainbownews'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ) );
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
 
-    register_sidebar( array(
-        'name'          => esc_html__( 'Front Page: Right Area', 'rainbownews' ),
-        'id'            => 'rainbownews_front_page_right_area',
-        'description'   => esc_html__( 'Add widgets here.', 'rainbownews' ),
+    register_sidebar(array(
+        'name' => esc_html__('Front Page: Right Area', 'rainbownews'),
+        'id' => 'rainbownews_front_page_right_area',
+        'description' => esc_html__('Add widgets here.', 'rainbownews'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ) );
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
 
-    register_sidebar( array(
-        'name'          => esc_html__( 'Front Page: Latest Posts Area', 'rainbownews' ),
-        'id'            => 'rainbownews_front_page_latest_post_area',
-        'description'   => esc_html__( 'Add widgets here.', 'rainbownews' ),
+    register_sidebar(array(
+        'name' => esc_html__('Front Page: Latest Posts Area', 'rainbownews'),
+        'id' => 'rainbownews_front_page_latest_post_area',
+        'description' => esc_html__('Add widgets here.', 'rainbownews'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ) );
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
 
-    register_sidebar( array(
-        'name'          => esc_html__( 'Front Page: Top Content Area', 'rainbownews' ),
-        'id'            => 'rainbownews_front_page_content_area',
-        'description'   => esc_html__( 'Add widgets here.', 'rainbownews' ),
+    register_sidebar(array(
+        'name' => esc_html__('Front Page: Top Content Area', 'rainbownews'),
+        'id' => 'rainbownews_front_page_content_area',
+        'description' => esc_html__('Add widgets here.', 'rainbownews'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ) );
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
 
-    register_sidebar( array(
-        'name'          => esc_html__( 'Front Page: Middle Left Content Area', 'rainbownews' ),
-        'id'            => 'rainbownews_front_page_middle_left_content_area',
-        'description'   => esc_html__( 'Add widgets here.', 'rainbownews' ),
+    register_sidebar(array(
+        'name' => esc_html__('Front Page: Middle Left Content Area', 'rainbownews'),
+        'id' => 'rainbownews_front_page_middle_left_content_area',
+        'description' => esc_html__('Add widgets here.', 'rainbownews'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ) );
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
 
-    register_sidebar( array(
-        'name'          => esc_html__( 'Front Page: Middle Right Content Area', 'rainbownews' ),
-        'id'            => 'rainbownews_front_page_middle_right_content_area',
-        'description'   => esc_html__( 'Add widgets here.', 'rainbownews' ),
+    register_sidebar(array(
+        'name' => esc_html__('Front Page: Middle Right Content Area', 'rainbownews'),
+        'id' => 'rainbownews_front_page_middle_right_content_area',
+        'description' => esc_html__('Add widgets here.', 'rainbownews'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ) );
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
 
-    register_sidebar( array(
-        'name'          => esc_html__( 'Front Page: Bottom Content Area', 'rainbownews' ),
-        'id'            => 'rainbownews_front_page_bottom_content_area',
-        'description'   => esc_html__( 'Add widgets here.', 'rainbownews' ),
+    register_sidebar(array(
+        'name' => esc_html__('Front Page: Bottom Content Area', 'rainbownews'),
+        'id' => 'rainbownews_front_page_bottom_content_area',
+        'description' => esc_html__('Add widgets here.', 'rainbownews'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ) );
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
 
-    register_sidebar( array(
-        'name'          => esc_html__( 'Front Page: Gallery Area', 'rainbownews' ),
-        'id'            => 'rainbownews_front_page_gallery_area',
-        'description'   => esc_html__( 'Add widgets here.', 'rainbownews' ),
+    register_sidebar(array(
+        'name' => esc_html__('Front Page: Gallery Area', 'rainbownews'),
+        'id' => 'rainbownews_front_page_gallery_area',
+        'description' => esc_html__('Add widgets here.', 'rainbownews'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ) );
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
 
-    register_sidebar( array(
-        'name'          => esc_html__( 'Footer 1', 'rainbownews' ),
-        'id'            => 'rainbownews_footer1_area',
-        'description'   => esc_html__( 'Add widgets here.', 'rainbownews' ),
+    register_sidebar(array(
+        'name' => esc_html__('Footer 1', 'rainbownews'),
+        'id' => 'rainbownews_footer1_area',
+        'description' => esc_html__('Add widgets here.', 'rainbownews'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title"><span>',
-        'after_title'   => '</span></h2>',
-    ) );
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title"><span>',
+        'after_title' => '</span></h2>',
+    ));
 
-    register_sidebar( array(
-        'name'          => esc_html__( 'Footer 2', 'rainbownews' ),
-        'id'            => 'rainbownews_footer2_area',
-        'description'   => esc_html__( 'Add widgets here.', 'rainbownews' ),
+    register_sidebar(array(
+        'name' => esc_html__('Footer 2', 'rainbownews'),
+        'id' => 'rainbownews_footer2_area',
+        'description' => esc_html__('Add widgets here.', 'rainbownews'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title"><span>',
-        'after_title'   => '</span></h2>',
-    ) );
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title"><span>',
+        'after_title' => '</span></h2>',
+    ));
 
-    register_sidebar( array(
-        'name'          => esc_html__( 'Footer 3', 'rainbownews' ),
-        'id'            => 'rainbownews_footer3_area',
-        'description'   => esc_html__( 'Add widgets here.', 'rainbownews' ),
+    register_sidebar(array(
+        'name' => esc_html__('Footer 3', 'rainbownews'),
+        'id' => 'rainbownews_footer3_area',
+        'description' => esc_html__('Add widgets here.', 'rainbownews'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title"><span>',
-        'after_title'   => '</span></h2>',
-    ) );
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title"><span>',
+        'after_title' => '</span></h2>',
+    ));
 
-    register_sidebar( array(
-        'name'          => esc_html__( 'Footer 4', 'rainbownews' ),
-        'id'            => 'rainbownews_footer4_area',
-        'description'   => esc_html__( 'Add widgets here.', 'rainbownews' ),
+    register_sidebar(array(
+        'name' => esc_html__('Footer 4', 'rainbownews'),
+        'id' => 'rainbownews_footer4_area',
+        'description' => esc_html__('Add widgets here.', 'rainbownews'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title"><span>',
-        'after_title'   => '</span></h2>',
-    ) );
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title"><span>',
+        'after_title' => '</span></h2>',
+    ));
 
 }
-add_action( 'widgets_init', 'rainbownews_widgets_init' );
+
+add_action('widgets_init', 'rainbownews_widgets_init');
 
 
-function rainbownews_excerpt( $rainbownews_content , $rainbownews_letter_count){
-    $rainbownews_letter_count = !empty($rainbownews_letter_count) ? $rainbownews_letter_count : 100 ;
+function rainbownews_excerpt($rainbownews_content, $rainbownews_letter_count)
+{
+    $rainbownews_letter_count = !empty($rainbownews_letter_count) ? $rainbownews_letter_count : 100;
     $rainbownews_striped_content = strip_shortcodes($rainbownews_content);
     $rainbownews_striped_content = strip_tags($rainbownews_striped_content);
-    $rainbownews_excerpt = mb_substr($rainbownews_striped_content, 0 , $rainbownews_letter_count);
-    if(strlen($rainbownews_striped_content) > strlen($rainbownews_excerpt)){
-        $rainbownews_excerpt.= "...";
+    $rainbownews_excerpt = mb_substr($rainbownews_striped_content, 0, $rainbownews_letter_count);
+    if (strlen($rainbownews_striped_content) > strlen($rainbownews_excerpt)) {
+        $rainbownews_excerpt .= "...";
     }
     return $rainbownews_excerpt;
 }
 
-/*----------  Trending News  ----------*/
+function rainbownews_category_news()
+{
+
+    $cat = get_theme_mod('rainbownews_news_ticker_category_layout');
+    $title = get_theme_mod('rainbownews_news_ticker_title');
+
+    $args = array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'posts_per_page' => 6,
+        'cat' => $cat,
+    );
+    $loop = new WP_Query($args);
+    if ($loop->have_posts()) {
+        ?>
+        <div class="nnc-trending-single">
+            <div class="nnc-trend-title"><?php echo $title; ?></div>
+            <ul class="newsticker">
+                <?php
+                while ($loop->have_posts()) : $loop->the_post();
+                    ?>
+                    <li class="pm_single_title"><a
+                            href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></li>
+                    <?php
+                endwhile;
+                wp_reset_postdata();
+
+
+                ?>
+            </ul>
+        </div>
+
+        <?php
+    }
+}
+
+
+function rainbownews_latest_news()
+{
+    $title = get_theme_mod('rainbownews_news_ticker_title');
+    $p = new WP_Query(array(
+        'posts_per_page' => 5,
+        'post_status' => 'publish',
+        'ignore_sticky_posts' => true,
+        'post_type' => 'post',
+        'order' => 'DESC',
+        'orderby' => 'meta_value',
+        'meta_key' => 'rainbownews_post_views_count'
+    ));
+
+    if ($p->have_posts()) {
+        ?>
+
+        <div class="nnc-trending-single">
+            <div class="nnc-trend-title"><?php echo $title ; ?></div>
+            <ul class="newsticker">
+                <?php
+                while ($p->have_posts()) {
+                    $p->the_post();
+                    ?>
+                    <li class="pm_single_title"><a
+                            href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></li>
+                    <?php
+                }
+                ?>
+            </ul>
+        </div>
+        <?php
+    }
+    wp_reset_postdata();
+}
 
 
 function rainbownews_trending_news()
 {
     $rainbownews = array('post_type' => 'post',
-                                'posts_per_page' => 5,
-                                'ignore_sticky_posts' => true,
-                                'post_status' => 'publish'
-                                );
+        'posts_per_page' => 5,
+        'ignore_sticky_posts' => true,
+        'post_status' => 'publish'
+    );
+    $title = get_theme_mod('rainbownews_news_ticker_title');
     $query = new WP_Query($rainbownews);
     ?>
 
 
     <div class="nnc-trending-single">
-        <div class="nnc-trend-title"><?php echo __('Trending News', 'rainbownews'); ?></div>
-        <ul class="newsticker"> 
+        <div class="nnc-trend-title"><?php echo $title; ?></div>
+        <ul class="newsticker">
             <?php
-                while($query->have_posts() ){
-                    $query->the_post();
-                ?> 
-                <li class="pm_single_title"><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></li> 
-            <?php
+            while ($query->have_posts()) {
+                $query->the_post();
+                ?>
+                <li class="pm_single_title"><a
+                        href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></li>
+                <?php
             }
-            ?>  
+            ?>
         </ul>
-    </div> 
+    </div>
     <?php
 }
 
 
-function rainbownews_footer_count(){
-$rainbownews_count = 0;
-if(is_active_sidebar('rainbownews_footer1_area'))
-$rainbownews_count++;
+function rainbownews_footer_count()
+{
+    $rainbownews_count = 0;
+    if (is_active_sidebar('rainbownews_footer1_area'))
+        $rainbownews_count++;
 
-if(is_active_sidebar('rainbownews_footer2_area'))
-$rainbownews_count++;
+    if (is_active_sidebar('rainbownews_footer2_area'))
+        $rainbownews_count++;
 
-if(is_active_sidebar('rainbownews_footer3_area'))
-$rainbownews_count++;
+    if (is_active_sidebar('rainbownews_footer3_area'))
+        $rainbownews_count++;
 
-if(is_active_sidebar('rainbownews_footer4_area'))
-$rainbownews_count++;
+    if (is_active_sidebar('rainbownews_footer4_area'))
+        $rainbownews_count++;
 
-return $rainbownews_count;
+    return $rainbownews_count;
 }
 
 
 // rainbownews Category Layouts
 
-if ( ! function_exists( 'rainbownews_category_layout' ) ) :
-    function rainbownews_category_layout( $wp_category_id ) {
+if (!function_exists('rainbownews_category_layout')) :
+    function rainbownews_category_layout($wp_category_id)
+    {
 
         $args = array(
             'orderby' => 'id',
             'hide_empty' => 0
         );
-        $category = get_categories( $args );
-        foreach ($category as $category_list ) {
-            $layout = get_theme_mod('rainbownews_category_layout_'.$wp_category_id, 'layout-1');
+        $category = get_categories($args);
+        foreach ($category as $category_list) {
+            $layout = get_theme_mod('rainbownews_category_layout_' . $wp_category_id, 'layout-1');
             return $layout;
         }
     }
 endif;
 
 /****************************** BREADCRUMBS ******************************************/
-if ( ! function_exists( 'rainbownews_breadcrumbs' ) ) :
+if (!function_exists('rainbownews_breadcrumbs')) :
     /**
      * Display Breadcrumbs
      *
@@ -260,24 +337,25 @@ if ( ! function_exists( 'rainbownews_breadcrumbs' ) ) :
      *
      */
 
-    function rainbownews_breadcrumbs($delimiter='') {
+    function rainbownews_breadcrumbs($delimiter = '')
+    {
         global $post;
         //$rainbownews_breadcrumb_option_single = get_post_meta( $post->ID, 'rainbownews_breadcrumbs_options', true );
         //$rainbownews_breadcrumb_option_text_single = get_post_meta( $post->ID, 'rainbownews_breadcrumbs_separator', true );
-        $rainbownews_et_to = get_theme_mod('rainbownews_breadcrumbs_activate',1);
+        $rainbownews_et_to = get_theme_mod('rainbownews_breadcrumbs_activate', 1);
 
         //$rainbownews_breadcrumb_option_single = 'enable-breadcrumbs';
-        if($rainbownews_et_to == 1):
+        if ($rainbownews_et_to == 1):
             $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-            if(isset($rainbownews_et_to['breadcrumb_separator'])){
-                $delimiter = '<span class="breadcrumb_separator">'.$rainbownews_et_to['breadcrumb_separator'].'</span>';
-            }else{
+            if (isset($rainbownews_et_to['breadcrumb_separator'])) {
+                $delimiter = '<span class="breadcrumb_separator">' . $rainbownews_et_to['breadcrumb_separator'] . '</span>';
+            } else {
                 $delimiter = '<span class="breadcrumb_separator"> <i class="fa fa-angle-right"></i> </span>'; // delimiter between crumbs
             }
 
-            if(isset($rainbownews_et_to['breadcrumb_home_text'])){
+            if (isset($rainbownews_et_to['breadcrumb_home_text'])) {
                 $home = $rainbownews_et_to['breadcrumb_home_text'];
-            }else{
+            } else {
                 $home = '<i class="fa fa-home"></i>'; // text for the 'Home' link
             }
 
@@ -285,92 +363,94 @@ if ( ! function_exists( 'rainbownews_breadcrumbs' ) ) :
             $before = '<span class="current">'; // tag before the current crumb
             $after = '</span>'; // tag after the current crumb
 
-            $homeLink = esc_url( home_url() );
+            $homeLink = esc_url(home_url());
 
             if (is_home() || is_front_page()) {
                 if ($showOnHome == 1) echo '<div id="rainbownews--breadcrumbs"><div class="nnc-top-breadcrumbs"><a href="' . $homeLink . '" class="breadcrumb_home_text">' . $home . '</a></div></div>';
             } else {
                 echo '<div id="rainbownews--breadcrumbs"><div class="nnc-top-breadcrumbs"><a href="' . $homeLink . '" class="breadcrumb_home_text">' . $home . '</a>' . $delimiter . ' ';
 
-                if ( is_category() ) {
+                if (is_category()) {
                     $thisCat = get_category(get_query_var('cat'), false);
                     if ($thisCat->parent != 0) echo get_category_parents($thisCat->parent, TRUE, ' ' . $delimiter . ' ');
                     echo $before . single_cat_title('', false) . $after;
 
-                } elseif ( is_search() ) {
+                } elseif (is_search()) {
                     echo $before . 'Search results for "' . get_search_query() . '"' . $after;
 
-                } elseif ( is_day() ) {
+                } elseif (is_day()) {
                     echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
-                    echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
+                    echo '<a href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
                     echo $before . get_the_time('d') . $after;
 
-                } elseif ( is_month() ) {
+                } elseif (is_month()) {
                     echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
                     echo $before . get_the_time('F') . $after;
 
-                } elseif ( is_year() ) {
+                } elseif (is_year()) {
                     echo $before . get_the_time('Y') . $after;
 
-                } elseif ( is_single() && !is_attachment() ) {
-                    if ( get_post_type() != 'post' ) {
+                } elseif (is_single() && !is_attachment()) {
+                    if (get_post_type() != 'post') {
                         $post_type = get_post_type_object(get_post_type());
                         $slug = $post_type->rewrite;
                         echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
                         if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
                     } else {
-                        $cat = get_the_category(); $cat = $cat[0];
+                        $cat = get_the_category();
+                        $cat = $cat[0];
                         $cats = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
                         if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
                         echo $cats;
                         if ($showCurrent == 1) echo $before . get_the_title() . $after;
                     }
 
-                } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
+                } elseif (!is_single() && !is_page() && get_post_type() != 'post' && !is_404()) {
                     $post_type = get_post_type_object(get_post_type());
                     echo $before . $post_type->labels->singular_name . $after;
 
-                } elseif ( is_attachment() ) {
+                } elseif (is_attachment()) {
                     $parent = get_post($post->post_parent);
-                    $cat = get_the_category($parent->ID); $cat = $cat[0];
+                    $cat = get_the_category($parent->ID);
+                    $cat = $cat[0];
                     echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
                     echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a>';
                     if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
 
-                } elseif ( is_page() && !$post->post_parent ) {
+                } elseif (is_page() && !$post->post_parent) {
                     if ($showCurrent == 1) echo $before . get_the_title() . $after;
 
-                } elseif ( is_page() && $post->post_parent ) {
-                    $parent_id  = $post->post_parent;
+                } elseif (is_page() && $post->post_parent) {
+                    $parent_id = $post->post_parent;
                     $breadcrumbs = array();
                     while ($parent_id) {
                         $page = get_page($parent_id);
                         $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
-                        $parent_id  = $page->post_parent;
+                        $parent_id = $page->post_parent;
                     }
                     $breadcrumbs = array_reverse($breadcrumbs);
                     for ($i = 0; $i < count($breadcrumbs); $i++) {
                         echo $breadcrumbs[$i];
-                        if ($i != count($breadcrumbs)-1) echo ' ' . $delimiter . ' ';
+                        if ($i != count($breadcrumbs) - 1) echo ' ' . $delimiter . ' ';
                     }
                     if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
 
-                } elseif ( is_tag() ) {
+                } elseif (is_tag()) {
                     echo $before . 'Posts tagged "' . single_tag_title('', false) . '"' . $after;
 
-                } elseif ( is_author() ) {
+                } elseif (is_author()) {
                     global $author;
                     $userdata = get_userdata($author);
                     echo $before . 'Articles posted by ' . $userdata->display_name . $after;
 
-                } elseif ( is_404() ) {
+                } elseif (is_404()) {
                     echo $before . 'Error 404' . $after;
                 }
 
-                if ( get_query_var('paged') ) {
-                    if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-                    echo __('Page' , 'rainbownews') . ' ' . get_query_var('paged');
-                    if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
+                if (get_query_var('paged')) {
+                    if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author()) echo ' (';
+                    echo __('Page', 'rainbownews') . ' ' . get_query_var('paged');
+                    if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author()) echo ')';
                 }
 
                 echo '</div></div>';
@@ -382,41 +462,40 @@ endif;
 
 
 /********************************** SIDEBAR LAYOUT SELECTION *******************/
-if ( ! function_exists( 'rainbownews_layout_class' ) ) :
+if (!function_exists('rainbownews_layout_class')) :
     /**
      * Generate layout class for sidebar based on customizer and post meta settings.
      */
-    function rainbownews_layout_class() {
+    function rainbownews_layout_class()
+    {
         global $post;
 
-        $layout = get_theme_mod( 'rainbownews_global_layout', 'right_sidebar' );
+        $layout = get_theme_mod('rainbownews_global_layout', 'right_sidebar');
 
         // Front page displays in Reading Settings
         $page_for_posts = get_option('page_for_posts');
 
         // Get Layout meta
-        if($post) {
-            $layout_meta = get_post_meta( $post->ID, 'rainbownews_page_specific_layout', true );
+        if ($post) {
+            $layout_meta = get_post_meta($post->ID, 'rainbownews_page_specific_layout', true);
         }
         // Home page if Posts page is assigned
-        if( is_home() && !( is_front_page() ) ) {
-            $queried_id = get_option( 'page_for_posts' );
-            $layout_meta = get_post_meta( $queried_id, 'rainbownews_page_specific_layout', true );
+        if (is_home() && !(is_front_page())) {
+            $queried_id = get_option('page_for_posts');
+            $layout_meta = get_post_meta($queried_id, 'rainbownews_page_specific_layout', true);
 
-            if( $layout_meta != 'default_layout' && $layout_meta != '' ) {
-                $layout = get_post_meta( $queried_id, 'rainbownews_page_specific_layout', true );
+            if ($layout_meta != 'default_layout' && $layout_meta != '') {
+                $layout = get_post_meta($queried_id, 'rainbownews_page_specific_layout', true);
             }
-        }
-        elseif( is_page() ) {
-            $layout = get_theme_mod( 'rainbownews_default_page_layout', 'right_sidebar' );
-            if( $layout_meta != 'default_layout' && $layout_meta != '' ) {
-                $layout = get_post_meta( $post->ID, 'rainbownews_page_specific_layout', true );
+        } elseif (is_page()) {
+            $layout = get_theme_mod('rainbownews_default_page_layout', 'right_sidebar');
+            if ($layout_meta != 'default_layout' && $layout_meta != '') {
+                $layout = get_post_meta($post->ID, 'rainbownews_page_specific_layout', true);
             }
-        }
-        elseif( is_single() ) {
-            $layout = get_theme_mod( 'rainbownews_default_single_post_layout', 'right_sidebar' );
-            if( $layout_meta != 'default_layout' && $layout_meta != '' ) {
-                $layout = get_post_meta( $post->ID, 'rainbownews_page_specific_layout', true );
+        } elseif (is_single()) {
+            $layout = get_theme_mod('rainbownews_default_single_post_layout', 'right_sidebar');
+            if ($layout_meta != 'default_layout' && $layout_meta != '') {
+                $layout = get_post_meta($post->ID, 'rainbownews_page_specific_layout', true);
             }
         }
         return $layout;
@@ -425,15 +504,16 @@ if ( ! function_exists( 'rainbownews_layout_class' ) ) :
 endif;
 
 
-if ( ! function_exists( 'rainbownews_sidebar_select' ) ) :
+if (!function_exists('rainbownews_sidebar_select')) :
     /**
      * Select and show sidebar based on post meta and customizer default settings
      */
-    function rainbownews_sidebar_select() {
+    function rainbownews_sidebar_select()
+    {
         $layout = rainbownews_layout_class();
 
-        if( $layout != "no_sidebar_full_width" &&  $layout != "no_sidebar_content_centered" ) {
-            if ( $layout == "right_sidebar" ) {
+        if ($layout != "no_sidebar_full_width" && $layout != "no_sidebar_content_centered") {
+            if ($layout == "right_sidebar") {
                 get_sidebar();
             } else {
                 get_sidebar('left');
@@ -445,35 +525,97 @@ endif;
 /******************************** POST-NAVIGATION *****************************************/
 
 /*************************** HEADER LOGO **********************************/
-if ( ! function_exists( 'rainbownews_the_custom_logo' ) ) :
+if (!function_exists('rainbownews_the_custom_logo')) :
     /**
      * Displays the optional custom logo Introduced in WordPress 4.5 .
      *
      * Does nothing if the custom logo is not available.
      *
      */
-    function rainbownews_the_custom_logo() {
-        if ( function_exists( 'the_custom_logo' ) ) {
+    function rainbownews_the_custom_logo()
+    {
+        if (function_exists('the_custom_logo')) {
             the_custom_logo();
         }
     }
 endif;
+
+
+function wpb_set_post_views($postID)
+{
+    $count_key = 'rainbownews_post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if ($count == '') {
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    } else {
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+
+//To keep the count accurate, lets get rid of prefetching
+remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+
+
+
+function rainbownews_comments_posted_on_cb($comment_id){
+
+
+    $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+    if( get_comment_date('Ymd', $comment_id) == date('Ymd')):
+        //if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+        $time_string_human = human_time_diff(get_comment_date( 'His', $comment_id ),current_time('His')).' '.__('ago','power-mag');
+        $time_string = '<time class="entry-date published" datetime="%1$s">'.$time_string_human.'</time><time class="updated" datetime="%3$s">%4$s</time>';
+        //}
+    endif;
+
+    $time_string = sprintf( $time_string,
+        esc_attr( get_comment_date( 'c',  $comment_id ) ),
+        esc_html( get_comment_date('M d, Y' , $comment_id) ),
+        esc_attr( get_the_modified_date( 'c' , $comment_id ) ),
+        esc_html( get_the_modified_date('M d, Y', $comment_id) )
+    );
+
+    $posted_on = sprintf(
+        _x( '%s', 'post date', 'power-mag' ),
+        '<a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( get_the_time() ) . '" rel="bookmark">' . $time_string . '</a>'
+    );
+
+    //$posted_on = sprintf(
+//    _x( '%s', 'post date', 'power-mag' ), $time_string );
+
+    echo '<span class="posted-on"><i class="fa fa-calendar-o"></i>' . $posted_on . '</span>';
+
+}
+add_action( 'rainbownews_comment_posted_on', 'rainbownews_comments_posted_on_cb', 11 );
+
+
+
 
 /******************************** FOOTER COPYRIGHT ***************************/
 /**
  * function to show the footer info, copyright information
  */
 
-function rainbownews_footer_copyright_info() {
-    $site_link = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" >' . get_bloginfo( 'name', 'display' ) . '</a>';
+function rainbownews_footer_copyright_info()
+{
+    $site_link = '<a href="' . esc_url(home_url('/')) . '" title="' . esc_attr(get_bloginfo('name', 'display')) . '" >' . get_bloginfo('name', 'display') . '</a>';
 
-    $wp_link = '<a href="'.esc_url( 'http://wordpress.org' ).'" target="_blank" title="' . esc_attr__( 'WordPress', 'rainbownews' ) . '"><span>' . esc_html__( 'WordPress', 'rainbownews' ) . '</span></a>';
+    $wp_link = '<a href="' . esc_url('http://wordpress.org') . '" target="_blank" title="' . esc_attr__('WordPress', 'rainbownews') . '"><span>' . esc_html__('WordPress', 'rainbownews') . '</span></a>';
 
-    $tm_link =  '<a href="'. 'http://99colorthemes.com/' .'" target="_blank" title="'.esc_attr__( '99colorthemes', 'rainbownews' ).'" rel="designer"><span>'.esc_html__( '99colorthemes', 'rainbownews') .'</span></a>';
+    $tm_link = '<a href="' . 'http://99colorthemes.com/' . '" target="_blank" title="' . esc_attr__('99colorthemes', 'rainbownews') . '" rel="designer"><span>' . esc_html__('99colorthemes', 'rainbownews') . '</span></a>';
 
-    $default_footer_value = '<p class="nnc-left">'.sprintf( esc_html__( ' &copy; %1$s %2$s. All Right Reserved. ', 'rainbownews' ), $site_link, date( 'Y' )) .sprintf( esc_html__( '| Powered by %s.', 'rainbownews' ), $wp_link ). '</p><p class="nnc-right">' . sprintf( esc_html__( 'Built by %s.', 'rainbownews' ), $tm_link ).'</p>';
+    $default_footer_value = '<p class="nnc-left">' . sprintf(esc_html__(' &copy; %1$s %2$s. All Right Reserved. ', 'rainbownews'), $site_link, date('Y')) . sprintf(esc_html__('| Powered by %s.', 'rainbownews'), $wp_link) . '</p><p class="nnc-right">' . sprintf(esc_html__('Built by %s.', 'rainbownews'), $tm_link) . '</p>';
 
-    $rainbownews_footer_copyright = '<div class="nnc-footer-bottom"><div class="nnc-container">'.$default_footer_value.'</div></div>';
+    $rainbownews_footer_copyright = '<div class="nnc-footer-bottom"><div class="nnc-container">' . $default_footer_value . '</div></div>';
     echo $rainbownews_footer_copyright;
 }
-add_action( 'rainbownews_footer_copyright', 'rainbownews_footer_copyright_info', 10 );
+
+add_action('rainbownews_footer_copyright', 'rainbownews_footer_copyright_info', 10);
+
+
+
+

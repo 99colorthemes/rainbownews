@@ -8,6 +8,7 @@
  */
 
 get_header();
+wpb_set_post_views(get_the_ID());
 $sidebar_layout = get_post_meta( $post->ID, 'rainbownews_page_specific_layout', true );
 
 ?>
