@@ -602,7 +602,7 @@ ul#top-menu li.current_page_item a {
 
 .nnc-logo {
 	float: left;
-	padding-top: 30px;
+	padding: 30px 0;
 }
 
 p.site-description {
@@ -621,53 +621,53 @@ p.site-description {
 	overflow: hidden;
 }
 
-.main-navigation {
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    background: #fff;
-}
+/*.main-navigation {*/
+    /*border-top: 1px solid #eee;*/
+    /*border-bottom: 1px solid #eee;*/
+    /*background: #fff;*/
+/*}*/
 
-.main-navigation a {
-	padding: 12px 14px;
-	font-size: 13px;
-	color: #666;
-	text-transform: uppercase;
-	border-right: 1px solid #eee;
-}
+/*.main-navigation a {*/
+	/*padding: 12px 14px;*/
+	/*font-size: 13px;*/
+	/*color: #666;*/
+	/*text-transform: uppercase;*/
+	/*border-right: 1px solid #eee;*/
+/*}*/
 
-.main-navigation a:hover {
-	background: #4db2ec;
-	color: #fff!important;
-}
+/*.main-navigation a:hover {*/
+	/*background: #4db2ec;*/
+	/*color: #fff!important;*/
+/*}*/
 
-.main-navigation ul li:first-child a {
-	border-left: 1px solid #eee;
-}
+/*.main-navigation ul li:first-child a {*/
+	/*border-left: 1px solid #eee;*/
+/*}*/
 
-.main-navigation a:hover {
-	color: #4db2ec;
-}
+/*.main-navigation a:hover {*/
+	/*color: #4db2ec;*/
+/*}*/
 
-.main-navigation ul ul {
-	margin-top: 14px;
-	box-shadow: none;
-	border: 1px solid #eee;
-	border: 0;
-	background: #666;
-}
+/*.main-navigation ul ul {*/
+	/*margin-top: 14px;*/
+	/*box-shadow: none;*/
+	/*border: 1px solid #eee;*/
+	/*border: 0;*/
+	/*background: #666;*/
+/*}*/
 
-.main-navigation ul ul ul {
-	margin-top: 0;
-}
+/*.main-navigation ul ul ul {*/
+	/*margin-top: 0;*/
+/*}*/
 
-ul#primary-menu li.current-menu-item {
-	background: #4db2ec;
-	color: #fff;
-}
+/*ul#primary-menu li.current-menu-item {*/
+	/*background: #4db2ec;*/
+	/*color: #fff;*/
+/*}*/
 
-ul#primary-menu li.current-menu-item a {
-	color: #fff;
-}
+/*ul#primary-menu li.current-menu-item a {*/
+	/*color: #fff;*/
+/*}*/
 
 .nnc-time {
 	color: #888;
@@ -697,6 +697,7 @@ ul#primary-menu li.current-menu-item a {
 	background: #4db2ec;
 	float: left;
 	padding: 11px;
+	height: 35px;
 	color: #fff;
 	position: relative;
 }
@@ -1332,7 +1333,9 @@ h2.widget-title:after {
 #primary {
 	width: 70%;
 	float:left;
-	padding-top: 30px;
+	margin-top: 30px;
+	padding: 8px;
+	background: #fff;
 }
 
 #secondary {

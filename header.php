@@ -27,13 +27,13 @@
     <div class="nnc-top-header">
         <div class="nnc-container">
             <div class="nnc-top-menu">
-                <?php wp_nav_menu(array('theme_location' => 'top-menu', 'menu' => 'Top Menu', 'menu_id' => 'top-menu')); ?>
+                <?php wp_nav_menu(array('theme_location' => 'top-menu', 'menu_id' => 'top-menu')); ?>
             </div>
             <div class="nnc-social">
-                <?php wp_nav_menu(array('theme_location' => 'social', 'container' => 'ul', 'menu_class' => 'nnc-social-icon')); ?>
+                <?php wp_nav_menu(array('theme_location' => 'social-icon', 'menu_id' => 'social-menu')); ?>
             </div>
             <div class="nnc-time">
-                <i class="fa fa-calendar-o"></i> 4 Aug, 2016
+                <i class="fa fa-calendar"></i> <?php echo date_i18n( 'l, F j, Y', time() ); ?>
             </div>
         </div>
     </div>
@@ -77,15 +77,21 @@
             </div>
         </div>
 
-        <nav id="site-navigation" class="main-navigation" role="navigation">
+        <?php /*<nav id="site-navigation" class="main-navigation" role="navigation">
             <div class="nnc-container">
                 <button class="menu-toggle" aria-controls="primary-menu"
                         aria-expanded="false"><?php esc_html_e('Primary Menu', 'rainbownews'); ?></button>
                 <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
             </div>
         </nav><!-- #site-navigation -->
-    </header><!-- #masthead -->
+    */ ?>
 
+        <div class="it-main-menu">
+            <div class="nnc-container">
+                <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
+            </div
+        </div>
+    </header><!-- #masthead -->
 
     <div id="content" class="site-content">
         <div class="nnc-container">

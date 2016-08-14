@@ -46,7 +46,7 @@ function rainbownews_setup() {
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'rainbownews' ),
 		'top-menu' => esc_html__( 'Top Menu', 'rainbownews' ),
-		'nnc-social-icon' => esc_html__( 'Social Icon', 'rainbownews' ),
+		'social-icon' => esc_html__( 'Social Icon', 'rainbownews' ),
 
 	) );
 
