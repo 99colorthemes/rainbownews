@@ -1233,6 +1233,7 @@ h2.widget-title:after {
 
 .nnc-img {
 	line-height: 0;
+	padding-bottom: 14px;
 }
 
 /*For Layout 2*/
@@ -1341,7 +1342,7 @@ h2.widget-title:after {
 #secondary {
 	width: 27%;
 	float: right;
-	padding-top: 30px;
+	margin-top: 30px;
 }
 
 body.left-sidebar #secondary {
@@ -1454,12 +1455,12 @@ span.post-date {
 /*======================================
 =            Category-block            =
 ======================================*/
-.nnc-category {
-    /*padding: 30px 0 0;*/
-    background: #fff;
-    padding: 12px;
-    box-shadow: 0 0px 3px 1px #eee;
-}
+/*.nnc-category {*/
+    /*!*padding: 30px 0 0;*!*/
+    /*background: #fff;*/
+    /*padding: 12px;*/
+    /*box-shadow: 0 0px 3px 1px #eee;*/
+/*}*/
 
 .nnc-category-block .nnc-category-large .nnc-category-single:nth-of-type(1) {
 	padding-top: 0;
@@ -1525,6 +1526,8 @@ span.post-date {
 
 .nnc-category span.posted-on i {
 	color: #888;
+	font-size: 13px;
+
 }
 
 .nnc-category span.posted-on a {
@@ -2068,7 +2071,7 @@ figure.nnc-g-img {
     position: fixed;
     top: 0;
     z-index: 9;
-    max-width: 100%;
+    width: 100%;
     background: #fff;
     box-shadow: 0 0 3px 0 #ccc; 
 } 
@@ -2131,6 +2134,15 @@ body.search article.post {
 
 /*=====  End of Search Page  ======*/
 
+/*===================================
+=            Search Page            =
+===================================*/
+
+h2.entry-title {
+	padding-bottom: 14px;
+}
+
+/*===================================*/
 
 /*==============================
 =            Box Bg            =

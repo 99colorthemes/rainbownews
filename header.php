@@ -26,12 +26,17 @@
 
     <div class="nnc-top-header">
         <div class="nnc-container">
+            <?php if ( has_nav_menu( 'top-menu' ) ) : ?>
             <div class="nnc-top-menu">
                 <?php wp_nav_menu(array('theme_location' => 'top-menu', 'menu_id' => 'top-menu')); ?>
             </div>
+            <?php endif; ?>
+
+            <?php if ( has_nav_menu( 'social-icon' ) ) : ?>
             <div class="nnc-social">
                 <?php wp_nav_menu(array('theme_location' => 'social-icon', 'menu_id' => 'social-menu')); ?>
-            </div>
+            </div><?php endif; ?>
+            
             <div class="nnc-time">
                 <i class="fa fa-calendar"></i> <?php echo date_i18n( 'l, F j, Y', time() ); ?>
             </div>
@@ -86,11 +91,14 @@
         </nav><!-- #site-navigation -->
     */ ?>
 
-        <div class="it-main-menu">
+        <?php if ( has_nav_menu( 'primary' ) ) : ?>
+        <div class="nnc-main-navigation">
             <div class="nnc-container">
                 <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
             </div
         </div>
+        <?php endif; ?>
+
     </header><!-- #masthead -->
 
     <div id="content" class="site-content">

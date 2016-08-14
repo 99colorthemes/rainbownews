@@ -1,12 +1,12 @@
 
-if(jQuery('.main-navigation').length){
- var stickyNavTop = jQuery('.main-navigation').offset().top;
+if(jQuery('.nnc-main-navigation').length){
+ var stickyNavTop = jQuery('.nnc-main-navigation').offset().top;
  var stickyNav = function(){
  var scrollTop = jQuery(window).scrollTop();
   if (scrollTop > stickyNavTop) {
-         jQuery('.main-navigation').addClass('nnc-sticky');
+         jQuery('.nnc-main-navigation').addClass('nnc-sticky');
           } else {
-              jQuery('.main-navigation').removeClass('nnc-sticky');
+              jQuery('.nnc-main-navigation').removeClass('nnc-sticky');
           }
       };
       stickyNav(); 
