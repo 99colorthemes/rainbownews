@@ -8,14 +8,13 @@
 
 <?php get_header();
 
-$layout_meta = get_post_meta( $post->ID, 'rainbownews_page_specific_layout', true );
-
-
-
 ?>
 
     <!-- banner-start -->
-    <div class="nnc-highlight-banner nnc-clearblock"> 
+<?php if (is_active_sidebar('rainbownews_front_page_left_area')
+    || is_active_sidebar('rainbownews_front_page_right_area')
+): ?>
+    <div class="nnc-highlight-banner nnc-clearblock">
         <div class="nnc-highlight-slider">
             <?php
             if (is_active_sidebar('rainbownews_front_page_left_area')) {
@@ -32,12 +31,13 @@ $layout_meta = get_post_meta( $post->ID, 'rainbownews_page_specific_layout', tru
                 endif;
             }
             ?>
-        </div> 
+        </div>
     </div>
+<?php endif; ?>
     <!-- banner-end -->
 
     <!-- latest-start -->
-    <div class="nnc-top-latest nnc-clearblock"> 
+    <div class="nnc-top-latest nnc-clearblock">
         <?php
         if (is_active_sidebar('rainbownews_front_page_latest_post_area')) {
             if (!dynamic_sidebar('rainbownews_front_page_latest_post_area')):
@@ -45,26 +45,22 @@ $layout_meta = get_post_meta( $post->ID, 'rainbownews_page_specific_layout', tru
         }
         ?>
     </div>
+<?php if (is_active_sidebar('rainbownews_front_page_content_area')
+    || is_active_sidebar('rainbownews_front_page_middle_left_content_area')
+    || is_active_sidebar('rainbownews_front_page_middle_right_content_area')
+    || is_active_sidebar('rainbownews_front_page_bottom_content_area')
+): ?>
+    <div id="content" class="content nnc-clearblock">
 
-    <div id="content" class="content nnc-clearblock"> 
         <div id="primary">
             <main id="main" class="site-main">
-
                 <?php
                 if (is_active_sidebar('rainbownews_front_page_content_area')) {
                     if (!dynamic_sidebar('rainbownews_front_page_content_area')):
                     endif;
                 }
                 ?>
-               <!-- <div class="nnc-middle-ads">
-                    <img src="<?php /*echo get_template_directory_uri(); */?>/images/wide-ads2.png" alt="advertisement">
-                </div>
 
-
-                <div class="nnc-middle-ads">
-                    <img src="<?php /*echo get_template_directory_uri(); */?>/images/wide-ads3.png" alt="advertisement">
-                </div>
--->
                 <div class="nnc-category nnc-category-layout-3 nnc-left">
                     <?php
                     if (is_active_sidebar('rainbownews_front_page_middle_left_content_area')) {
@@ -88,21 +84,22 @@ $layout_meta = get_post_meta( $post->ID, 'rainbownews_page_specific_layout', tru
                     endif;
                 }
                 ?>
-
             </main>
         </div>
 
 
-            <aside id="secondary" class="widget-area" role="complementary">
-                <?php
-                if (is_active_sidebar('rainbownews_front_page_sidebar')) {
-                    if (!dynamic_sidebar('rainbownews_front_page_sidebar')):
-                    endif;
-                }
-                ?> 
-            </aside>
+        <aside id="secondary" class="widget-area" role="complementary">
+            <?php
+            if (is_active_sidebar('rainbownews_front_page_sidebar')) {
+                if (!dynamic_sidebar('rainbownews_front_page_sidebar')):
+                endif;
+            }
+            ?>
+        </aside>
 
-    </div> 
+    </div>
+<?php endif;
 
+get_footer();
 
-<?php get_footer(); ?>
+?>

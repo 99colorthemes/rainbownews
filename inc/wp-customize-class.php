@@ -11,60 +11,39 @@
 if (!class_exists('WP_Customize_Control'))
     return NULL;
 
+/**
+ * A class to create a dropdown for all categories to news ticker
+ */
+class RainbowNews_Category_Dropdown_Custom_Control extends WP_Customize_Control {
+    private $cats = false;
 
-class Theme_Customize_Dropdown_Taxonomies_Control extends WP_Customize_Control
-{
+    public function __construct($manager, $id, $args = array(), $options = array()) {
+        $this->cats = get_categories($options);
 
-    public $type = 'dropdown-taxonomies';
+        parent::__construct( $manager, $id, $args );
+    }
 
-    public $taxonomy = '';
-
-
-    public function __construct($manager, $id, $args = array())
-    {
-
-        $our_taxonomy = 'category';
-        if (isset($args['taxonomy'])) {
-            $taxonomy_exist = taxonomy_exists(esc_attr($args['taxonomy']));
-            if (true === $taxonomy_exist) {
-                $our_taxonomy = esc_attr($args['taxonomy']);
-            }
+    /**
+     * Render the content of the category dropdown
+     *
+     * @return HTML
+     */
+    public function render_content() {
+        if(!empty($this->cats)) {
+            ?>
+            <label>
+                <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+                <select <?php $this->link(); ?>>
+                    <?php
+                    foreach ( $this->cats as $cat ) {
+                        printf('<option value="%s" %s>%s</option>', $cat->term_id, selected($this->value(), $cat->term_id, false), $cat->name);
+                    }
+                    ?>
+                </select>
+            </label>
+            <?php
         }
-        $args['taxonomy'] = $our_taxonomy;
-        $this->taxonomy = esc_attr($our_taxonomy);
-
-        parent::__construct($manager, $id, $args);
     }
-
-    public function render_content()
-    {
-
-        $tax_args = array(
-            'hierarchical' => 0,
-            'taxonomy' => $this->taxonomy,
-        );
-        $all_taxonomies = get_categories($tax_args);
-
-        ?>
-        <label>
-            <span class="customize-control-title"><?php echo esc_html($this->label); ?></span>
-            <select <?php echo $this->link(); ?>>
-                <?php
-                printf('<option value="%s" %s>%s</option>', '', selected($this->value(), '', false), __('Select', 'rainbownews'));
-                ?>
-                <?php if (!empty($all_taxonomies)): ?>
-                    <?php foreach ($all_taxonomies as $key => $tax): ?>
-                        <?php
-                        printf('<option value="%s" %s>%s</option>', $tax->term_id, selected($this->value(), $tax->term_id, false), $tax->name);
-                        ?>
-                    <?php endforeach ?>
-                <?php endif ?>
-            </select>
-
-        </label>
-        <?php
-    }
-
 }
 
 

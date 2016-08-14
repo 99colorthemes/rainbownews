@@ -51,7 +51,9 @@ function rainbownews_customize_register($wp_customize)
     );
     /********************************* END OF IMPORTANT-LINKS ****************************************/
 
-    /********************************* SITE-IDENTITY-OPTIONS ****************************************/
+
+
+
 // logo and site title position options
     $wp_customize->add_setting(
         'rainbownews_header_logo_placement',
@@ -77,89 +79,194 @@ function rainbownews_customize_register($wp_customize)
             )
         )
     );
-    /*********************************END OF SITE-IDENTITY-OPTIONS ****************************************/
+
+
+    /********************************* HEADER-BAR-OPTIONS ****************************************/
+    // Header Option  Panel
+    $wp_customize->add_panel( 'rainbownews_header_options',	array(
+        'priority' 			  => 50,
+        'title' 			  => esc_html__( 'Header Option', 'rainbownews' )
+    ) );
+
+    // Top Bar  Activate
+    $wp_customize->add_section( 'rainbownews_top_bar_section', array(
+        'priority' 			   => 5,
+        'title' 			   => esc_html__( 'Top Bar Activate', 'rainbownews' ),
+        'panel'				   => 'rainbownews_header_options'
+    ) );
+
+    // Activate Top Bar
+    $wp_customize->add_setting( 'rainbownews_top_bar_activate', array(
+        'default' 			   => '',
+        'capability' 		   => 'edit_theme_options',
+        'sanitize_callback'    => 'rainbownews_checkbox_sanitize'
+    ) );
+
+    $wp_customize->add_control( 'rainbownews_top_bar_activate', array(
+        'type' 				   => 'checkbox',
+        'label' 			   => esc_html__( ' Activate Top Bar ', 'rainbownews' ),
+        'settings' 			   => 'rainbownews_top_bar_activate',
+        'section' 			   => 'rainbownews_top_bar_section'
+    ) );
+
+    $wp_customize->add_setting( 'rainbownews_top_bar_date', array(
+        'default' 			   => '',
+        'capability' 		   => 'edit_theme_options',
+        'sanitize_callback'    => 'rainbownews_checkbox_sanitize'
+    ) );
+
+    $wp_customize->add_control( 'rainbownews_top_bar_date', array(
+        'type' 				   => 'checkbox',
+        'label' 			   => esc_html__( ' Activate Date ', 'rainbownews' ),
+        'settings' 			   => 'rainbownews_top_bar_date',
+        'section' 			   => 'rainbownews_top_bar_section'
+    ) );
+
+    // News Ticker
+    $wp_customize->add_section( 'rainbownews_news_ticker_section', array(
+        'priority'             => 10,
+        'title'                => esc_html__('News Ticker', 'rainbownews'),
+        'panel'                => 'rainbownews_header_options'
+        ) );
+
+    $wp_customize->add_setting( 'rainbownews_top_bar_ticker', array(
+        'default' 			   => '',
+        'capability' 		   => 'edit_theme_options',
+        'sanitize_callback'    => 'rainbownews_checkbox_sanitize'
+    ) );
+
+    $wp_customize->add_control( 'rainbownews_top_bar_ticker', array(
+        'type' 				   => 'checkbox',
+        'label' 			   => esc_html__( 'Enable Header Bar News Ticker', 'rainbownews' ),
+        'settings' 			   => 'rainbownews_top_bar_ticker',
+        'section' 			   => 'rainbownews_news_ticker_section'
+    ) );
+
+    $wp_customize->add_setting( 'rainbownews_news_ticker_title', array(
+        'default'              => 'Trending News',
+        'capability'           => 'edit_theme_options',
+        'sanitize_callback'	   => 'rainbownews_sanitize_text'
+    ) );
+
+    $wp_customize->add_control('rainbownews_news_ticker_title', array(
+        'label'                => esc_html__('Choose your Title for news.', 'rainbownews'),
+        'settings' 			   => 'rainbownews_news_ticker_title',
+        'section'              => 'rainbownews_news_ticker_section',
+    ) );
+
+    $wp_customize->add_setting( 'rainbownews_new_ticker_layout', array(
+        'default'              => 'latest_post',
+        'capability'           => 'edit_theme_options',
+        'sanitize_callback'    => 'rainbownews_sanitize_radio'
+        ) );
+
+    $wp_customize->add_control( 'rainbownews_new_ticker_layout', array(
+        'type'                 => 'radio',
+        'label'                => esc_html__('Choose your trending news.', 'rainbownews'),
+        'section'              => 'rainbownews_news_ticker_section',
+        'choices'              => array(
+            'latest_post'      => esc_html__('Latest Post', 'rainbownews'),
+            'popular_post'     => esc_html__('Popular Post', 'rainbownews'),
+            'category_post'    => esc_html__('Category Post', 'rainbownews')
+            )
+        ) );
+
+    $wp_customize->add_setting( 'rainbownews_news_ticker_category_layout', array(
+         'default'             => '',
+         'capability'          => 'edit_theme_options',
+         'sanitize_callback'   => 'rainbownews_sanitize_text'
+        ) );
+
+    $wp_customize->add_control( new RainbowNews_Category_Dropdown_Custom_Control($wp_customize, 'rainbownews_news_ticker_category_layout', array(
+        'label'                => esc_html__('Choose category for News Ticker.', 'rainbownews'),
+        'settings' 			   => 'rainbownews_news_ticker_category_layout',
+        'section'              => 'rainbownews_news_ticker_section',
+        )
+    ));
+    // Top Bar Number of Posts
+    $wp_customize->add_setting(	'rainbownews_top_bar_news_ticker_posts', array(
+        'default' 			   => '5',
+        'capability' 		   => 'edit_theme_options',
+        'sanitize_callback'	   => 'rainbownews_sanitize_integer'
+    ) );
+
+    $wp_customize->add_control(	'rainbownews_top_bar_news_ticker_posts', array(
+        'type' 				   => 'text',
+        'label' 			   => esc_html__( 'Number of Posts', 'rainbownews' ),
+        'settings' 			   => 'rainbownews_top_bar_news_ticker_posts',
+        'section' 			   => 'rainbownews_news_ticker_section'
+    ) );
+
+    //Activate Breadcrumb
+    $wp_customize->add_section( 'rainbownews_activate_breadcrumb_section', array(
+        'priority'             => 15,
+        'title'                => esc_html__('Activate Breadcrumb', 'rainbownews'),
+        'panel'                => 'rainbownews_header_options'
+    ) );
+
+    $wp_customize->add_setting( 'rainbownews_activate_breadcrumb', array(
+        'default' 			   => '',
+        'capability' 		   => 'edit_theme_options',
+        'sanitize_callback'    => 'rainbownews_checkbox_sanitize'
+    ) );
+
+    $wp_customize->add_control( 'rainbownews_activate_breadcrumb', array(
+        'type' 				   => 'checkbox',
+        'label' 			   => esc_html__( 'Activate Breadcrumb', 'rainbownews' ),
+        'settings' 			   => 'rainbownews_activate_breadcrumb',
+        'section' 			   => 'rainbownews_activate_breadcrumb_section'
+    ) );
+
+    //Activate Search Box
+    $wp_customize->add_section( 'rainbownews_activate_search_section', array(
+        'priority'             => 15,
+        'title'                => esc_html__('Activate Search Box', 'rainbownews'),
+        'panel'                => 'rainbownews_header_options'
+    ) );
+
+    $wp_customize->add_setting( 'rainbownews_activate_search', array(
+        'default' 			   => '',
+        'capability' 		   => 'edit_theme_options',
+        'sanitize_callback'    => 'rainbownews_checkbox_sanitize'
+    ) );
+
+    $wp_customize->add_control( 'rainbownews_activate_search', array(
+        'type' 				   => 'checkbox',
+        'label' 			   => esc_html__( 'Activate Breadcrumb', 'rainbownews' ),
+        'settings' 			   => 'rainbownews_activate_search',
+        'section' 			   => 'rainbownews_activate_search_section'
+    ) );
+
+
+
+
+
+
+
+
+
+
+
 
     /************************************** THEME-OPTIONS *******************************************************/
 
     // Theme Options panel
     $wp_customize->add_panel('rainbownews_theme_options', array(
         'capabitity' => 'edit_theme_options',
-        'description' => __('Theme options settings here', 'rainbownews'),
-        'priority' => 500,
-        'title' => __('Theme Options', 'rainbownews')
+        'description' => esc_html__('Theme options settings here', 'rainbownews'),
+        'priority' => 55,
+        'title' => esc_html__('Theme Options', 'rainbownews')
     ));
-
-    $wp_customize->add_section(
-        'rainbownews_news_ticker_section',
-        array(
-            'priority' => 15,
-            'title' => esc_html__('News Ticker', 'rainbownews'),
-            'panel' => 'rainbownews_theme_options'
-        )
-    );
-
-    $wp_customize->add_setting('rainbownews_news_ticker_title', array(
-        'default' => 'Trending News',
-        'capability' => 'edit_theme_options',
-    ));
-
-    $wp_customize->add_control('rainbownews_news_ticker_title', array(
-        'label' => esc_html__('Choose your Title for news.', 'rainbownews'),
-        'section' => 'rainbownews_news_ticker_section',
-        'priority' => 1
-    ));
-
-    $wp_customize->add_setting(
-        'rainbownews_new_ticker_layout',
-        array(
-            'default' => 'latest_post',
-            'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'rainbownews_sanitize_radio'
-        )
-    );
-
-    $wp_customize->add_control(
-        'rainbownews_new_ticker_layout',
-        array(
-            'type' => 'radio',
-            'priority' => 20,
-            'label' => esc_html__('Choose your trending news.', 'rainbownews'),
-            'section' => 'rainbownews_news_ticker_section',
-            'choices' => array(
-                'latest_post' => esc_html__('Latest Post', 'rainbownews'),
-                'popular_post' => esc_html__('Popular Post', 'rainbownews'),
-                'category_post' => esc_html__('Category Post', 'rainbownews')
-            )
-        )
-    );
-
-    $wp_customize->add_setting(
-        'rainbownews_news_ticker_category_layout',
-        array(
-            'default' => '1',
-            'capability' => 'edit_theme_options',
-            //'sanitize_callback'     => 'rainbownews_sanitize_radio'
-        )
-    );
-
-    $wp_customize->add_control(new Theme_Customize_Dropdown_Taxonomies_Control($wp_customize, 'rainbownews_news_ticker_category_layout', array(
-            'label' => __('Choose category for News Ticker.', 'rainbownews'),
-            'priority' => 25,
-            'section' => 'rainbownews_news_ticker_section',
-            'type' => 'dropdown-taxonomies',
-        )
-    ));
-
 
     //side bar
     $wp_customize->add_section('rainbownews_sidebar_section', array(
         'priority' => 15,
-        'title' => __('Category Sidebar Settings', 'rainbownews'),
+        'title' => esc_html__('Category Sidebar Settings', 'rainbownews'),
         'panel' => 'rainbownews_theme_options'
     ));
 
     $wp_customize->add_setting('rainbownews_category_sidebar_setting', array(
-        'default' => __('right-sidebar', 'rainbownews'),
+        'default' => esc_html__('right-sidebar', 'rainbownews'),
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field'
     ));
@@ -172,8 +279,8 @@ function rainbownews_customize_register($wp_customize)
         'choices' => array(
             'right-sidebar' => RAINBOWNEWS_IMAGES_ADMIN_URL . '/right-sidebar.png',
             'left-sidebar' => RAINBOWNEWS_IMAGES_ADMIN_URL . '/left-sidebar.png',
-            'no-sidebar' => RAINBOWNEWS_IMAGES_ADMIN_URL . '/no-sidebar-content-centered-layout.png',
-            //'both-sidebar'	=> RAINBOWNEWS_IMAGES_ADMIN_URL . '/both-sidebar.png'
+            'no-sidebar-content-centered' => RAINBOWNEWS_IMAGES_ADMIN_URL . '/no-sidebar-content-centered-layout.png',
+            'no-sidebar-full-width'	=> RAINBOWNEWS_IMAGES_ADMIN_URL . '/no-sidebar-full-width-layout.png'
         )
     )));
 
@@ -198,8 +305,8 @@ function rainbownews_customize_register($wp_customize)
         'choices' => array(
             'right-sidebar' => RAINBOWNEWS_IMAGES_ADMIN_URL . '/right-sidebar.png',
             'left-sidebar' => RAINBOWNEWS_IMAGES_ADMIN_URL . '/left-sidebar.png',
-            'no-sidebar' => RAINBOWNEWS_IMAGES_ADMIN_URL . '/no-sidebar-content-centered-layout.png',
-            //'both-sidebar'	=> RAINBOWNEWS_IMAGES_ADMIN_URL . '/both-sidebar.png'
+            'no-sidebar-content-centered' => RAINBOWNEWS_IMAGES_ADMIN_URL . '/no-sidebar-content-centered-layout.png',
+            'no-sidebar-full-width'	=> RAINBOWNEWS_IMAGES_ADMIN_URL . '/no-sidebar-full-width-layout.png'
         )
     )));
 
@@ -234,7 +341,7 @@ function rainbownews_customize_register($wp_customize)
         ));
 
         $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'rainbownews_category_color_' . get_cat_id($wp_category_list[$category_list->cat_ID]), array(
-            'label' => sprintf(__('%s', 'rainbownews'), $wp_category_list[$category_list->cat_ID]),
+            'label' => sprintf( esc_html__('%s', 'rainbownews'), $wp_category_list[$category_list->cat_ID]),
             'section' => 'rainbownews_category_setting',
             'settings' => 'rainbownews_category_color_' . get_cat_id($wp_category_list[$category_list->cat_ID]),
             'priority' => $i
@@ -265,9 +372,30 @@ function rainbownews_customize_register($wp_customize)
     }
 
 
-    /************************************** THEME-OPTIONS *******************************************************/
-
     /************************************** FUNCTION SANITIZE*******************************************************/
+    // Sanitize Text
+    function rainbownews_sanitize_text( $string ) {
+        global $allowedtags;
+        return wp_kses( $string , $allowedtags );
+    }
+
+    // Sanitize Integer
+    function rainbownews_sanitize_integer( $number, $setting ) {
+        // Ensure $number is an absolute integer (whole number, zero or greater).
+        $number = absint( $number );
+
+        // If the input is an absolute integer, return it; otherwise, return the default
+        return ( $number ? $number : $setting->default );
+    }
+
+    // Checkbox Sanitize
+    function rainbownews_checkbox_sanitize( $input ) {
+        if ( $input == 1 ) {
+            return 1;
+        } else {
+            return '';
+        }
+    }
 // sanitization of links
     function rainbownews_sanitize_links()
     {

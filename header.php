@@ -21,8 +21,11 @@
 </head>
 
 <body <?php body_class(); ?>>
+
 <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e('Skip to content', 'rainbownews'); ?></a>
+
+   <?php  if ( get_theme_mod( 'rainbownews_top_bar_activate' ) == '1' ) : ?>
 
     <div class="nnc-top-header">
         <div class="nnc-container">
@@ -37,21 +40,34 @@
                 <?php wp_nav_menu(array('theme_location' => 'social-icon', 'menu_id' => 'social-menu')); ?>
             </div><?php endif; ?>
 
-            <div class="nnc-time">
-                <i class="fa fa-calendar"></i> <?php echo date_i18n( 'l, F j, Y', time() ); ?>
-            </div>
+            <?php  if ( get_theme_mod( 'rainbownews_top_bar_date' ) == '1' ) : ?>
+
+                <div class="nnc-time">
+                    <i class="fa fa-calendar"></i> <?php echo date_i18n( 'l, F j, Y', time() ); ?>
+                </div>
+
+            <?php endif; ?>
+
         </div>
     </div>
+
+    <?php endif; ?>
 
     <header id="masthead" class="site-header" role="banner">
         <div class="nnc-logo-bar">
             <div class="nnc-container">
                 <div class="site-branding">
-                    <?php if ((get_theme_mod('rainbownews_header_logo_placement', 'header_text_only') == 'show_both' || get_theme_mod('rainbownews_header_logo_placement', 'header_text_only') == 'header_logo_only') && has_custom_logo()) : ?>
+
+                    <?php if ((get_theme_mod('rainbownews_header_logo_placement', 'header_text_only') == 'show_both'
+                            || get_theme_mod('rainbownews_header_logo_placement', 'header_text_only') == 'header_logo_only')
+                            && has_custom_logo()) : ?>
+
                         <div class="nnc-logo-img">
                             <?php rainbownews_the_custom_logo(); ?>
                         </div>
+
                     <?php endif; ?>
+
                     <div class="nnc-logo">
                         <?php
                         if (is_front_page() && is_home()) : ?>
@@ -105,7 +121,13 @@
         <div class="nnc-container">
             <!-- trending-start -->
             <div class="nnc-trending-news nnc-clearblock">
-                <?php $news_ticker = get_theme_mod('rainbownews_new_ticker_layout', 'latest_post');
+
+                <?php
+
+                if(get_theme_mod('rainbownews_top_bar_ticker') == 1 || get_theme_mod('rainbownews_activate_breadcrumb') == 1 ) :
+
+                $news_ticker = get_theme_mod('rainbownews_new_ticker_layout', 'latest_post');
+
                 if (is_home() || is_front_page()) {
                     if ($news_ticker == 'category_post') {
                         rainbownews_category_news();
@@ -116,17 +138,25 @@
                             rainbownews_trending_news();
                         }
                     }
-
-                } else {
+                }
+                else {
                     ?>
                     <div class="nnc-breadcrumbs nnc-trending-single">
                         <?php rainbownews_breadcrumbs(); ?>
                     </div>
+
                 <?php } ?>
+
+                <?php endif; ?>
+
+                <?php if(get_theme_mod('rainbownews_activate_search') == 1) : ?>
 
                 <div class="nnc-search nnc-clearblock">
                     <?php get_search_form(); ?>
                 </div>
+
+                <?php endif; ?>
+
             </div>
             <!-- trending-end -->
 

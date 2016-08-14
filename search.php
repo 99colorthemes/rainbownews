@@ -7,7 +7,19 @@
  * @package RainbowNews
  */
 
-get_header(); ?>
+get_header();
+$default_sidebar_layout = get_theme_mod('rainbownews_default_sidebar_setting', 'right-sidebar');
+?>
+<?php
+if ($default_sidebar_layout == 'left-sidebar'):
+	?>
+	<aside id="secondary" class="widget-area" role="complementary">
+		<?php dynamic_sidebar('rainbownews_left_sidebar'); ?>
+	</aside><!-- #secondary -->
+	<?php
+endif;
+
+?>
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -44,5 +56,8 @@ get_header(); ?>
 	</section><!-- #primary -->
 
 <?php
-get_sidebar();
+if ($default_sidebar_layout == 'right-sidebar'):
+	get_sidebar();
+endif;
+
 get_footer();

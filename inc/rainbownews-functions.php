@@ -178,45 +178,56 @@ add_action('widgets_init', 'rainbownews_widgets_init');
 
 function rainbownews_excerpt($rainbownews_content, $rainbownews_letter_count)
 {
+
     $rainbownews_letter_count = !empty($rainbownews_letter_count) ? $rainbownews_letter_count : 100;
     $rainbownews_striped_content = strip_shortcodes($rainbownews_content);
     $rainbownews_striped_content = strip_tags($rainbownews_striped_content);
     $rainbownews_excerpt = mb_substr($rainbownews_striped_content, 0, $rainbownews_letter_count);
+
     if (strlen($rainbownews_striped_content) > strlen($rainbownews_excerpt)) {
         $rainbownews_excerpt .= "...";
     }
+
     return $rainbownews_excerpt;
+
 }
 
 function rainbownews_category_news()
 {
 
-    $cat = get_theme_mod('rainbownews_news_ticker_category_layout');
-    $title = get_theme_mod('rainbownews_news_ticker_title');
+    $cat           =   get_theme_mod('rainbownews_news_ticker_category_layout');
+    $title         =   get_theme_mod('rainbownews_news_ticker_title');
+    $no_of_post    =   get_theme_mod('rainbownews_top_bar_news_ticker_posts');
+
 
     $args = array(
-        'post_type' => 'post',
-        'post_status' => 'publish',
-        'posts_per_page' => 6,
-        'cat' => $cat,
+        'post_type'      =>   'post',
+        'post_status'    =>   'publish',
+        'posts_per_page' =>   $no_of_post,
+        'order'          =>   'DESC',
+        'cat'            =>   $cat,
     );
+
     $loop = new WP_Query($args);
-    if ($loop->have_posts()) {
-        ?>
+
+    if ($loop->have_posts()) {   ?>
+
         <div class="nnc-trending-single">
+
             <div class="nnc-trend-title"><?php echo $title; ?></div>
+
             <ul class="newsticker">
-                <?php
-                while ($loop->have_posts()) : $loop->the_post();
-                    ?>
-                    <li class="pm_single_title"><a
-                            href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></li>
-                    <?php
-                endwhile;
+
+                <?php while ($loop->have_posts()) : $loop->the_post();     ?>
+
+                    <li class="pm_single_title"><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></li>
+
+                <?php endwhile;
+
                 wp_reset_postdata();
 
-
                 ?>
+
             </ul>
         </div>
 
@@ -227,34 +238,33 @@ function rainbownews_category_news()
 
 function rainbownews_latest_news()
 {
-    $title = get_theme_mod('rainbownews_news_ticker_title');
+    $title       =   get_theme_mod('rainbownews_news_ticker_title');
+    $no_of_post  =   get_theme_mod('rainbownews_top_bar_news_ticker_posts');
+
     $p = new WP_Query(array(
-        'posts_per_page' => 5,
-        'post_status' => 'publish',
-        'ignore_sticky_posts' => true,
-        'post_type' => 'post',
-        'order' => 'DESC',
-        'orderby' => 'meta_value',
-        'meta_key' => 'rainbownews_post_views_count'
+        'post_type'              =>  'post',
+        'posts_per_page'         =>  $no_of_post,
+        'ignore_sticky_posts'    =>  true,
+        'post_status'            =>  'publish',
+        'order'                  =>  'DESC',
     ));
 
-    if ($p->have_posts()) {
-        ?>
+    if ($p->have_posts()) {  ?>
 
         <div class="nnc-trending-single">
             <div class="nnc-trend-title"><?php echo $title; ?></div>
+
             <ul class="newsticker">
-                <?php
-                while ($p->have_posts()) {
-                    $p->the_post();
-                    ?>
-                    <li class="pm_single_title"><a
-                            href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></li>
-                    <?php
-                }
-                ?>
+                <?php  while ($p->have_posts()) {
+                        $p->the_post();   ?>
+
+                    <li class="pm_single_title"><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></li>
+
+                <?php  } ?>
             </ul>
+
         </div>
+
         <?php
     }
     wp_reset_postdata();
@@ -263,31 +273,39 @@ function rainbownews_latest_news()
 
 function rainbownews_trending_news()
 {
-    $rainbownews = array('post_type' => 'post',
-        'posts_per_page' => 5,
-        'ignore_sticky_posts' => true,
-        'post_status' => 'publish'
-    );
+
     $title = get_theme_mod('rainbownews_news_ticker_title');
+    $no_of_post  =  get_theme_mod('rainbownews_top_bar_news_ticker_posts');
+
+    $rainbownews = array(
+        'post_type'             =>  'post',
+        'posts_per_page'        =>  $no_of_post,
+        'ignore_sticky_posts'   =>  true,
+        'post_status'           =>  'publish',
+        'order'                 =>  'DESC',
+    );
+
     $query = new WP_Query($rainbownews);
     ?>
 
-
     <div class="nnc-trending-single">
+
         <div class="nnc-trend-title"><?php echo $title; ?></div>
+
         <ul class="newsticker">
             <?php
             while ($query->have_posts()) {
                 $query->the_post();
                 ?>
-                <li class="pm_single_title"><a
-                        href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></li>
-                <?php
-            }
-            ?>
+
+                <li class="pm_single_title"><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></li>
+
+                <?php } ?>
         </ul>
+
     </div>
     <?php
+
 }
 
 
