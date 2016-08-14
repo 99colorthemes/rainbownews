@@ -36,7 +36,7 @@
             <div class="nnc-social">
                 <?php wp_nav_menu(array('theme_location' => 'social-icon', 'menu_id' => 'social-menu')); ?>
             </div><?php endif; ?>
-            
+
             <div class="nnc-time">
                 <i class="fa fa-calendar"></i> <?php echo date_i18n( 'l, F j, Y', time() ); ?>
             </div>

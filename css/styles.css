@@ -1916,7 +1916,7 @@ a.nnc-readmore:hover {
 }
 
 .nnc-footer { 
-	padding: 40px 0 0; 
+	/*padding: 40px 0 0; */
 	border-top: 4px solid #4db2ec; 
 }
 
@@ -2135,11 +2135,15 @@ body.search article.post {
 /*=====  End of Search Page  ======*/
 
 /*===================================
-=            Search Page            =
+=            Index Page            =
 ===================================*/
 
 h2.entry-title {
 	padding-bottom: 14px;
+}
+
+article.post {
+	border-bottom: 2px solid #666;
 }
 
 /*===================================*/
