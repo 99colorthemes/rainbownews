@@ -25,6 +25,13 @@ function rainbownews_body_classes($classes)
         $classes[] = 'hfeed';
     }
 
+    // Add class site layout style.
+    if ( get_theme_mod ( 'rainbownews_site_layout', 'wide' ) == 'wide' ) {
+        $classes[] = 'wide';
+    } else {
+        $classes[] = 'box';
+    }
+
     return $classes;
 }
 
@@ -33,10 +40,6 @@ add_filter('body_class', 'rainbownews_body_classes');
 
 function rainbownews_page_post_layout($rainbownews_classes)
 {
-    //$rainbownews_et_to = rainbownews_get_options_values();
-    //echo $post -> ID;
-    //print_r($post);
-    //$rainbownews_post_class = get_post_meta(get_the_ID(), 'rainbownews_page_specific_layout', true);
 
     global $post;
 
@@ -49,6 +52,7 @@ function rainbownews_page_post_layout($rainbownews_classes)
 
     }
     elseif (is_singular()) {
+
         $rainbownews_post_class = get_post_meta($post->ID, 'rainbownews_page_specific_layout', true);
 
         if (empty($rainbownews_post_class)) {
@@ -62,32 +66,48 @@ function rainbownews_page_post_layout($rainbownews_classes)
             $rainbownews_classes[] = $rainbownews_post_class;
 
         }
+
     }
     elseif (is_category()) {
 
         if (empty($rainbownews_cat_sidebar_layout)) {
 
             $rainbownews_classes[] = 'right-sidebar';
-        } else {
+
+        }
+        else {
+
             $rainbownews_classes[] = $rainbownews_cat_sidebar_layout;
         }
     }
     elseif (is_archive()) {
+
         if (empty($rainbownews_default_sidebar_layout)) {
+
             $rainbownews_classes[] = 'right-sidebar';
+
         } else {
+
             $rainbownews_classes[] = $rainbownews_default_sidebar_layout;
+
         }
     }
     elseif (is_search()) {
+
         if (empty($rainbownews_default_sidebar_layout)) {
+
             $rainbownews_classes[] = 'right-sidebar';
+
         } else {
+
             $rainbownews_classes[] = $rainbownews_default_sidebar_layout;
+
         }
     }
     elseif (is_404()) {
+
         $rainbownews_classes[] = '';
+
     }
     else {
 
@@ -99,23 +119,3 @@ function rainbownews_page_post_layout($rainbownews_classes)
 }
 
 add_filter('body_class', 'rainbownews_page_post_layout');
-
-
-//rainbownews body class
-
-function rainbownews_web_layout($rainbownews_classes)
-{
-    //$rainbownews_et_to = rainbownews_get_options_values();
-
-    //if($rainbownews_et_to['page_layout'] == 'boxed'){
-    $rainbownews_classes[] = 'boxed-layout';
-    //}
-    //elseif($rainbownews_et_to['page_layout'] == 'fullwidth'){
-    //$rainbownews_classes[]='fullwidth';
-    //}
-    return $rainbownews_classes;
-}
-
-add_filter('body_class', 'rainbownews_web_layout');
-
-
