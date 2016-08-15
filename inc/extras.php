@@ -94,7 +94,7 @@ function rainbownews_page_post_layout($rainbownews_classes)
         $rainbownews_classes[] = 'right-sidebar';
 
     }
-  
+
     return $rainbownews_classes;
 }
 
