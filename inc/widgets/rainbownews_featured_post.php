@@ -56,9 +56,9 @@ class Rainbownews_featured_post extends WP_Widget
 
     function update($new_instance, $old_instance)
     {
-        $instance = $old_instance;
-        $instance['type'] = $new_instance['type'];
-        $instance['category'] = $new_instance['category'];
+        $instance             =  $old_instance;
+        $instance['type']     =  sanitize_key($new_instance['type']);
+        $instance['category'] =  absint($new_instance['category']);
 
         return $instance;
     }// end of update.
@@ -70,23 +70,23 @@ class Rainbownews_featured_post extends WP_Widget
 
         global $post;
 
-        $type = isset($instance['type']) ? $instance['type'] : 'latest';
-        $category = isset($instance['category']) ? $instance['category'] : '';
+        $type     =  isset($instance['type']) ? $instance['type'] : 'latest';
+        $category =  isset($instance['category']) ? $instance['category'] : '';
 
         if ($type == 'latest') {
 
             $get_featured_posts = new WP_Query(array(
-                'posts_per_page' => 3,
-                'post_type' => 'post',
-                'ignore_sticky_posts' => true
+                'posts_per_page'      =>  3,
+                'post_type'           =>  'post',
+                'ignore_sticky_posts' =>  true
             ));
 
         } else {
 
             $get_featured_posts = new WP_Query(array(
-                'posts_per_page' => 3,
-                'post_type' => 'post',
-                'category__in' => $category
+                'posts_per_page' =>  3,
+                'post_type'      =>  'post',
+                'category__in'   =>  $category
             ));
 
         }

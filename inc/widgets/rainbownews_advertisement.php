@@ -95,15 +95,15 @@ class Rainbownews_advertisement extends WP_Widget
 
     function update($new_instance, $old_instance)
     {
-        $instance = $old_instance;
-        $instance['title'] = strip_tags($new_instance['title']);
-        $instance['style'] = $new_instance['style'];
+        $instance              =  $old_instance;
+        $instance['title']     =  strip_tags($new_instance['title']);
+        $instance['style']     =  $new_instance['style'];
 
-        $image_link = '728x90_image_link';
-        $image_url = '728x90_image_url';
+        $image_link            =  '728x90_image_link';
+        $image_url             =  '728x90_image_url';
 
-        $instance[$image_link] = esc_url_raw($new_instance[$image_link]);
-        $instance[$image_url] = esc_url_raw($new_instance[$image_url]);
+        $instance[$image_link] =  esc_url_raw($new_instance[$image_link]);
+        $instance[$image_url]  =  esc_url_raw($new_instance[$image_url]);
 
         return $instance;
     }// end of update.
@@ -113,19 +113,18 @@ class Rainbownews_advertisement extends WP_Widget
         extract($args);
         extract($instance);
 
-        $title = isset($instance['title']) ? $instance['title'] : '';
+        $title       =  isset($instance['title']) ? $instance['title'] : '';
 
-        $image_link = '728x90_image_link';
-        $image_url = '728x90_image_url';
+        $image_link  =  '728x90_image_link';
+        $image_url   =  '728x90_image_url';
 
-        $image_link = isset($instance[$image_link]) ? $instance[$image_link] : '';
-        $image_url = isset($instance[$image_url]) ? $instance[$image_url] : '';
-        $style = isset($instance['style']) ? $instance['style'] : 'style1';
+        $image_link  =  isset($instance[$image_link]) ? $instance[$image_link] : '';
+        $image_url   =  isset($instance[$image_url]) ? $instance[$image_url] : '';
+        $style       =  isset($instance['style']) ? $instance['style'] : 'style1';
 
         ?>
 
         <div class="<?php if ($style == 'style2') {
-
             echo 'nnc-970X250-ads';
         }
         elseif ($style == 'style3') {
