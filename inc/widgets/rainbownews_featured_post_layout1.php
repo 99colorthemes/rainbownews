@@ -31,12 +31,12 @@ class Rainbownews_featured_post_layout1 extends WP_Widget
 
     function form($instance)
     {
-        $tg_defaults['title']    =  '';
-        $tg_defaults['number']   =  4;
-        $tg_defaults['type']     =  'latest';
-        $tg_defaults['category'] =  '';
+        $defaults['title']    =  '';
+        $defaults['number']   =  4;
+        $defaults['type']     =  'latest';
+        $defaults['category'] =  '';
 
-        $instance                =  wp_parse_args((array)$instance, $tg_defaults);
+        $instance                =  wp_parse_args((array)$instance, $defaults);
 
         $title                   =  esc_attr($instance['title']);
         $number                  =  $instance['number'];
@@ -78,10 +78,10 @@ class Rainbownews_featured_post_layout1 extends WP_Widget
     function update($new_instance, $old_instance)
     {
         $instance = $old_instance;
-        $instance['title'] = strip_tags($new_instance['title']);
-        $instance['number'] = absint($new_instance['number']);
-        $instance['type'] = $new_instance['type'];
-        $instance['category'] = $new_instance['category'];
+        $instance['title']    =  strip_tags($new_instance['title']);
+        $instance['number']   =  absint($new_instance['number']);
+        $instance['type']     =  sanitize_key($new_instance['type']);
+        $instance['category'] =  absint($new_instance['category']);
 
         return $instance;
     }// end of update.
@@ -93,16 +93,16 @@ class Rainbownews_featured_post_layout1 extends WP_Widget
 
         global $post;
 
-        $title = isset($instance['title']) ? $instance['title'] : '';
-        $number = empty($instance['number']) ? 4 : $instance['number'];
-        $type = isset($instance['type']) ? $instance['type'] : 'latest';
-        $category = isset($instance['category']) ? $instance['category'] : '';
+        $title    =  isset($instance['title']) ? $instance['title'] : '';
+        $number   =  empty($instance['number']) ? 4 : $instance['number'];
+        $type     =  isset($instance['type']) ? $instance['type'] : 'latest';
+        $category =  isset($instance['category']) ? $instance['category'] : '';
 
         if ($type == 'latest') {
 
             $get_featured_posts = new WP_Query(array(
-                'posts_per_page' => $number,
-                'post_type' => 'post',
+                'posts_per_page'      => $number,
+                'post_type'           => 'post',
                 'ignore_sticky_posts' => true
             ));
 
@@ -110,8 +110,8 @@ class Rainbownews_featured_post_layout1 extends WP_Widget
 
             $get_featured_posts = new WP_Query(array(
                 'posts_per_page' => $number,
-                'post_type' => 'post',
-                'category__in' => $category
+                'post_type'      => 'post',
+                'category__in'   => $category
             ));
 
         }
@@ -127,12 +127,12 @@ class Rainbownews_featured_post_layout1 extends WP_Widget
                 if ($type != 'latest') {
 
                     $border_color = 'style="border-bottom-color:' . rainbownews_category_color($category) . ';"';
-                    $title_color = 'style="color:' . rainbownews_category_color($category) . ';"';
+                    $title_color  = 'style="color:' . rainbownews_category_color($category) . ';"';
 
                 } else {
 
                     $border_color = '';
-                    $title_color = 'style="color:#4db2ec;"';
+                    $title_color  = 'style="color:#4db2ec;"';
 
                 }
                 if (!empty($title)) {
@@ -147,7 +147,7 @@ class Rainbownews_featured_post_layout1 extends WP_Widget
                 ?>
                 <div class="nnc-viewmore"><a <?php if(!empty($cat_slug->slug)){ ?> href="<?php echo site_url(). __('/category/', 'rainbownews') . $cat_slug->slug; ?>" <?php }?>><i class="fa fa-th-large" title="View All"></i></a></div>
 
-            <div class="nnc-category-block nnc-clearblock">
+                <div class="nnc-category-block nnc-clearblock">
 
                 <?php
                 $i = 1;
@@ -211,8 +211,8 @@ class Rainbownews_featured_post_layout1 extends WP_Widget
                                 <?php if ($i == 1 || $i == 2)
                                     rainbownews_colored_category();
                                 ?>
-
                             </div>
+
                         </div>
                     </div>
 
@@ -221,7 +221,7 @@ class Rainbownews_featured_post_layout1 extends WP_Widget
                     }
                     $i++;
                 endwhile;
-                if ($i == 3) {
+                if ($i == $number) {
                     echo '</div>';
                 }
 
@@ -229,12 +229,12 @@ class Rainbownews_featured_post_layout1 extends WP_Widget
                 wp_reset_query();
                 ?>
             </div>
+
+            </div>
         </div>
 
-
-        <!-- </div> -->
         <?php echo $after_widget;
-    }
+    }// end of widdget function.
 }// end of apply for action widget.
 
 

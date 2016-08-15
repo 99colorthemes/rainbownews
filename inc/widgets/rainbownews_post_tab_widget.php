@@ -19,73 +19,66 @@ function register_rainbownews_post_tab_widget()
 /**
  * Posts Tabs Widget Class
  */
-class rainbownews_posts_tabs extends WP_Widget
+class Rainbownews_posts_tabs extends WP_Widget
 {
     function __construct()
     {
         $widget_ops = array(
-            'classname'      => 'widget_custom_posts_tabs_entries',
+            'classname'      => 'rainbownews_posts_tabs',
             'description'    => __('Latest, Popular posts & recent comments', 'rainbownews')
         );
 
-        parent::__construct('custom-posts-tabs', '&nbsp;' . __('NNC: Posts Tabs', 'rainbownews'), $widget_ops);
-    }
+        parent::__construct('rainbownews_posts_tabs', '&nbsp;' . __('NNC: Posts Tabs', 'rainbownews'), $widget_ops);
+    }// end of construct.
 
     function form($instance)
     {
         $instance = wp_parse_args((array)$instance, array(
-            'latest' => true,
-            'popular' => true,
-            'recent' => true
+            'latest'   => true,
+            'popular'  => true,
+            'recent'   => true
         ));
         $number = (isset($instance['number']) && $instance['number'] != 0) ? absint($instance['number']) : 3;
 
         ?>
         <p>
-            <input class="checkbox" type="checkbox" <?php checked($instance['latest'], true); ?>
-                   id="<?php echo $this->get_field_id('latest'); ?>"
-                   name="<?php echo $this->get_field_name('latest'); ?>"/>
-            <label
-                for="<?php echo $this->get_field_id('latest'); ?>"><?php _e('Latest Posts', 'rainbownews'); ?></label>
+            <input class="checkbox" type="checkbox" <?php checked($instance['latest'], true); ?> id="<?php echo $this->get_field_id('latest'); ?>" name="<?php echo $this->get_field_name('latest'); ?>"/>
+
+            <label for="<?php echo $this->get_field_id('latest'); ?>"><?php _e('Latest Posts', 'rainbownews'); ?></label>
         </p>
         <p>
-            <input class="checkbox" type="checkbox" <?php checked($instance['popular'], true); ?>
-                   id="<?php echo $this->get_field_id('popular'); ?>"
-                   name="<?php echo $this->get_field_name('popular'); ?>"/>
-            <label
-                for="<?php echo $this->get_field_id('popular'); ?>"><?php _e('Popular Posts', 'rainbownews'); ?></label>
+            <input class="checkbox" type="checkbox" <?php checked($instance['popular'], true); ?> id="<?php echo $this->get_field_id('popular'); ?>" name="<?php echo $this->get_field_name('popular'); ?>"/>
+
+            <label for="<?php echo $this->get_field_id('popular'); ?>"><?php _e('Popular Posts', 'rainbownews'); ?></label>
         </p>
         <p>
-            <input class="checkbox" type="checkbox" <?php checked($instance['recent'], true); ?>
-                   id="<?php echo $this->get_field_id('recent'); ?>"
-                   name="<?php echo $this->get_field_name('recent'); ?>"/>
-            <label
-                for="<?php echo $this->get_field_id('recent'); ?>"><?php _e('Recent Comments', 'rainbownews'); ?></label>
+            <input class="checkbox" type="checkbox" <?php checked($instance['recent'], true); ?> id="<?php echo $this->get_field_id('recent'); ?>" name="<?php echo $this->get_field_name('recent'); ?>"/>
+
+            <label for="<?php echo $this->get_field_id('recent'); ?>"><?php _e('Recent Comments', 'rainbownews'); ?></label>
         </p>
         <p>
-            <label
-                for="<?php echo $this->get_field_id('number'); ?>"><?php _e("Enter the number of recent comments, popular and latest posts you'd like to display", 'rainbownews'); ?>
-                :<br/><br/>
-                <input id="<?php echo $this->get_field_id('number'); ?>"
-                       name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo $number; ?>"
-                       size="3"/>
+            <label for="<?php echo $this->get_field_id('number'); ?>"><?php _e("Enter the number of recent comments, popular and latest posts you'd like to display", 'rainbownews'); ?>:<br/><br/>
+
+                <input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo $number; ?>" size="3"/>
+
                 <small class="s_red"><?php _e('default is', 'rainbownews'); ?> 3</small>
+
                 <br/>
             </label>
         </p>
 
         <div class="cl"></div>
         <?php
-    }
+    }// end of form.
 
     function update($new_instance, $old_instance)
     {
         $new_instance = (array)$new_instance;
 
         $instance = array(
-            'latest' => 0,
+            'latest'  => 0,
             'popular' => 0,
-            'recent' => 0
+            'recent'  => 0
         );
 
         foreach ($instance as $field => $val) {
@@ -101,7 +94,7 @@ class rainbownews_posts_tabs extends WP_Widget
         $instance['number'] = absint($new_instance['number']);
 
         return $instance;
-    }
+    }// end of update.
 
     function widget($args, $instance)
     {
@@ -359,8 +352,6 @@ class rainbownews_posts_tabs extends WP_Widget
 
 
         <?php
-    }
-
-
-}
+    }// end of widdget function.
+}// end of apply for action widget.
 
