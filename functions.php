@@ -155,6 +155,8 @@ function rainbownews_admin_scripts( $hook ) {
 		wp_enqueue_script( 'wp-color-picker' );
 
 		wp_enqueue_style( 'rainbownews-admin-css', get_template_directory_uri() . '/css/admin/rainbownews-admin.css', false, '1.0.0' );
+
+		wp_enqueue_script( 'rainbownews-admin-scripts', get_template_directory_uri() . '/js/admin/rainbownews-admin.js', array( 'jquery' ), '1.0.0', true );
 	}
 }
 add_action('admin_enqueue_scripts', 'rainbownews_admin_scripts');
