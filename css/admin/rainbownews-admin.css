@@ -1,20 +1,45 @@
-/*
- * customizer Theme Instructions Panel style
- */
-li#accordion-section-rainbownews_important_links h3.accordion-section-title, li#accordion-section-rainbownews_important_links h3.accordion-section-title:focus { background-color: #162937 !important; color: #fff !important; }
-li#accordion-section-rainbownews_important_links h3.accordion-section-title:hover { background-color: #142d46 !important; color: #fff !important; }
-li#accordion-section-rainbownews_important_links h3.accordion-section-title:after { color: #fff !important; }
+/*=================================================
+=    Customizer Theme Panel CSS Stylesheet    =
+=================================================*/ 
+
+li#accordion-section-rainbownews_important_links h3.accordion-section-title,
+li#accordion-section-rainbownews_important_links h3.accordion-section-title:focus {  
+ 	color: #fff!important;
+ 	background: #4db2ec!important;
+ 	border-left: 3px solid #222;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; 
+   
+}
+
+li#accordion-section-rainbownews_important_links h3.accordion-section-title:hover { 
+	background-color: #4db2ec!important;
+	color: #fff!important; 
+}
+
+li#accordion-section-rainbownews_important_links h3.accordion-section-title:after { 
+	color: #fff!important; 
+}
+
 /* Upsell button CSS */
 .rainbownews-pro-info,
 .customize-control-rainbownews-important-links a {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8fc800+0,8fc800+100;Green+Flat+%232 */
-  background: #142d46;
-  color: #fff;
-  display: block;
-  margin: 15px 0 0;
-  padding: 5px 0;
-  text-align: center;
-  font-weight: 600;
+	  background: #4db2ec;
+	  color: #fff;
+	  display: block;
+	  margin: 15px 0 0;
+	  padding: 5px 0;
+	  text-align: center;
+	  font-weight: 600;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out; 
 }
 
 .customize-control-rainbownews-important-links a{
@@ -28,9 +53,7 @@ li#accordion-section-rainbownews_important_links h3.accordion-section-title:afte
   background:#ff4a1c;
 }
 
-/*
- * customizer layout animated border style
- */
+/* Customizer layout border style */ 
 #rainbownews-img-container .rainbownews-radio-img-img {
 	border: 3px solid #DEDEDE;
 	margin: 0 5px 5px 0;
@@ -39,19 +62,27 @@ li#accordion-section-rainbownews_important_links h3.accordion-section-title:afte
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 }
+
 #rainbownews-img-container .rainbownews-radio-img-selected {
 	border: 3px solid #AAA;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 }
+
 input[type=checkbox]:before {
 	content: '';
 	margin: -3px 0 0 -4px;
 }
+
 .nnc-social-wrap {
 	display: none;
 }
+
 .nnc-social-show {
 	display: block;
 }
+
+
+
+/*=====  End of Customizer CSS Stylesheet  ======*/

@@ -158,12 +158,12 @@ footer.entry-footer {
 }
 
 a.post-edit-link {
-    background: #666;
+    background: #333;
     color: #fff;
     padding: 8px 14px;
     display: inline-block;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 13px;
 } 
 
 a.post-edit-link:hover {
@@ -1022,6 +1022,10 @@ span.comments-link i {
 span.comments-link a {
 	color: #fff;
 	font-weight: normal;
+}
+
+body.home span.comments-link a {
+	color: #333; 
 }
 
 span.comments-link a:hover {
@@ -2274,3 +2278,5 @@ ul.tab li a:focus, .active {
 
 
 /*=====  End of Tabs  ======*/
+
+
