@@ -204,7 +204,8 @@ body.single .entry-content {
 
 .navigation.post-navigation,nav.navigation.posts-navigation {
 	border-top: 1px solid #eee;
-	box-shadow: 0 0 3px 1px #eee;  
+	box-shadow: 0 0 3px 1px #eee; 
+	background: #fff;
 }
 
 .nav-previous a, .nav-next a {
@@ -1330,6 +1331,8 @@ h2.widget-title:after {
 ===============================*/
 
 #primary .widget { 
+	background: #fff;
+	padding: 12px;
 }
 
 /*=============================================
@@ -1338,9 +1341,7 @@ h2.widget-title:after {
 #primary {
 	width: 70%;
 	float:left;
-	margin-top: 30px;
-	padding: 8px;
-	background: #fff;
+	margin-top: 30px; 
 }
 
 #secondary {
@@ -1753,9 +1754,10 @@ a.nnc-readmore:hover {
 }
 
 .nnc-category-highlight-block .nnc-highlight-single {
-	margin-bottom: 30px;
-	padding-bottom: 30px;
+	margin-bottom: 30px; 
 	border-bottom: 2px solid #333;
+	background: #fff;
+	padding: 12px 12px 30px;
 }
 
 .nnc-category-small-block .nnc-hightlight-large {
@@ -1770,6 +1772,14 @@ a.nnc-readmore:hover {
 
 .nnc-category-small-block .nnc-highlight-single .nnc-dtl .nnc-entry-title a {
 	font-size: 16px;
+}
+
+.nnc-category-small-block .nnc-highlight-single .nnc-dtl {
+	margin: 12px;
+}
+
+.nnc-category-highlight-block .nnc-dtl {
+	margin: 12px;
 }
 
 .nnc-pagination li {
@@ -1920,7 +1930,7 @@ a.nnc-readmore:hover {
 }
 
 .nnc-footer { 
-	/*padding: 40px 0 0; */
+	padding: 40px 0 0; 
 	border-top: 4px solid #4db2ec; 
 }
 
@@ -1931,7 +1941,7 @@ a.nnc-readmore:hover {
 }
 
 .nnc-footer-single .widget {
-	margin: 0 0 36px;
+	margin: 0 0 36px 
 }
 
 .nnc-footer-single:nth-child(1) {
@@ -2147,7 +2157,8 @@ h2.entry-title {
 }
 
 article.post {
-	border-bottom: 2px solid #666;
+	border-bottom: 2px solid #666;background: #fff;
+    padding: 12px;
 }
 
 /*===================================*/

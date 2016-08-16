@@ -668,11 +668,11 @@ a:active {
 }
 
 .nnc-main-navigation li ul {
-	background: #4db2ec;
-	-webkit-transition: all .25s ease;
-	-moz-transition: all .25s ease;
-	-o-transition: all .25s ease;
-	transition: all .25s ease;
+	background: #fff;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
 }
 
 .nnc-main-navigation ul {
@@ -698,20 +698,48 @@ a:active {
 	text-transform: uppercase;
 }
 
+
+
+.nnc-main-navigation li a:hover {
+    background: #4db2ec;
+    color: #fff;
+}
+
+/*
+
 .nnc-main-navigation li a:hover,
 .nnc-main-navigation li:hover,
 .nnc-main-navigation li:hover > a,
 .current-menu-item > a {
 	background: #4db2ec;
-	color: #fff !important;
+	color: #666 !important;
 }
 
 .nnc-main-navigation li ul li a:hover,
 .nnc-main-navigation li ul li :hover,
 .nnc-main-navigation li ul li :hover > a ,
 ul.sub-menu .current-menu-item > a {
-	background: red;
-	color: #fff !important;
+	background: #4db2ec;
+	color: #666 !important;
+}*/
+
+.nnc-main-navigation ul.menu li ul.sub-menu li a {
+    color: #666;
+}
+ 
+.nnc-main-navigation ul.menu li ul.sub-menu li a:hover {
+    background: #4db2ec;
+    color: #fff;
+}
+
+.nnc-main-navigation ul.menu li.current-menu-item > a {
+	background: #4db2ec;
+	color: #fff;
+}
+
+.nnc-main-navigation ul.sub-menu .current-menu-item > a {
+	background: #4db2ec;
+	color: #fff;
 }
 
 .nnc-main-navigation li ul {
