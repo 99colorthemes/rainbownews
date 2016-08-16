@@ -35,26 +35,17 @@ class Rainbownews_advertisement extends WP_Widget
 
     function form($instance)
     {
-
-        $defaults['title']             =  '';
         $defaults['728x90_image_url']  =  '';
         $defaults['728x90_image_link'] =  '';
         $defaults['style']             =  '';
 
         $instance                      = wp_parse_args((array)$instance, $defaults);
 
-        $title                         =  esc_attr($instance['title']);
         $image_url                     =  '728x90_image_url' ;
         $image_link                    =  '728x90_image_link';
         $style                         =  esc_attr($instance['style']);
 
     ?>
-
-        <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'rainbownews'); ?></label>
-
-            <input id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>"/>
-        </p>
 
         <label><?php _e('Add your Advertisement 728x90 Images Here', 'rainbownews'); ?></label>
 
@@ -96,7 +87,6 @@ class Rainbownews_advertisement extends WP_Widget
     function update($new_instance, $old_instance)
     {
         $instance              =  $old_instance;
-        $instance['title']     =  strip_tags($new_instance['title']);
         $instance['style']     =  $new_instance['style'];
 
         $image_link            =  '728x90_image_link';
@@ -112,8 +102,6 @@ class Rainbownews_advertisement extends WP_Widget
     {
         extract($args);
         extract($instance);
-
-        $title       =  isset($instance['title']) ? $instance['title'] : '';
 
         $image_link  =  '728x90_image_link';
         $image_url   =  '728x90_image_url';
@@ -134,14 +122,7 @@ class Rainbownews_advertisement extends WP_Widget
             echo 'nnc-728X90-ads';
 
         } ?>">
-
-            <?php if (!empty($title)) { ?>
-
-               <div class="nnc-advertisement-title">
-                    <?php echo $before_title. esc_html( $title ) . $after_title; ?>
-                </div>
-
-            <?php }
+            <?php
 
             $output = '';
             if (!empty($image_url)) {

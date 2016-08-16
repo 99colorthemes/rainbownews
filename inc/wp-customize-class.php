@@ -56,9 +56,6 @@ class RainbowNews_Important_Links extends WP_Customize_Control
 
 }
 
-
-
-
 /**
  * A class to create a radio button  for sidebar
  */

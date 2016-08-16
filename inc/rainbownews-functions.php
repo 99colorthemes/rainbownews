@@ -72,7 +72,7 @@ function rainbownews_widgets_init()
     ));
 
     register_sidebar(array(
-        'name' => esc_html__('Front Page: Latest Posts Area', 'rainbownews'),
+        'name' => esc_html__('Front Page: Full Width Post', 'rainbownews'),
         'id' => 'rainbownews_front_page_latest_post_area',
         'description' => esc_html__('Add widgets here.', 'rainbownews'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',

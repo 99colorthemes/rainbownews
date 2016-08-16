@@ -9,26 +9,26 @@
  * Rainbownews Post Tab Widget Section
  */
 
-add_action('widgets_init', 'register_rainbownews_post_tab_widget');
+add_action('widgets_init', 'register_rainbownews_post_tab');
 
-function register_rainbownews_post_tab_widget()
+function register_rainbownews_post_tab()
 {
-    register_widget('rainbownews_posts_tabs');
+    register_widget('rainbownews_post_tab');
 }
 
 /**
  * Posts Tabs Widget Class
  */
-class Rainbownews_posts_tabs extends WP_Widget
+class Rainbownews_post_tab extends WP_Widget
 {
     function __construct()
     {
         $widget_ops = array(
-            'classname'      => 'rainbownews_posts_tabs',
+            'classname'      => 'rainbownews_post_tab',
             'description'    => __('Latest, Popular posts & recent comments', 'rainbownews')
         );
 
-        parent::__construct('rainbownews_posts_tabs', '&nbsp;' . __('NNC: Posts Tabs', 'rainbownews'), $widget_ops);
+        parent::__construct('rainbownews_post_tab', '&nbsp;' . __('NNC: Posts Tabs', 'rainbownews'), $widget_ops);
     }// end of construct.
 
     function form($instance)

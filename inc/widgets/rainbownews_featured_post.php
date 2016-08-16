@@ -25,7 +25,7 @@ class Rainbownews_featured_post extends WP_Widget
             'description'    =>  esc_html__('Add your  Featured Post', 'rainbownews')
         );
 
-        parent::__construct('rainbownews_featured_post', '&nbsp;' . __(' NNC: Main Featured Post', 'rainbownews '), $widget_ops);
+        parent::__construct('rainbownews_featured_post', '&nbsp;' . __(' NNC: Main Featured Post', 'rainbownews'), $widget_ops);
     }// end of construct.
 
     function form($instance)

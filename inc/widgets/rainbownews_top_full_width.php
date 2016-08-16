@@ -9,24 +9,24 @@
  * Rainbownews Latest Post Widget Section
  */
 
-add_action('widgets_init', 'register_rainbownews_latest_post');
+add_action('widgets_init', 'register_rainbownews_top_full_width');
 
-function register_rainbownews_latest_post()
+function register_rainbownews_top_full_width()
 {
-    register_widget("rainbownews_latest_post");
+    register_widget("rainbownews_top_full_width");
 }
 
-class Rainbownews_latest_post extends WP_Widget
+class Rainbownews_top_full_width extends WP_Widget
 {
 
     function __construct()
     {
         $widget_ops = array(
-            'classname'      => 'rainbownews_latest_post',
+            'classname'      => 'rainbownews_top_full_width',
             'description'    => __('Display latest posts or posts of specific category.', 'rainbownews')
         );
 
-        parent::__construct('rainbownews_latest_post', '&nbsp;' . __(' NNC: Latest Post ', 'rainbownews'), $widget_ops);
+        parent::__construct('rainbownews_top_full_width', '&nbsp;' . __(' NNC: Full Width Post ', 'rainbownews'), $widget_ops);
     }// end of construct.
 
     function form($instance)
