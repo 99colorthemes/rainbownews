@@ -27,7 +27,7 @@ class Rainbownews_advertisement extends WP_Widget
     {
         $widget_ops = array(
             'classname'      =>  'rainbownews_advertisement',
-            'description'    =>  esc_html__('Add your 728x90 Advertisement', 'rainbownews')
+            'description'    =>  esc_html__('Add your Advertisement', 'rainbownews')
         );
 
         parent::__construct( 'rainbownews_advertisement', '&nbsp;' . __('NNC: Advertisement', 'rainbownews' ), $widget_ops);
