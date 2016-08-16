@@ -2026,6 +2026,98 @@ a.nnc-readmore:hover {
 	font-size: 20px;
 }
 
+.nnc-social-sidebar-icons ul li {
+	float: left;
+	border: 1px solid #eee;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	display: inline-block;
+}
+
+.nnc-social-sidebar-icons ul li a i {
+	width: 38px;
+	height: 38px;
+	text-align: center;
+	line-height: 38px;
+	color: #fff;
+	font-size: 14px;
+}
+
+.nnc-social-sidebar-icons ul li a span {
+	color: #fff;
+	padding-left: 10px;
+	font-size: 14px;
+}
+
+li.nnc-fb i {
+	background: #3b5998;
+}
+
+.nnc-social-sidebar-icons ul li.nnc-fb {
+	background: #304D8D;
+}
+
+li.nnc-twt i {
+	background: #55acee;
+}
+
+.nnc-social-sidebar-icons ul li.nnc-twt {
+	background: #47a5ed;
+}
+
+li.nnc-gplus i {
+	background: #dd4b39;
+}
+
+.nnc-social-sidebar-icons ul li.nnc-gplus {
+	background: #de412c;
+}
+
+li.nnc-linked i {
+	background: #007bb5;
+}
+
+.nnc-social-sidebar-icons ul li.nnc-linked {
+	background: #0070a3;
+}
+
+li.nnc-insta i {
+	background: #e95950;
+}
+
+.nnc-social-sidebar-icons ul li.nnc-insta {
+	background: #e85046;
+}
+
+li.nnc-utube i {
+	background: #bb0000;
+}
+
+.nnc-social-sidebar-icons ul li.nnc-utube {
+	background: #a80000;
+}
+
+li.nnc-tumb i {
+	background: #32506d;
+}
+
+.nnc-social-sidebar-icons ul li.nnc-tumb {
+	background: #2a4d6e;
+}
+
+li.nnc-rss i {
+	background: #ff6600;
+}
+
+.nnc-social-sidebar-icons ul li.nnc-rss {
+	background: #e95f03;
+}
+
+
+/*footer-social*/
+
+
 
 .nnc-f-gallery-block {
 	background: #1A1A1A;

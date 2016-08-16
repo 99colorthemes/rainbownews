@@ -9,22 +9,22 @@
  * Rainbownews Gallery Widget Section
  */
 
-add_action('widgets_init', 'register_rainbownews_gallery_widget');
+add_action('widgets_init', 'register_rainbownews_gallery');
 
-function register_rainbownews_gallery_widget()
+function register_rainbownews_gallery()
 {
-    register_widget("rainbownews_gallery_widget");
+    register_widget("rainbownews_gallery");
 }
 
-class Rainbownews_gallery_widget extends WP_Widget {
+class Rainbownews_gallery extends WP_Widget {
 
     function __construct() {
         $widget_ops           = array(
-            'classname'       => 'rainbownews_gallery_widget',
+            'classname'       => 'rainbownews_gallery',
             'description'     => esc_html__( 'Display your images as in grid gallery views.', 'rainbownews' )
         );
 
-    parent::__construct('rainbownews_gallery_widget', '&nbsp;' . __(' NNC: Gallery', 'rainbownews'), $widget_ops);
+    parent::__construct('rainbownews_gallery', '&nbsp;' . __(' NNC: Gallery', 'rainbownews'), $widget_ops);
     }// end of construct.
 
     function form( $instance ) {

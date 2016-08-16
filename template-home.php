@@ -118,7 +118,7 @@
 
                 if (!dynamic_sidebar('rainbownews_front_page_sidebar')):
                 endif;
-                
+
             }
             ?>
         </aside>
