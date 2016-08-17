@@ -203,7 +203,9 @@ class Rainbownews_featured_post_layout1 extends WP_Widget
                                     </a>
                                 </span>
 
+                            <?php if ($i == 1 || $i == 2): ?>
                                 <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> <a href="<?php the_permalink(); ?>" title="No Comments"><?php comments_popup_link('No Comment', '1', '%'); ?></a></span>
+                             <?php endif; ?>
 
                             </div>
 

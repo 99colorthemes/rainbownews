@@ -171,11 +171,6 @@ class Rainbownews_featured_post_layout3 extends WP_Widget
                                         </time>
                                     </a>
                                 </span>
-
-                                <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i>
-                                    <a href="<?php the_permalink(); ?>" title="No Comments"><?php comments_popup_link('No Comment', '1', '%'); ?></a>
-                                </span>
-
                             </div>
                         </div>
                     </div>
