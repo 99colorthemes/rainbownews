@@ -6,7 +6,18 @@
  */
 ?>
 
-<?php get_header(); ?>  
+<?php get_header(); ?>
+
+<?php
+if ($default_sidebar_layout == 'left-sidebar'):
+    ?>
+    <aside id="secondary" class="widget-area" role="complementary">
+        <?php dynamic_sidebar('rainbownews_left_sidebar'); ?>
+    </aside><!-- #secondary -->
+    <?php
+endif;
+
+?>
 
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
@@ -28,7 +39,9 @@
     </div><!-- #primary -->
 
 <?php
-rainbownews_sidebar_select();
+if ($default_sidebar_layout == 'right-sidebar'):
+	get_sidebar();
+endif;
 get_footer();
 
     

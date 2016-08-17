@@ -108,21 +108,28 @@ function rainbownews_save_custom_meta($post_id)
         return;
 
     if ('page' == $_POST['post_type']) {
+
         if (!current_user_can('edit_page', $post_id))
             return $post_id;
-    } elseif (!current_user_can('edit_post', $post_id)) {
+
+    }
+    elseif (!current_user_can('edit_post', $post_id)) {
         return $post_id;
     }
 
     foreach ($rainbownews_page_specific_layout as $field) {
+
         //Execute this saving function
         $old = get_post_meta($post_id, $field['id'], true);
         $new = sanitize_key($_POST[$field['id']]);
+
         if ($new && $new != $old) {
             update_post_meta($post_id, $field['id'], $new);
-        } elseif ('' == $new && $old) {
+        }
+        elseif ('' == $new && $old) {
             delete_post_meta($post_id, $field['id'], $old);
         }
+
     } // end foreach
 }
 

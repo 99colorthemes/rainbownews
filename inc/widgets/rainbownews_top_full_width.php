@@ -26,7 +26,7 @@ class Rainbownews_top_full_width extends WP_Widget
             'description'    => __('Display latest posts or posts of specific category.', 'rainbownews')
         );
 
-        parent::__construct('rainbownews_top_full_width', '&nbsp;' . __(' NNC: Full Width Post ', 'rainbownews'), $widget_ops);
+        parent::__construct('rainbownews_top_full_width', '&nbsp;' . __(' NNC: Full Width Area ', 'rainbownews'), $widget_ops);
     }// end of construct.
 
     function form($instance)
@@ -69,15 +69,15 @@ class Rainbownews_top_full_width extends WP_Widget
         </p>
 
         <p>
-            <input type="radio" <?php checked($style, 'style1') ?> id="<?php echo $this->get_field_id('style'); ?>" name="<?php echo $this->get_field_name('style'); ?>" value="style1"/><?php _e('Style 1', 'rainbownews'); ?><br/>
-
-            <input type="radio" <?php checked($style, 'style2') ?> id="<?php echo $this->get_field_id('style'); ?>" name="<?php echo $this->get_field_name('style'); ?>" value="style2"/><?php _e('Style 2', 'rainbownews'); ?><br/>
-        </p>
-
-        <p>
             <label for="<?php echo $this->get_field_id('category'); ?>"><?php _e('Select category', 'rainbownews'); ?> :</label>
 
             <?php wp_dropdown_categories(array('show_option_none' => ' ', 'name' => $this->get_field_name('category'), 'selected' => $category)); ?>
+        </p>
+
+        <p>
+            <input type="radio" <?php checked($style, 'style1') ?> id="<?php echo $this->get_field_id('style'); ?>" name="<?php echo $this->get_field_name('style'); ?>" value="style1"/><?php _e('Style 1', 'rainbownews'); ?><br/>
+
+            <input type="radio" <?php checked($style, 'style2') ?> id="<?php echo $this->get_field_id('style'); ?>" name="<?php echo $this->get_field_name('style'); ?>" value="style2"/><?php _e('Style 2', 'rainbownews'); ?><br/>
         </p>
         <?php
     }// end of form.
@@ -188,7 +188,7 @@ class Rainbownews_top_full_width extends WP_Widget
                                      </a>
                                 </span>
 
-                                <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> <a href="<?php the_permalink(); ?>" title="No Comments"><?php comments_popup_link('No Comment', '1', '%'); ?></a></span>
+                                <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> <a href="<?php the_permalink(); ?>" title="No Comments"><?php comments_popup_link('0', '1', '%'); ?></a></span>
 
                             </div>
 
