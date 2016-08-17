@@ -15,6 +15,7 @@ function rainbownews_add_custom_box()
 {
     // Adding layout meta box for Page
     add_meta_box('page-layout', esc_html__('Select Layout', 'rainbownews'), 'rainbownews_layout_call', 'page', 'side', 'default');
+
     // Adding layout meta box for Post
     add_meta_box('post-layout', esc_html__('Select Layout', 'rainbownews'), 'rainbownews_layout_call', 'post', 'side', 'default');
 }
@@ -22,6 +23,7 @@ function rainbownews_add_custom_box()
 /****************************************************************************************/
 
 global $rainbownews_page_specific_layout;
+
 $rainbownews_page_specific_layout = array(
     'right-sidebar' => array(
         'id' => 'rainbownews_page_specific_layout',

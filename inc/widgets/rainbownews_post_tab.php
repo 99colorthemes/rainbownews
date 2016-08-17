@@ -241,7 +241,7 @@ class Rainbownews_post_tab extends WP_Widget
                                 <div class="nnc-category-small nnc-clearblock">
                                     <?php
                                     while ($p->have_posts()) : $p->the_post(); ?>
-                                        <div class="nnc-category-single">
+                                        <div class="nnc-category-single <?php echo has_post_thumbnail() ? '' : 'nnc-no-image'; ?>">
                                             <figure class="nnc-img">
                                                 <?php
                                                 if (has_post_thumbnail()) {

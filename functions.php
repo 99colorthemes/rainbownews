@@ -42,6 +42,13 @@ function rainbownews_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
+	// Register image sizes 
+	add_image_size( 'rainbownews-slider', 506, 380, true );
+
+	add_image_size( 'rainbownews-featured-post-large', 508, 198, true );
+
+	add_image_size( 'rainbownews-featured-post-small', 253, 182, true );
+
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(

@@ -25,6 +25,10 @@
                 </div><!-- .entry-meta -->
             </div>
         <?php endif; ?>
+        <?php if (rainbownews_colored_category() > 0) {
+            rainbownews_colored_category();
+        }
+        ?>
     </header><!-- .entry-header -->
 
     <div class="entry-summary">
