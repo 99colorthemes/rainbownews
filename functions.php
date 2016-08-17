@@ -137,6 +137,8 @@ function rainbownews_scripts() {
 
 	//Register swiper
 	wp_enqueue_script( 'swiper', get_template_directory_uri() . '/js/swiper.js', array( 'jquery' ), '3.3.1', true );
+	
+	wp_enqueue_script( 'newsticker', get_template_directory_uri() . '/js/newsTicker.js', array( 'jquery' ), '1.0.11', true );
 
 	//Register main.js
 	wp_enqueue_script( 'rainbownews-main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), '1.0.0', true );

@@ -55,17 +55,19 @@ function openCity(evt, cityName) {
 
 
 
-jQuery(document).ready(function(){
-    jQuery(window).scroll(function() {
-        if (jQuery(this).scrollTop() > 1){
-            jQuery('.nnc-scroll-top').addClass("show");
+
+jQuery(document).ready(function($){
+
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 1){
+            $('.nnc-scroll-top').addClass("show");
         }
         else{
-            jQuery('.nnc-scroll-top').removeClass("show");
+            $('.nnc-scroll-top').removeClass("show");
         }
     });
-        jQuery(".nnc-scroll-top").on("click", function() {
-         jQuery("html, body").animate({ scrollTop: 0 }, 600);
+        $(".nnc-scroll-top").on("click", function() {
+         $("html, body").animate({ scrollTop: 0 }, 600);
         return false;
     });
 
@@ -82,24 +84,27 @@ jQuery(document).ready(function(){
     });
 
 
-    jQuery('input,textarea').focus(function(){
-        jQuery(this).data('placeholder',jQuery(this).attr('placeholder'))
-            jQuery(this).attr('placeholder','');});jQuery('input,textarea').blur(function(){
-            jQuery(this).attr('placeholder',jQuery(this).data('placeholder'));
+    $('input,textarea').focus(function(){
+        $(this).data('placeholder',$(this).attr('placeholder'))
+            $(this).attr('placeholder','');});$('input,textarea').blur(function(){
+            $(this).attr('placeholder',$(this).data('placeholder'));
     });
 
-    // News Ticker   
-    $('.newsticker').newsTicker({
-        row_height: 35,
-        max_rows: 1,
-        speed: 1000,
-        direction: 'down',
-        duration: 4000,
-        autostart: 1,
-        pauseOnHover: 1
-    });
+// News Ticker
+
+        $('.newsticker').newsTicker({
+            row_height: 35,
+            max_rows: 1,
+            speed: 1000,
+            direction: 'down',
+            duration: 4000,
+            autostart: 1,
+            pauseOnHover: 1
+        });
+
 
 
 
 });
+
 
