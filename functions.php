@@ -47,7 +47,7 @@ function rainbownews_setup() {
 
 	add_image_size( 'rainbownews-featured-post-large', 508, 198, true );
 
-	add_image_size( 'rainbownews-featured-post-small', 253, 182, true );
+	add_image_size( 'rainbownews-featured-post-small', 253, 180, true );
 
 	add_image_size( 'rainbownews-featured-large1', 334, 194, true );
 
@@ -137,7 +137,7 @@ function rainbownews_scripts() {
 
 	//Register swiper
 	wp_enqueue_script( 'swiper', get_template_directory_uri() . '/js/swiper.js', array( 'jquery' ), '3.3.1', true );
-	
+
 	wp_enqueue_script( 'newsticker', get_template_directory_uri() . '/js/newsTicker.js', array( 'jquery' ), '1.0.11', true );
 
 	//Register main.js

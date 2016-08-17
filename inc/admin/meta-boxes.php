@@ -25,25 +25,29 @@ function rainbownews_add_custom_box()
 global $rainbownews_page_specific_layout;
 
 $rainbownews_page_specific_layout = array(
-    'right-sidebar' => array(
-        'id' => 'rainbownews_page_specific_layout',
-        'value' => 'right-sidebar',
-        'label' => esc_html__('Right Sidebar', 'rainbownews')
+
+    'right-sidebar'               =>  array(
+        'id'                      =>  'rainbownews_page_specific_layout',
+        'value'                   =>  'right-sidebar',
+        'label'                   =>  esc_html__('Right Sidebar', 'rainbownews')
     ),
-    'left-sidebar' => array(
-        'id' => 'rainbownews_page_specific_layout',
-        'value' => 'left-sidebar',
-        'label' => esc_html__('Left Sidebar', 'rainbownews')
+
+    'left-sidebar'                =>  array(
+        'id'                      =>  'rainbownews_page_specific_layout',
+        'value'                   =>  'left-sidebar',
+        'label'                   =>  esc_html__('Left Sidebar', 'rainbownews')
     ),
-    'no-sidebar-full-width' => array(
-        'id' => 'rainbownews_page_specific_layout',
-        'value' => 'no-sidebar',
-        'label' => esc_html__('No Sidebar Full Width', 'rainbownews')
+
+    'no-sidebar-content-centered' =>  array(
+        'id'                      =>  'rainbownews_page_specific_layout',
+        'value'                   =>  'no-sidebar-content-centered',
+        'label'                   =>  esc_html__('No Sidebar Content Centered', 'rainbownews')
     ),
-    'no-sidebar-content-centered' => array(
-        'id' => 'rainbownews_page_specific_layout',
-        'value' => 'no_sidebar_content_centered',
-        'label' => esc_html__('No Sidebar Content Centered', 'rainbownews')
+
+    'no-sidebar-full-width'       =>  array(
+        'id'                      =>  'rainbownews_page_specific_layout',
+        'value'                   =>  'no-sidebar-full-width',
+        'label'                   =>  esc_html__('No Sidebar Full Width', 'rainbownews')
     )
 );
 
@@ -66,18 +70,21 @@ function rainbownews_meta_form($rainbownews_metabox_field)
     wp_nonce_field(basename(__FILE__), 'custom_meta_box_nonce');
 
     foreach ($rainbownews_metabox_field as $field) {
+
         $layout_meta = get_post_meta($post->ID, $field['id'], true);
         switch ($field['id']) {
 
             // Layout
             case 'rainbownews_page_specific_layout':
+
                 if (empty($layout_meta)) {
                     $layout_meta = 'right-sidebar';
                 } ?>
 
-                <input class="post-format" type="radio" name="<?php echo esc_attr($field['id']); ?>"
-                       value="<?php echo esc_attr($field['value']); ?>" <?php checked($field['value'], $layout_meta); ?>/>
+                <input class="post-format" type="radio" name="<?php echo esc_attr($field['id']); ?>" value="<?php echo esc_attr($field['value']); ?>" <?php checked($field['value'], $layout_meta); ?>/>
+
                 <label class="post-format-icon"><?php echo esc_html($field['label']); ?></label><br/>
+
                 <?php
                 break;
         }
