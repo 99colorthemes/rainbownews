@@ -10,6 +10,10 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <?php if (rainbownews_colored_category() > 0) {
+        rainbownews_colored_category();
+    }
+    ?>
     <?php if (has_post_thumbnail()) { ?>
         <figure class="nnc-img">
             <?php the_post_thumbnail('full'); ?>

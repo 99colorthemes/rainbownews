@@ -70,13 +70,13 @@ class Rainbownews_advertisement extends WP_Widget
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id('category'); ?>"><?php _e('Select Sizes', 'rainbownews'); ?>:</label>
+            <label for="<?php echo $this->get_field_id('category'); ?>"><?php _e('Select Here', 'rainbownews'); ?>:</label>
 
             <select name="<?php echo $this->get_field_name('style'); ?>">
 
-                <option value="style1" <?php if ($style == 'style1') echo 'selected="selected"'; ?> id="<?php echo $this->get_field_id('style'); ?>" name="<?php echo $this->get_field_name('style'); ?>"><?php _e('728X90', 'rainbownews'); ?></option>
-                <option value="style2" <?php if ($style == 'style2') echo 'selected="selected"'; ?> id="<?php echo $this->get_field_id('style'); ?>" name="<?php echo $this->get_field_name('style'); ?>"><?php _e('970X250', 'rainbownews'); ?></option>
-                <option value="style3" <?php if ($style == 'style3') echo 'selected="selected"'; ?> id="<?php echo $this->get_field_id('style'); ?>" name="<?php echo $this->get_field_name('style'); ?>"><?php _e('970X90', 'rainbownews'); ?></option>
+                <option value="style1" <?php if ($style == 'style1') echo 'selected="selected"'; ?> id="<?php echo $this->get_field_id('style'); ?>" name="<?php echo $this->get_field_name('style'); ?>"><?php _e('Top Advertisement', 'rainbownews'); ?></option>
+                <option value="style2" <?php if ($style == 'style2') echo 'selected="selected"'; ?> id="<?php echo $this->get_field_id('style'); ?>" name="<?php echo $this->get_field_name('style'); ?>"><?php _e('Mid Advertisement', 'rainbownews'); ?></option>
+                <option value="style3" <?php if ($style == 'style3') echo 'selected="selected"'; ?> id="<?php echo $this->get_field_id('style'); ?>" name="<?php echo $this->get_field_name('style'); ?>"><?php _e('Bottom Advertisement', 'rainbownews'); ?></option>
 
             </select>
         </p>
