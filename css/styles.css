@@ -54,8 +54,8 @@ table {
 
 @font-face {
 	font-family: 'FontAwesome';  
-  src: url('../fonts/fontawesome-webfont.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  	src: url('../fonts/fontawesome-webfont.eot'); /* IE9 Compat Modes */
+  	src: url('../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('../fonts/fontawesome-webfont.woff2') format('woff2'), /* Super Modern Browsers */
        url('../fonts/fontawesome-webfont.woff') format('woff'), /* Pretty Modern Browsers */
        url('../fonts/fontawesome-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
@@ -63,7 +63,7 @@ table {
 }
 
 .col-2 {
-	width: calc(48% - 5px);;
+	width: calc(49% - 5px);;
 	float: left; 
 }
 
@@ -603,7 +603,8 @@ ul#top-menu li.current_page_item a {
 
 .nnc-logo {
 	float: left;
-	padding: 30px 0;
+    padding: 25px 0;
+    line-height: 20px;
 }
 
 p.site-description {
@@ -725,25 +726,6 @@ ul.sub-menu .current-menu-item > a {
 	top: 50%;
 	left: 100%;
 }
-
-/*.menu-item-has-children {*/
-	/*padding-right: 12px;*/
-	/*background: #4db2ec;*/
-/*}*/
-
-/*.menu-item-has-children:after {*/
-	/*font-family: 'FontAwesome', sans-serif;*/
-	/*font-size: 16px;*/
-	/*position: absolute;*/
-	/*top: 8px;*/
-	/*right: 10px;*/
-	/*content: '\f107';*/
-	/*color: rgba(255,255,255,.75);*/
-/*}*/
-
-/*.menu-item-has-children .menu-item-has-children:after {*/
-	/*content: '\f105';*/
-/*}*/
 
 .nnc-top-menu li:hover > ul {
 	top: 100%;
@@ -919,16 +901,7 @@ span.breadcrumb_separator {
 
 .search-form input[type="text"] :-ms-input-placeholder {
    color: #666!important;
-}
-
-/*search-submit:before {
-    content: "\f002";
-    font-family: 'FontAwesome';
-    font-size: 14px;   
-    position: absolute;
-    top: 0;
-    right: 0;
-}*/
+} 
 
 button.search-submit { 
     bottom: 0; 
@@ -979,7 +952,6 @@ button.search-submit i {
 
 .nnc-highlight-slider .nnc-slide-img {
 	line-height: 0;
-	max-height: 388px;
 }
 
 .swiper-container {
@@ -1113,11 +1085,7 @@ span.comments-link i {
 span.comments-link a {
 	color: #fff;
 	font-weight: normal;
-}
-
-body.home span.comments-link a {
-	color: #333; 
-}
+} 
 
 span.comments-link a:hover {
 	color: #4db2ec;
@@ -1165,13 +1133,11 @@ span.catlinks a:before {
 }
 
 .nnc-hightlight-large .nnc-slide-img {
-	line-height: 0;
-	max-height: 206px;
+	line-height: 0; 
 }
 
 .nnc-hightlight-small .nnc-slide-img {
-	line-height: 0;
-	max-height: 180px;
+	line-height: 0; 
 }
 
 .nnc-hightlight-large:hover img {
@@ -1235,16 +1201,16 @@ h2.widget-title {
 	position: relative;
 }
 
-h2.widget-title:after {
+h2.widget-title:after { 
     content: '';
     display: block;
     height: 1px;
     background-color: #eee;
     position: absolute;
     top: 50%;
-    left: 132px;
-    right: 30px;
-    z-index: 1;
+    left: 0;
+    right: 0;
+    z-index: -1; 
 }
 
 .widget-title > span {
@@ -1281,6 +1247,11 @@ h2.widget-title:after {
 	width: 25%;
 	position: relative;
 	overflow: hidden;
+	padding-left: 2px;
+} 
+
+.nnc-latest-single .nnc-dtl { 
+	padding: 12px 12px 0 12px;
 }
 
 .nnc-latest-single:hover img {
@@ -1752,7 +1723,6 @@ span.post-date {
 /*Category Layout 2*/
 .nnc-category-dtl p {
     font-size: 13px;
-    font-family: 'open-sans', sans-serif;
     color: #666;
     line-height: 22px;
     padding-top: 6px;
@@ -2254,7 +2224,6 @@ figure.nnc-g-img {
 
 .nnc-footer-single .nnc-info p {
     font-size: 14px;
-    font-family: 'open-sans', sans-serif;
     color: #666;
     line-height: 20px; 
 }
@@ -2269,8 +2238,7 @@ figure.nnc-g-img {
     top: 0;
     z-index: 9;
     width: 100%;
-    background: #fff;
-    box-shadow: 0 0 3px 0 #ccc; 
+    background: #fff; 
 } 
 
 .admin-bar .nnc-sticky {
