@@ -1716,9 +1716,7 @@ span.post-date {
 	position: relative;
 }
 
-.nnc-category-small .nnc-category-single .nnc-img {
-    max-width: 110px;
-    max-height: 92px;
+.nnc-category-small .nnc-category-single .nnc-img { 
     margin-right: 18px;
     margin-bottom: 0;
     float: left;
@@ -1777,7 +1775,7 @@ span.post-date {
 }
 
 .nnc-category-layout-2 .nnc-category-small {
-	width: calc(48% - 5px);
+	width: calc(49% - 5px);
 	float: right;
 }
 
@@ -1799,7 +1797,7 @@ span.post-date {
 }
 
 .nnc-category.nnc-category-layout-3 {
-	width: calc(48% - 5px);
+	width: calc(49% - 5px);
 	margin-right: 0;
 }
 
