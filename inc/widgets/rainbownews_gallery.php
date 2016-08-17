@@ -124,8 +124,10 @@ class Rainbownews_gallery extends WP_Widget {
                             <div class="nnc-gallery-single nnc-latest-single">
 
                                 <figure class="nnc-g-img">
+
                                     <a href="#"><img src="<?php echo esc_url( $image ); ?>"></a>
                                 </figure>
+                                
 
                                 <div class="nnc-ico-dtl"><a href="#"><i class="fa fa-search-plus"></i></a></div>
                             </div>

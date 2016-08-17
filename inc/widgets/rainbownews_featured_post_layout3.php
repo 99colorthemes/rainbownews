@@ -155,7 +155,7 @@ class Rainbownews_featured_post_layout3 extends WP_Widget
 
                         <?php if (has_post_thumbnail()) : ?>
                             <figure class="nnc-img">
-                                <?php the_post_thumbnail('small'); ?>
+                                <?php the_post_thumbnail('rainbownews-featured-small1'); ?>
                             </figure>
                         <?php endif; ?>
 

@@ -169,7 +169,7 @@ class Rainbownews_top_full_width extends WP_Widget
 
                         <?php if (has_post_thumbnail()) : ?>
                             <figure class="nnc-img">
-                                <?php the_post_thumbnail('large'); ?>
+                                <?php the_post_thumbnail('rainbownews-featured-post-small'); ?>
                             </figure>
                         <?php endif; ?>
 

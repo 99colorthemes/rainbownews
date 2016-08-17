@@ -168,7 +168,7 @@ class Rainbownews_featured_post_layout2 extends WP_Widget
                                 <?php if (has_post_thumbnail()) : ?>
 
                                     <figure class="nnc-img">
-                                        <?php the_post_thumbnail('large'); ?>
+                                        <?php the_post_thumbnail('rainbownews-featured-large1'); ?>
                                     </figure>
 
                                 <?php endif; ?>
@@ -176,7 +176,7 @@ class Rainbownews_featured_post_layout2 extends WP_Widget
                             <?php } else { ?>
 
                                 <figure class="nnc-img">
-                                    <?php the_post_thumbnail('thumbnail'); ?>
+                                    <?php the_post_thumbnail('rainbownews-featured-small1'); ?>
                                 </figure>
 
                             <?php } ?>
