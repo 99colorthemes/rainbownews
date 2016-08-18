@@ -35,6 +35,7 @@
                 </div><!-- .entry-meta -->
             </div>
             <?php
+        
         endif; ?>
     </header><!-- .entry-header -->
 
