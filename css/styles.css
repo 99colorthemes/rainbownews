@@ -32,7 +32,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	background: #f6f6f6;
+	background: #f9f9f9;
 }
 ol, ul {
 	list-style: none;
@@ -1210,15 +1210,17 @@ h2.widget-title:after {
     top: 50%;
     left: 0;
     right: 0;
-    z-index: -1; 
+    z-index: 1; 
 }
 
-.widget-title > span {
+h2.widget-title > span {
     background: #fff;
     display: inline-block;
     padding: 0 14px 0 30px;
     font-size: 20px;
     color: #4db2ec;
+    position: relative;
+    z-index: 99;
 }
 
 .widget-title > span:before {
@@ -1238,16 +1240,22 @@ h2.widget-title:after {
 	position: absolute;
     top: 1px;
     right: 0;
+    z-index: 999;
     padding-left: 14px;
     background: #fff;
 }
 
 .nnc-latest-single {
 	float: left;
-	width: 25%;
+	width: 24.8%;
 	position: relative;
 	overflow: hidden;
-	padding-left: 2px;
+	margin-right: 2px;
+	margin-bottom: 2px;
+} 
+
+.nnc-latest-single:nth-child(4n) { 
+	margin-right: 0;
 } 
 
 .nnc-latest-single .nnc-dtl { 
@@ -1299,6 +1307,7 @@ h2.widget-title:after {
 
 .nnc-img {
 	line-height: 0; 
+	overflow: hidden;
 }
 
 /*For Layout 2*/
@@ -1984,11 +1993,12 @@ a.nnc-readmore:hover {
     top: 50%;
     left: 0;
     right: 0;
-    z-index: -1;
+    z-index: 1;
 }
 
 .nnc-footer {  
-	border-top: 4px solid #4db2ec; 
+	border-top: 4px solid #4db2ec;
+	background: #fff;
 }
 
 .nnc-footer-block {
@@ -2012,6 +2022,7 @@ a.nnc-readmore:hover {
 .nnc-footer .widget-title > span {
 	background: #fff;
 	z-index: 999;
+	position: relative;
 }
 
 .nnc-bottom-footer {
@@ -2185,19 +2196,22 @@ li.nnc-rss i {
 	background: #e95f03;
 }
 
-
-/*footer-social*/
-
-
-
 .nnc-f-gallery-block {
 	background: #1A1A1A;
 }  
 
 .nnc-f-gallery .nnc-gallery-single {
-	width: 12.5%;
+	width: 16.5%;
 	position: relative;
-} 
+	margin-bottom: 0;
+}  
+
+.rainbownews_gallery .nnc-latest {
+    background: #fff;
+    padding: 0;
+    box-shadow: none;
+    padding-top: 18px;
+}
 
 .nnc-ico-dtl i {  
 	width: 100%;
@@ -2236,7 +2250,7 @@ figure.nnc-g-img {
 .nnc-sticky {
     position: fixed;
     top: 0;
-    z-index: 9;
+    z-index: 999;
     width: 100%;
     background: #fff; 
 } 
