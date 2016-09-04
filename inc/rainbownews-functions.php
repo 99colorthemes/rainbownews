@@ -528,6 +528,36 @@ if (!function_exists('rainbownews_the_custom_logo')) :
 
 endif;
 
+//rainbownews post format icon function
+if( !function_exists( 'rainbownews_post_format_icon_hook' ) ):
+
+    function rainbownews_post_format_icon_hook() {
+
+        global $post;
+        $post_id = $post->ID;
+        $rainbownews_post_format = get_post_format( $post_id );
+        switch ( $rainbownews_post_format ) {
+            case 'video':
+                $post_format_icon = '<i class="fa fa-play"></i>';
+                break;
+            case 'audio':
+                $post_format_icon = '<i class="fa fa-volume-up"></i>';
+                break;
+            default:
+                $post_format_icon = '';
+                break;
+        }
+        if( $post_format_icon ) {
+            echo '<span class="format-icon">'. $post_format_icon .'</span>';
+        }
+    }
+
+    add_action( 'rainbownews_post_format_icon', 'rainbownews_post_format_icon_hook' );
+
+endif;
+
+
+
 if (!function_exists('wpb_set_post_views')) :
 
     function wpb_set_post_views($postID)
@@ -550,6 +580,8 @@ endif;
 
 //To keep the count accurate, lets get rid of prefetching
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+
 
 // rainbownews comment posted on cb function
 if (!function_exists('rainbownews_comments_posted_on_cb')) :

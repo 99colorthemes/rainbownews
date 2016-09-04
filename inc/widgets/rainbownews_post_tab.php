@@ -249,8 +249,8 @@ class Rainbownews_post_tab extends WP_Widget
                                                     echo get_the_post_thumbnail(get_the_ID(), 'thumbnail', array(
                                                         'alt' => get_the_title(),
                                                         'title' => get_the_title(),
-                                                        //'style' => 'width:150px; height:200px;'
                                                     ));
+                                                    do_action( 'rainbownews_post_format_icon' );
                                                 }
                                                 ?>
                                             </figure>

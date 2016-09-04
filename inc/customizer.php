@@ -228,7 +228,6 @@ function rainbownews_customize_register($wp_customize)
         'title'              =>  esc_html__('Theme Options', 'rainbownews')
     ) );
 
-
     // site layout setting
     $wp_customize->add_section( 'rainbownews_site_layout_section', array(
         'priority'             =>  5,

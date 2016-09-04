@@ -17,6 +17,12 @@
     <?php if (has_post_thumbnail()) { ?>
         <figure class="nnc-img">
             <?php the_post_thumbnail('full'); ?>
+            <?php
+
+            // do_action( 'rainbownews_post_tag_lists' );
+            do_action( 'rainbownews_post_format_icon' );
+
+            ?>
         </figure>
     <?php } ?>
     <header class="entry-header">
@@ -35,7 +41,7 @@
                 </div><!-- .entry-meta -->
             </div>
             <?php
-        
+
         endif; ?>
     </header><!-- .entry-header -->
 

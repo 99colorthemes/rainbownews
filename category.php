@@ -58,61 +58,78 @@ if ($query->have_posts()) :
         <main id="main" class="site-main">
             <div
                 class="nnc-category-highlight-block <?php echo $layout == 'layout-1' ? '' : 'nnc-category2-highlight-block'; ?>">
+
                 <?php while ($query->have_posts()) : $query->the_post();
                     if ($i == 2) {
                         echo '<div class="nnc-category-small-block nnc-clearblock">';
                     }
                     ?>
+
                     <div class="nnc-hightlight-large">
                         <div class="nnc-highlight-single">
+
                             <?php if ($i == 1) {
                                 if (has_post_thumbnail()) : ?>
+
                                     <figure class="nnc-slide-img">
-                                        <?php the_post_thumbnail('full'); ?>
+                                        <?php
+                                            the_post_thumbnail('full');
+                                            do_action( 'rainbownews_post_format_icon' );
+                                        ?>
                                     </figure>
+
                                 <?php endif;
                             } else { ?>
+
                                 <figure class="nnc-slide-img">
-                                    <?php the_post_thumbnail('small'); ?>
+                                    <?php
+                                        the_post_thumbnail('small');
+                                        do_action( 'rainbownews_post_format_icon' );
+                                    ?>
                                 </figure>
+
                             <?php } ?>
+
                             <div class="nnc-dtl">
 
-                                <div class="nnc-entry-title"><a href="<?php the_permalink(); ?>"
-                                                                title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-                                </div>
+                                <div class="nnc-entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></div>
+
                                 <div class="nnc-entry-meta">
-                                           <span class="posted-on">
-                                        <?php if ($layout != 'layout-1') { ?>
-                                            <a href="<?php the_permalink(); ?>"
-                                               title="<?php echo get_the_time(); ?>" rel="bookmark">
-                                                <time class="entry-date" datetime="">
-                                                    <i class="fa fa-calendar"></i> <?php echo get_the_date(); ?>
-                                                </time>
-                                            </a>
-                                        <?php } else { ?>
-                                            <a href="<?php the_permalink(); ?>"
-                                               title="<?php echo get_the_time(); ?>" rel="bookmark">
-                                                <time class="entry-date" datetime="">
-                                                    <?php echo get_the_date( 'M d' ); ?>
-                                                </time>
-                                                <br>
-                                                <time><?php echo get_the_date( 'Y' ); ?></time>
-                                            </a>
-                                        <?php } ?>
-                                            </span>
-                                        <span class="author"><i class="fa fa-user" aria-hidden="true"></i> <a
-                                                href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"
-                                                title="<?php the_author(); ?>"><?php echo esc_html(get_the_author()); ?></a></span>
-                                       <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> <a
-                                               href="<?php the_permalink(); ?>"
-                                               title="No Comments"><?php comments_popup_link('No Comment', '1', '%'); ?></a></span>
+                                       <span class="posted-on">
+
+                                            <?php if ($layout != 'layout-1') { ?>
+                                                <a href="<?php the_permalink(); ?>"
+                                                   title="<?php echo get_the_time(); ?>" rel="bookmark">
+                                                    <time class="entry-date" datetime="">
+                                                        <i class="fa fa-calendar"></i> <?php echo get_the_date(); ?>
+                                                    </time>
+                                                </a>
+
+                                            <?php } else { ?>
+
+                                                <a href="<?php the_permalink(); ?>"
+                                                   title="<?php echo get_the_time(); ?>" rel="bookmark">
+                                                    <time class="entry-date" datetime="">
+                                                        <?php echo get_the_date( 'M d' ); ?>
+                                                    </time>
+                                                    <br>
+                                                    <time><?php echo get_the_date( 'Y' ); ?></time>
+                                                </a>
+
+                                            <?php } ?>
+
+                                        </span>
+                                        <span class="author"><i class="fa fa-user" aria-hidden="true"></i> <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" title="<?php the_author(); ?>"><?php echo esc_html(get_the_author()); ?></a></span>
+
+                                       <span class="comments-link"><i class="fa fa-comments" aria-hidden="true"></i> <a href="<?php the_permalink(); ?>" title="No Comments"><?php comments_popup_link('No Comment', '1', '%'); ?></a></span>
                                 </div>
                                 <div class="nnc-category-list">
+
                                     <?php if (rainbownews_colored_category() > 0) {
                                         rainbownews_colored_category();
                                     }
                                     ?>
+
                                 </div>
                             </div>
                             <div class="nnc-content">

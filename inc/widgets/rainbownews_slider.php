@@ -110,7 +110,10 @@ class Rainbownews_slider extends WP_Widget
                         <?php if (has_post_thumbnail()) : ?>
 
                             <figure class="nnc-slide-img">
-                                <?php the_post_thumbnail('rainbownews-slider'); ?>
+                                <?php
+                                    the_post_thumbnail('rainbownews-slider');
+                                    do_action( 'rainbownews_post_format_icon' );
+                                ?>
                             </figure>
 
                         <?php endif; ?>

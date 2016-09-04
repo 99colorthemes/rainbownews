@@ -128,7 +128,7 @@ function rainbownews_scripts() {
 	wp_enqueue_style( 'rainbownews-styles', get_template_directory_uri() . '/css/styles.css', false, '1.0.0' );
 
 	//Register swiper
-	wp_enqueue_style( 'swiper', get_template_directory_uri() . '/css/swiper.css', false, '1.0.0' );
+	wp_enqueue_style( 'swiper', get_template_directory_uri() . '/css/swiper.css', false, '3.3.1' );
 
 
 
