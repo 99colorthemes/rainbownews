@@ -253,6 +253,26 @@ function rainbownews_customize_register($wp_customize)
             )
     ) );
 
+    // Breadcrumbs
+    $wp_customize->add_section('rainbownews_breadcrumbs_activate_settings', array(
+        'priority' => 1,
+        'title' => __('Activate Breadcrumbs', 'rainbownews'),
+        'panel' => 'rainbownews_theme_options'
+    ));
+
+    $wp_customize->add_setting('rainbownews_breadcrumbs_activate', array(
+        'default' => 1,
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'rainbownews_checkbox_sanitize'
+    ));
+
+    $wp_customize->add_control('rainbownews_breadcrumbs_activate', array(
+        'type' => 'checkbox',
+        'label' => __('Check to activate breadcrumbs', 'rainbownews'),
+        'section' => 'rainbownews_breadcrumbs_activate_settings',
+        'settings' => 'rainbownews_breadcrumbs_activate'
+    ));
+
     //side bar
     $wp_customize->add_section( 'rainbownews_default_sidebar_section', array(
         'priority'             =>  10,
@@ -279,6 +299,7 @@ function rainbownews_customize_register($wp_customize)
         )
     ) ) );
 
+    //category sidebar
     $wp_customize->add_section( 'rainbownews_sidebar_section', array(
         'priority'             =>  15,
         'title'                =>  esc_html__('Category Sidebar Settings', 'rainbownews'),

@@ -59,7 +59,7 @@
                         ?>
                     </div>
                 <?php } ?>
-                <?php if (is_active_sidebar('rainbownews_footer3_area')) { ?>
+                <?php if (is_active_sidebar('rainbownews_footer4_area')) { ?>
                     <div class="nnc-footer-single">
                         <?php
                         if (!dynamic_sidebar('rainbownews_footer4_area')):

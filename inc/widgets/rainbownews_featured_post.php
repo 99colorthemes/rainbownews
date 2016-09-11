@@ -40,9 +40,9 @@ class Rainbownews_featured_post extends WP_Widget
 
         ?>
         <p>
-            <input type="radio" <?php checked($type, 'latest') ?> id="<?php echo $this->get_field_id('type'); ?>" name="<?php echo $this->get_field_name('type'); ?>" value="latest"/><?php _e('Show latest Posts', 'rainbownews'); ?><br/>
+            <input type="radio" <?php checked($type, 'latest') ?> id="<?php echo $this->get_field_id('type'); ?>" name="<?php echo $this->get_field_name('type'); ?>" value="latest"/><?php esc_html_e('Show latest Posts', 'rainbownews'); ?><br/>
 
-            <input type="radio" <?php checked($type, 'category') ?> id="<?php echo $this->get_field_id('type'); ?>" name="<?php echo $this->get_field_name('type'); ?>" value="category"/><?php _e('Show posts from a category', 'rainbownews'); ?><br/>
+            <input type="radio" <?php checked($type, 'category') ?> id="<?php echo $this->get_field_id('type'); ?>" name="<?php echo $this->get_field_name('type'); ?>" value="category"/><?php esc_html_e('Show posts from a category', 'rainbownews'); ?><br/>
         </p>
 
         <p>
